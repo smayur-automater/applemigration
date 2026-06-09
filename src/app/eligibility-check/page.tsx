@@ -1,22 +1,30 @@
 import type { Metadata } from "next";
+import { EligibilityQuiz } from "@/components/quiz/EligibilityQuiz";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Eligibility Check",
+  title: "Check Your Australian Visa Eligibility — Free 3-Minute Quiz",
+  description:
+    "Answer a few quick questions and discover which Australian visa pathways match your situation. Free, no account needed.",
+  robots: { index: true, follow: false },
+  alternates: { canonical: "/eligibility-check" },
 };
 
-// TODO: Build out the Eligibility Check page
-export default function Page() {
+export default function EligibilityCheckPage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 py-16">
-      <h1
-        className="text-3xl sm:text-4xl font-bold font-display mb-4"
-        style={{ color: "var(--color-deep-navy)" }}
-      >
-        Eligibility Check
-      </h1>
-      <p className="text-gray-500 italic">
-        Content coming soon — this is a route stub for <code>/eligibility-check</code>.
-      </p>
-    </section>
+    <div className="flex min-h-[calc(100svh-var(--header-h))] flex-col bg-off-white">
+      <div className="flex flex-1 items-start justify-center px-4 py-10 sm:py-16">
+        <div className="w-full">
+          <h1 className="sr-only">Australian visa eligibility check</h1>
+          <EligibilityQuiz />
+        </div>
+      </div>
+      <div className="bg-surface py-4 text-center text-sm text-charcoal/80">
+        Need help?{" "}
+        <a href={site.phoneHref} className="font-semibold text-navy underline underline-offset-2 hover:text-gold-dark">
+          Call us on {site.phone}
+        </a>
+      </div>
+    </div>
   );
 }
