@@ -7,7 +7,6 @@ import { CTABanner } from "@/components/layout/CTABanner";
 import { MaraDisclaimer } from "@/components/layout/MaraDisclaimer";
 import { ServiceCard } from "@/components/cards/ServiceCard";
 import {
-  ArrowRightIcon,
   BookIcon,
   BriefcaseIcon,
   BuildingIcon,

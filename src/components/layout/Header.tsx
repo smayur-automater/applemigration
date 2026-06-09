@@ -286,10 +286,7 @@ export function Header() {
     };
   }, []);
 
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
-
+  // Every link in the drawer calls onClose, so no pathname effect is needed.
   const closeMenu = useCallback(() => {
     setMenuOpen(false);
     hamburgerRef.current?.focus();

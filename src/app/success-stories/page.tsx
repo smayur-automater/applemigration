@@ -1,22 +1,40 @@
 import type { Metadata } from "next";
+import { Container } from "@/components/ui/Container";
+import { Section } from "@/components/ui/Section";
+import { PageHero } from "@/components/layout/PageHero";
+import { CTABanner } from "@/components/layout/CTABanner";
+import { TestimonialCard } from "@/components/cards/TestimonialCard";
+import { testimonials } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Success Stories",
+  title: "Success Stories — Real Visa Outcomes",
+  description:
+    "Real clients, real Australian visa outcomes — student visas, skilled migration, partner visas, and more, handled by Apple Education & Immigration.",
+  alternates: { canonical: "/success-stories" },
 };
 
-// TODO: Build out the Success Stories page
-export default function Page() {
+export default function SuccessStoriesPage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 py-16">
-      <h1
-        className="text-3xl sm:text-4xl font-bold font-display mb-4"
-        style={{ color: "var(--color-deep-navy)" }}
-      >
-        Success Stories
-      </h1>
-      <p className="text-gray-500 italic">
-        Content coming soon — this is a route stub for <code>/success-stories</code>.
-      </p>
-    </section>
+    <>
+      <PageHero
+        title="Success Stories"
+        subtitle="Real people, real outcomes — across every visa pathway we handle."
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Success Stories" }]}
+      />
+      <Section size="lg" bg="default" aria-label="Client testimonials">
+        <Container>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {testimonials.map((t) => (
+              <TestimonialCard key={t.name} {...t} />
+            ))}
+          </div>
+          <p className="mt-10 text-center text-sm text-charcoal/60">
+            Testimonials reflect individual experiences. Every case is different, and past
+            outcomes don&rsquo;t guarantee future results.
+          </p>
+        </Container>
+      </Section>
+      <CTABanner variant="gold" heading="Ready to Write Your Own Success Story?" />
+    </>
   );
 }
