@@ -1,22 +1,144 @@
 import type { Metadata } from "next";
+import { Container } from "@/components/ui/Container";
+import { Section } from "@/components/ui/Section";
+import { PageHero } from "@/components/layout/PageHero";
+import { MaraDisclaimer } from "@/components/layout/MaraDisclaimer";
+import { ContactForm } from "@/components/forms/ContactForm";
+import { CalendarIcon, MailIcon, PhoneIcon } from "@/components/ui/icons";
+import { site } from "@/lib/site";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Contact Us",
+  description:
+    "Get in touch with Apple Education & Immigration. We respond within 1 business day. Phone, email, or send us a message online.",
+  alternates: { canonical: "/contact" },
 };
 
-// TODO: Build out the Contact Us page
-export default function Page() {
+const altMethods = [
+  {
+    icon: <PhoneIcon className="size-6" />,
+    label: "Phone",
+    value: site.phone,
+    href: site.phoneHref,
+  },
+  {
+    icon: <MailIcon className="size-6" />,
+    label: "Email",
+    value: site.email,
+    href: site.emailHref,
+  },
+  {
+    icon: <CalendarIcon className="size-6" />,
+    label: "Book Online",
+    value: "Schedule a free consultation",
+    href: "/book",
+  },
+];
+
+export default function ContactPage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 py-16">
-      <h1
-        className="text-3xl sm:text-4xl font-bold font-display mb-4"
-        style={{ color: "var(--color-deep-navy)" }}
-      >
-        Contact Us
-      </h1>
-      <p className="text-gray-500 italic">
-        Content coming soon — this is a route stub for <code>/contact</code>.
-      </p>
-    </section>
+    <>
+      <PageHero
+        title="Get in Touch"
+        subtitle="We respond within 1 business day."
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
+      />
+
+      <Section size="lg" bg="default">
+        <Container className="grid gap-12 lg:grid-cols-[60%_1fr]">
+          <div>
+            <h2 className="mb-6 text-2xl font-semibold text-navy">Send Us a Message</h2>
+            <ContactForm />
+          </div>
+
+          <aside>
+            <div className="rounded-lg bg-white p-8 shadow-sm lg:sticky lg:top-[calc(var(--header-h)+16px)]">
+              <h3 className="text-xl font-semibold text-navy">Contact Information</h3>
+              <address className="mt-4 space-y-3 text-sm not-italic text-charcoal/85">
+                <p>
+                  <a
+                    href={site.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-2 transition-colors duration-(--duration-fast) hover:text-gold-dark"
+                  >
+                    {site.address}
+                  </a>
+                </p>
+                <p>
+                  <a href={site.phoneHref} className="font-medium text-navy hover:text-gold-dark">
+                    {site.phone}
+                  </a>
+                </p>
+                <p>
+                  <a href={site.emailHref} className="font-medium text-navy hover:text-gold-dark">
+                    {site.email}
+                  </a>
+                </p>
+              </address>
+
+              <h3 className="mt-6 text-sm font-semibold uppercase tracking-wide text-navy">
+                Business Hours
+              </h3>
+              <table className="mt-2 w-full text-sm text-charcoal/85">
+                <tbody>
+                  {site.hours.map((row) => (
+                    <tr key={row.days}>
+                      <th scope="row" className="py-1 pr-4 text-left font-medium">
+                        {row.days}
+                      </th>
+                      <td className="py-1">{row.time}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+
+              <h3 className="mt-6 text-sm font-semibold uppercase tracking-wide text-navy">
+                Emergency / After Hours
+              </h3>
+              <p className="mt-1 text-sm text-charcoal/80">
+                For urgent visa matters (e.g. imminent visa expiry), email us with
+                &ldquo;URGENT&rdquo; in the subject line and we&rsquo;ll respond as soon as
+                possible.
+              </p>
+
+              <h3 className="mt-6 text-sm font-semibold uppercase tracking-wide text-navy">
+                Office Location
+              </h3>
+              <iframe
+                title="Office location map"
+                src={`https://www.google.com/maps?q=${encodeURIComponent(site.address)}&output=embed`}
+                className="mt-2 aspect-[4/3] w-full rounded-md border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+
+              <MaraDisclaimer variant="inline" className="mt-6" />
+            </div>
+          </aside>
+        </Container>
+      </Section>
+
+      <Section size="md" bg="white" aria-label="Other ways to contact us">
+        <Container>
+          <div className="grid gap-6 sm:grid-cols-3">
+            {altMethods.map((m) => (
+              <Link
+                key={m.label}
+                href={m.href}
+                className="flex flex-col items-center gap-2 rounded-lg border border-border p-8 text-center transition-[box-shadow,transform] duration-(--duration-base) hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <span className="flex size-12 items-center justify-center rounded-full bg-surface text-navy">
+                  {m.icon}
+                </span>
+                <span className="font-semibold text-navy">{m.label}</span>
+                <span className="text-sm text-charcoal/75">{m.value}</span>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </Section>
+    </>
   );
 }
