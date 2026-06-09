@@ -9,7 +9,7 @@ import {
   TextareaInput,
   TextInput,
 } from "@/components/forms/fields";
-import { submitBooking, type BookingFormState } from "@/app/book/actions";
+import { submitBooking, type BookingFormState } from "@/app/(public)/book/actions";
 
 const timeSlots = [
   "9:00am – 9:45am",

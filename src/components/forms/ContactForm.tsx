@@ -9,7 +9,7 @@ import {
   TextareaInput,
   TextInput,
 } from "@/components/forms/fields";
-import { submitContactForm, type ContactFormState } from "@/app/contact/actions";
+import { submitContactForm, type ContactFormState } from "@/app/(public)/contact/actions";
 import { countries } from "@/lib/countries";
 import Link from "next/link";
 

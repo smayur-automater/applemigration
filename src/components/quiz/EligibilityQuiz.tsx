@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useReducer, useRef, useState, useTransition } from "react";
 import { Button } from "@/components/ui/Button";
 import { TextInput } from "@/components/forms/fields";
-import { submitQuizLead } from "@/app/eligibility-check/actions";
+import { submitQuizLead } from "@/app/(public)/eligibility-check/actions";
 import { countries } from "@/lib/countries";
 import { site } from "@/lib/site";
 
