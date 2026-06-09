@@ -1,54 +1,108 @@
-import { ButtonHTMLAttributes, forwardRef } from "react";
+import Link from "next/link";
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 
-type ButtonVariant = "primary" | "secondary" | "ghost";
+type ButtonVariant = "primary" | "secondary" | "ghost" | "ghost-light" | "gold";
 type ButtonSize = "sm" | "md" | "lg";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonBaseProps {
   variant?: ButtonVariant;
   size?: ButtonSize;
-  asChild?: boolean;
+  loading?: boolean;
+  icon?: ReactNode;
+  iconRight?: ReactNode;
+  fullWidthMobile?: boolean;
+  href?: string;
+  className?: string;
+  children?: ReactNode;
 }
+
+type ButtonProps = ButtonBaseProps &
+  Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof ButtonBaseProps> &
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof ButtonBaseProps>;
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-[#D4A843] text-[#1A2E4A] hover:bg-[#c49835] font-semibold shadow-sm",
+    "bg-navy text-white hover:bg-navy-light active:scale-[0.98] shadow-sm hover:shadow-md font-semibold",
   secondary:
-    "bg-transparent border-2 border-[#1A2E4A] text-[#1A2E4A] hover:bg-[#1A2E4A] hover:text-white font-semibold",
-  ghost:
-    "bg-transparent text-[#1A2E4A] hover:bg-[#1A2E4A]/10 font-medium",
+    "border-2 border-gold text-navy hover:bg-gold hover:text-white font-semibold bg-transparent",
+  ghost: "text-navy hover:bg-surface font-medium bg-transparent",
+  "ghost-light": "text-white hover:bg-white/10 font-medium bg-transparent",
+  gold:
+    "bg-gold text-navy hover:bg-gold-light active:bg-gold-dark shadow-sm hover:shadow-md font-semibold",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
-  sm: "px-3 py-1.5 text-sm rounded",
-  md: "px-5 py-2.5 text-base rounded-md",
-  lg: "px-7 py-3.5 text-lg rounded-lg",
+  sm: "h-9 px-4 text-sm",
+  md: "h-11 px-6 text-base",
+  lg: "h-13 px-8 text-lg",
 };
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    { variant = "primary", size = "md", className = "", children, ...props },
-    ref
-  ) => {
+function Spinner() {
+  return (
+    <svg
+      className="size-5 animate-[spin_700ms_linear_infinite]"
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" opacity="0.25" />
+      <path d="M22 12a10 10 0 0 0-10-10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function Button({
+  variant = "primary",
+  size = "md",
+  loading = false,
+  icon,
+  iconRight,
+  fullWidthMobile = false,
+  href,
+  className = "",
+  children,
+  disabled,
+  ...props
+}: ButtonProps & { disabled?: boolean }) {
+  const classes = [
+    "inline-flex items-center justify-center gap-2 rounded-full whitespace-nowrap",
+    "transition-[background-color,color,box-shadow,transform] duration-[var(--duration-base)]",
+    "disabled:pointer-events-none disabled:opacity-60",
+    variantStyles[variant],
+    sizeStyles[size],
+    fullWidthMobile ? "w-full sm:w-auto" : "",
+    loading ? "opacity-85 cursor-not-allowed" : "",
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  const content = (
+    <>
+      {loading ? <Spinner /> : icon}
+      {children}
+      {!loading && iconRight}
+    </>
+  );
+
+  if (href) {
     return (
-      <button
-        ref={ref}
-        className={[
-          "inline-flex items-center justify-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4A843] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
-          variantStyles[variant],
-          sizeStyles[size],
-          className,
-        ]
-          .filter(Boolean)
-          .join(" ")}
-        {...props}
-      >
-        {children}
-      </button>
+      <Link href={href} className={classes} {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}>
+        {content}
+      </Link>
     );
   }
-);
 
-Button.displayName = "Button";
+  return (
+    <button
+      className={classes}
+      disabled={disabled || loading}
+      aria-busy={loading || undefined}
+      {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}
+    >
+      {content}
+    </button>
+  );
+}
 
-export { Button };
 export type { ButtonProps, ButtonVariant, ButtonSize };

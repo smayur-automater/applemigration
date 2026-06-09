@@ -1,70 +1,129 @@
 @import "tailwindcss";
 
-/* ── Brand colour tokens ── */
-:root {
-  /* Brand palette */
-  --color-deep-navy:   #1A2E4A;
-  --color-warm-gold:   #D4A843;
-  --color-sky-blue:    #4A90C4;
-  --color-off-white:   #F7F5F0;
-  --color-charcoal:    #2D2D2D;
-  --color-leaf-green:  #3A7D44;
+/* ── Design system tokens (DESIGN_SPEC.md §1) ── */
+@theme {
+  /* ─── Colour ──────────────────────────────────────────── */
+  --color-navy:        #1A2E4A;   /* Primary – Deep Navy      */
+  --color-gold:        #D4A843;   /* Accent  – Warm Gold      */
+  --color-sky:         #4A90C4;   /* Secondary – Sky Blue     */
+  --color-off-white:   #F7F5F0;   /* Page background          */
+  --color-charcoal:    #2D2D2D;   /* Body text                */
+  --color-white:       #FFFFFF;
+  --color-navy-light:  #243D5F;   /* Hover state on navy      */
+  --color-gold-light:  #E0BC6A;   /* Hover state on gold      */
+  --color-gold-dark:   #B8922E;   /* Active/pressed gold      */
+  --color-sky-light:   #6BACD4;   /* Hover state on sky       */
+  --color-error:       #C0392B;
+  --color-success:     #27AE60;
+  --color-warning:     #E67E22;
+  --color-border:      #D9D4CC;   /* Subtle dividers          */
+  --color-surface:     #EFEDE8;   /* Card/panel backgrounds   */
 
-  /* Semantic */
-  --background:        var(--color-off-white);
-  --foreground:        var(--color-charcoal);
+  /* ─── Typography ─────────────────────────────────────── */
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-body:    var(--font-inter), system-ui, sans-serif;
+  --font-sans:    var(--font-inter), system-ui, sans-serif;
 
-  /* Spacing scale (augments Tailwind) */
-  --space-xs:  0.25rem;   /* 4px  */
-  --space-sm:  0.5rem;    /* 8px  */
-  --space-md:  1rem;      /* 16px */
-  --space-lg:  1.5rem;    /* 24px */
-  --space-xl:  2rem;      /* 32px */
-  --space-2xl: 3rem;      /* 48px */
-  --space-3xl: 4rem;      /* 64px */
-  --space-4xl: 6rem;      /* 96px */
-
-  /* Border radius */
-  --radius-sm:   0.25rem;
-  --radius-md:   0.5rem;
-  --radius-lg:   0.75rem;
-  --radius-xl:   1rem;
-  --radius-full: 9999px;
-
-  /* Shadows */
-  --shadow-sm:  0 1px 3px 0 rgb(26 46 74 / 0.08), 0 1px 2px -1px rgb(26 46 74 / 0.08);
+  /* ─── Shadows ────────────────────────────────────────── */
+  --shadow-xs:  0 1px 2px 0 rgb(26 46 74 / 0.06);
+  --shadow-sm:  0 1px 3px 0 rgb(26 46 74 / 0.10), 0 1px 2px -1px rgb(26 46 74 / 0.10);
   --shadow-md:  0 4px 6px -1px rgb(26 46 74 / 0.10), 0 2px 4px -2px rgb(26 46 74 / 0.10);
-  --shadow-lg:  0 10px 15px -3px rgb(26 46 74 / 0.12), 0 4px 6px -4px rgb(26 46 74 / 0.12);
-  --shadow-xl:  0 20px 25px -5px rgb(26 46 74 / 0.14), 0 8px 10px -6px rgb(26 46 74 / 0.14);
+  --shadow-lg:  0 10px 15px -3px rgb(26 46 74 / 0.10), 0 4px 6px -4px rgb(26 46 74 / 0.10);
+  --shadow-xl:  0 20px 25px -5px rgb(26 46 74 / 0.10), 0 8px 10px -6px rgb(26 46 74 / 0.10);
+  --shadow-2xl: 0 25px 50px -12px rgb(26 46 74 / 0.25);
+  --shadow-gold: 0 0 0 3px rgb(212 168 67 / 0.35);  /* focus ring */
 }
 
-/* ── Tailwind v4 theme extension ── */
-@theme inline {
-  /* Fonts */
-  --font-sans:     var(--font-inter);
-  --font-display:  var(--font-playfair);
+:root {
+  /* ─── Z-Index Scale ──────────────────────────────────── */
+  --z-below:    -1;
+  --z-base:      0;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-toast:    500;
 
-  /* Brand colours */
-  --color-deep-navy:   #1A2E4A;
-  --color-warm-gold:   #D4A843;
-  --color-sky-blue:    #4A90C4;
-  --color-off-white:   #F7F5F0;
-  --color-charcoal:    #2D2D2D;
-  --color-leaf-green:  #3A7D44;
+  /* ─── Transitions ────────────────────────────────────── */
+  --ease-out:    cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast:   150ms;
+  --duration-base:   250ms;
+  --duration-slow:   400ms;
 
-  /* Semantic aliases */
-  --color-background:  var(--background);
-  --color-foreground:  var(--foreground);
+  /* ─── Layout ─────────────────────────────────────────── */
+  --max-w-content: 1200px;
+  --max-w-prose:    720px;
+  --max-w-narrow:   560px;
+  --header-h:        72px;
+  --header-h-mobile: 60px;
 }
 
 /* ── Base styles ── */
-body {
-  background: var(--background);
-  color: var(--foreground);
+html {
+  scroll-padding-top: var(--header-h);
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+body {
+  background: var(--color-off-white);
+  color: var(--color-charcoal);
+  font-family: var(--font-body);
+  line-height: 1.625;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-navy);
+}
+
+/* Main content fade-in on route render */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main {
+  animation: fadeIn 300ms var(--ease-out);
+}
+
+/* Spinner */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Standard focus ring (WCAG 2.2 AA) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Reduced-motion: disable all animation/transitions globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
