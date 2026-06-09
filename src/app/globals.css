@@ -1,70 +1,120 @@
 @import "tailwindcss";
 
-/* ── Brand colour tokens ── */
-:root {
-  /* Brand palette */
+@theme inline {
+  /* ─── Fonts ─────────────────────────────────────────── */
+  --font-sans:    var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-playfair), Georgia, serif;
+
+  /* ─── Colour ──────────────────────────────────────────── */
+  --color-navy:        #1A2E4A;
+  --color-gold:        #D4A843;
+  --color-sky:         #4A90C4;
+  --color-off-white:   #F7F5F0;
+  --color-charcoal:    #2D2D2D;
+  --color-white:       #FFFFFF;
+  --color-navy-light:  #243D5F;
+  --color-gold-light:  #E0BC6A;
+  --color-gold-dark:   #B8922E;
+  --color-sky-light:   #6BACD4;
+  --color-error:       #C0392B;
+  --color-success:     #27AE60;
+  --color-warning:     #E67E22;
+  --color-border:      #D9D4CC;
+  --color-surface:     #EFEDE8;
+
+  /* Legacy aliases so existing code still works */
   --color-deep-navy:   #1A2E4A;
   --color-warm-gold:   #D4A843;
   --color-sky-blue:    #4A90C4;
-  --color-off-white:   #F7F5F0;
   --color-charcoal:    #2D2D2D;
   --color-leaf-green:  #3A7D44;
+  --color-background:  #F7F5F0;
+  --color-foreground:  #2D2D2D;
 
-  /* Semantic */
-  --background:        var(--color-off-white);
-  --foreground:        var(--color-charcoal);
-
-  /* Spacing scale (augments Tailwind) */
-  --space-xs:  0.25rem;   /* 4px  */
-  --space-sm:  0.5rem;    /* 8px  */
-  --space-md:  1rem;      /* 16px */
-  --space-lg:  1.5rem;    /* 24px */
-  --space-xl:  2rem;      /* 32px */
-  --space-2xl: 3rem;      /* 48px */
-  --space-3xl: 4rem;      /* 64px */
-  --space-4xl: 6rem;      /* 96px */
-
-  /* Border radius */
+  /* ─── Border Radius ──────────────────────────────────── */
   --radius-sm:   0.25rem;
   --radius-md:   0.5rem;
   --radius-lg:   0.75rem;
   --radius-xl:   1rem;
+  --radius-2xl:  1.5rem;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-sm:  0 1px 3px 0 rgb(26 46 74 / 0.08), 0 1px 2px -1px rgb(26 46 74 / 0.08);
+  /* ─── Shadows ────────────────────────────────────────── */
+  --shadow-xs:  0 1px 2px 0 rgb(26 46 74 / 0.06);
+  --shadow-sm:  0 1px 3px 0 rgb(26 46 74 / 0.10), 0 1px 2px -1px rgb(26 46 74 / 0.10);
   --shadow-md:  0 4px 6px -1px rgb(26 46 74 / 0.10), 0 2px 4px -2px rgb(26 46 74 / 0.10);
-  --shadow-lg:  0 10px 15px -3px rgb(26 46 74 / 0.12), 0 4px 6px -4px rgb(26 46 74 / 0.12);
-  --shadow-xl:  0 20px 25px -5px rgb(26 46 74 / 0.14), 0 8px 10px -6px rgb(26 46 74 / 0.14);
+  --shadow-lg:  0 10px 15px -3px rgb(26 46 74 / 0.10), 0 4px 6px -4px rgb(26 46 74 / 0.10);
+  --shadow-xl:  0 20px 25px -5px rgb(26 46 74 / 0.10), 0 8px 10px -6px rgb(26 46 74 / 0.10);
+  --shadow-2xl: 0 25px 50px -12px rgb(26 46 74 / 0.25);
+  --shadow-gold: 0 0 0 3px rgb(212 168 67 / 0.35);
 }
 
-/* ── Tailwind v4 theme extension ── */
-@theme inline {
-  /* Fonts */
-  --font-sans:     var(--font-inter);
-  --font-display:  var(--font-playfair);
-
-  /* Brand colours */
-  --color-deep-navy:   #1A2E4A;
-  --color-warm-gold:   #D4A843;
-  --color-sky-blue:    #4A90C4;
+/* ─── CSS Custom Properties ───────────────────────────── */
+:root {
+  --color-navy:        #1A2E4A;
+  --color-gold:        #D4A843;
   --color-off-white:   #F7F5F0;
   --color-charcoal:    #2D2D2D;
-  --color-leaf-green:  #3A7D44;
+  --color-white:       #FFFFFF;
+  --color-navy-light:  #243D5F;
+  --color-error:       #C0392B;
+  --color-success:     #27AE60;
+  --color-border:      #D9D4CC;
+  --color-surface:     #EFEDE8;
+  --shadow-gold:       0 0 0 3px rgb(212 168 67 / 0.35);
+  --header-h:          72px;
+  --header-h-mobile:   60px;
+  --max-w-content:     1200px;
 
-  /* Semantic aliases */
-  --color-background:  var(--background);
-  --color-foreground:  var(--foreground);
+  /* Legacy */
+  --color-deep-navy:   #1A2E4A;
+  --color-warm-gold:   #D4A843;
 }
 
-/* ── Base styles ── */
+html {
+  scroll-padding-top: var(--header-h);
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: var(--color-off-white);
+  color: var(--color-charcoal);
+  line-height: 1.625;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* ─── Animations ── */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 400ms cubic-bezier(0.0, 0.0, 0.2, 1) both;
 }
