@@ -1,22 +1,44 @@
 import type { Metadata } from "next";
+import { Container } from "@/components/ui/Container";
+import { Section } from "@/components/ui/Section";
+import { PageHero } from "@/components/layout/PageHero";
+import { CTABanner } from "@/components/layout/CTABanner";
+import { TeamMemberCard } from "@/components/cards/TeamMemberCard";
+import { teamMembers } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Our Team",
+  description:
+    "Meet the MARA-registered migration agents and education consultants behind Apple Education & Immigration.",
+  alternates: { canonical: "/team" },
 };
 
-// TODO: Build out the Our Team page
-export default function Page() {
+export default function TeamPage() {
   return (
-    <section className="max-w-4xl mx-auto px-4 py-16">
-      <h1
-        className="text-3xl sm:text-4xl font-bold font-display mb-4"
-        style={{ color: "var(--color-deep-navy)" }}
-      >
-        Our Team
-      </h1>
-      <p className="text-gray-500 italic">
-        Content coming soon — this is a route stub for <code>/team</code>.
-      </p>
-    </section>
+    <>
+      <PageHero
+        title="Our Team"
+        subtitle="Registered migration agents and education specialists who treat your application like their own."
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "About", href: "/about" },
+          { label: "Our Team" },
+        ]}
+      />
+      <Section size="lg" bg="default">
+        <Container>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {teamMembers.map((member) => (
+              <TeamMemberCard key={member.name} {...member} />
+            ))}
+          </div>
+        </Container>
+      </Section>
+      <CTABanner
+        variant="navy"
+        heading="Want to Work With Us?"
+        subtext="Book a free consultation and meet the agent who'll handle your case personally."
+      />
+    </>
   );
 }
