@@ -216,18 +216,30 @@ Layout (desktop: sidebar left, content right; mobile: stacked):
 
 ### 3.1 Colour Palette
 
+**Direction: "Apple Store Adjacent"** — clean, premium, immediately trustworthy to Apple customers.
+Mirrors Apple's own marketing palette so visitors feel at home the moment they land.
+
 | Token | Hex | Usage |
 |---|---|---|
-| `--color-primary` | `#0071E3` | Primary actions, links (Apple-inspired blue) |
-| `--color-primary-dark` | `#0058B0` | Hover state |
-| `--color-accent` | `#34C759` | Success, checkmarks, badges |
-| `--color-navy` | `#1D2B3A` | CTA bands, footer background, headings |
-| `--color-surface` | `#F5F5F7` | Page backgrounds, card fills |
-| `--color-white` | `#FFFFFF` | Card backgrounds, hero |
-| `--color-text-primary` | `#1D1D1F` | Body text |
-| `--color-text-secondary` | `#6E6E73` | Captions, meta, placeholders |
-| `--color-border` | `#D2D2D7` | Input borders, dividers |
-| `--color-danger` | `#FF3B30` | Form errors |
+| `--color-primary` | `#0071E3` | Primary buttons, links (Apple's own blue) |
+| `--color-primary-hover` | `#0077ED` | Button hover state |
+| `--color-primary-dark` | `#0058B0` | Active / pressed state |
+| `--color-success` | `#34C759` | Checkmarks, success badges, "included" ticks |
+| `--color-navy` | `#1D2B3A` | CTA bands, footer background |
+| `--color-surface` | `#F5F5F7` | Alternating section backgrounds, card fills |
+| `--color-white` | `#FFFFFF` | Page base, card backgrounds, hero |
+| `--color-text-primary` | `#1D1D1F` | All headings and body text |
+| `--color-text-secondary` | `#6E6E73` | Captions, meta, placeholder text |
+| `--color-border` | `#D2D2D7` | Input borders, dividers, card strokes |
+| `--color-danger` | `#FF3B30` | Form validation errors |
+
+**Design principles (Option A):**
+- Generous white space — let content breathe
+- Section alternation: white → `#F5F5F7` → white to create rhythm without heavy borders
+- Shadows: very subtle (`0 2px 12px rgba(0,0,0,0.06)`) — never harsh
+- Photography / illustration: clean, bright, Apple-style lifestyle imagery
+- Gradient: allowed only for hero overlay — `linear-gradient(135deg, #FFFFFF 60%, #F5F5F7 100%)`
+- Icons: SF Symbols style (outline weight, `#1D1D1F` or `#0071E3`)
 
 ### 3.2 Typography
 
