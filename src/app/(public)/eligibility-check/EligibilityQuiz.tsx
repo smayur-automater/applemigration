@@ -144,7 +144,7 @@ export function EligibilityQuiz() {
           Start Again
         </button>
         <p className="mt-6 text-xs text-center" style={{ color: "var(--color-charcoal)", opacity: 0.5 }}>
-          Results are indicative only and do not constitute migration advice. MARN 0000000.
+          Results are indicative only and do not constitute migration advice. MARN 2318293.
         </p>
       </div>
     );

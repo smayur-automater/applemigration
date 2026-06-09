@@ -4,17 +4,17 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Apple Education & Immigration — Australian Visa & Education Experts",
   description:
-    "MARA registered migration agents with 15+ years experience. Expert guidance for student visas, skilled migration, partner visas and education consulting. 1,200+ visas granted.",
+    "MARA registered migration agents (MARN 2318293) with 12+ years experience. Expert guidance for student visas, skilled migration, education admissions and career pathways. 2,000+ satisfied clients.",
   openGraph: {
     title: "Apple Education & Immigration — Australian Visa & Education Experts",
-    description: "MARA registered migration agents. 1,200+ visas granted. 15+ years experience. 98% client satisfaction.",
+    description: "MARA registered migration agents (MARN 2318293). 2,000+ satisfied clients. 12+ years experience. 200+ approved providers.",
   },
 };
 
 const stats = [
-  { value: "1,200+", label: "Visas Granted" },
-  { value: "15+", label: "Years Experience" },
-  { value: "98%", label: "Client Satisfaction" },
+  { value: "2,000+", label: "Satisfied Clients" },
+  { value: "12+", label: "Years Experience" },
+  { value: "200+", label: "Approved Providers" },
 ];
 
 const services = [
@@ -58,42 +58,42 @@ const services = [
 const whyUs = [
   {
     title: "MARA Registered Agents",
-    body: "Fully registered with the Office of the Migration Agents Registration Authority. Your application is in safe, compliant hands.",
+    body: "Fully registered with the Office of the Migration Agents Registration Authority (MARN 2318293). Your application is in safe, compliant hands.",
   },
   {
     title: "Plain-English Advice",
-    body: "We explain your options clearly — no jargon, no surprises. You always know where you stand.",
+    body: "We explain your options clearly — no jargon, no surprises. You always know where you stand throughout your visa journey.",
   },
   {
     title: "End-to-End Service",
-    body: "From initial assessment to visa grant and pre-departure support, we're with you at every step.",
+    body: "From initial assessment to visa grant and pre-departure support, we're with you at every step — including health insurance and career pathways.",
   },
   {
-    title: "15+ Years of Experience",
-    body: "Deep knowledge of Australian immigration law, built across hundreds of successful applications every year.",
+    title: "12+ Years of Experience",
+    body: "Established in 2016, we bring deep knowledge of Australian immigration and education law with 2,000+ satisfied clients.",
   },
 ];
 
 const testimonials = [
   {
-    quote: "Apple Migration made our student visa process completely stress-free. They knew exactly what documents were needed and kept us updated throughout.",
-    name: "Wei Chen",
-    visa: "Student Visa 500",
-    country: "🇨🇳 China",
-    rating: 5,
-  },
-  {
-    quote: "After being rejected by another agent, Apple's team reviewed our application and got our partner visa approved within 8 months. Highly recommend.",
-    name: "Priya Sharma",
-    visa: "Partner Visa 820",
+    quote: "I had an outstanding experience with Apple Migration and Education Company. The team guided me through the entire migration process to Australia with utmost professionalism and expertise.",
+    name: "Prem Chand",
+    visa: "Migration Visa",
     country: "🇮🇳 India",
     rating: 5,
   },
   {
-    quote: "The skilled migration process was daunting but the team made it manageable. They helped me choose the right subclass and maximise my points.",
-    name: "Ahmed Al-Rashid",
-    visa: "Skilled Independent 189",
-    country: "🇦🇪 UAE",
+    quote: "He possesses an in-depth knowledge of the various visa options and requirements, and he guided me through the complex paperwork with ease. His attention to detail ensured that all my documents were accurately prepared.",
+    name: "Vinod Rohilla",
+    visa: "Australian Visa",
+    country: "🇮🇳 India",
+    rating: 5,
+  },
+  {
+    quote: "He guided me through the complex visa options and requirements with ease, ensuring that all my documents were accurately prepared and submitted on time. His meticulous attention to detail was invaluable.",
+    name: "Yeshan",
+    visa: "Skilled Visa",
+    country: "🌏 Australia",
     rating: 5,
   },
 ];
@@ -138,7 +138,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.12em] mb-4" style={{ color: "var(--color-gold)" }}>
-                Registered Migration Agent · MARN 0000000
+                Registered Migration Agent · MARN 2318293
               </p>
               <h1
                 className="font-display font-bold text-white mb-6"
@@ -457,7 +457,7 @@ export default function HomePage() {
               Book a Free Consultation
             </Link>
             <a
-              href="tel:+61200000000"
+              href="tel:+61480047407"
               className="inline-flex items-center justify-center px-8 py-4 rounded-full text-base font-semibold border-2 transition-colors duration-150"
               style={{ borderColor: "var(--color-navy)", color: "var(--color-navy)" }}
             >

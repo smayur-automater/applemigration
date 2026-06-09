@@ -50,9 +50,9 @@ export default function ContactPage() {
                 <div className="space-y-4 text-sm mb-6" style={{ color: "var(--color-charcoal)" }}>
                   <div>
                     <p className="font-medium mb-1" style={{ color: "var(--color-navy)" }}>📍 Address</p>
-                    <p>Suite 100, 123 Collins Street<br />Melbourne VIC 3000</p>
+                    <p>Melbourne Business Centre<br />470 St Kilda Road<br />Melbourne VIC 3004</p>
                     <a
-                      href="https://maps.google.com"
+                      href="https://maps.google.com/maps?q=470+St+Kilda+Road+Melbourne+VIC+3004"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs mt-1 inline-block transition-colors duration-150"
@@ -63,11 +63,13 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-medium mb-1" style={{ color: "var(--color-navy)" }}>📞 Phone</p>
-                    <a href="tel:+61200000000" className="hover:underline">+61 2 0000 0000</a>
+                    <p><a href="tel:+61480047407" className="hover:underline">Admissions: +61 480 047 407</a></p>
+                    <p><a href="tel:+61470519421" className="hover:underline">Migration: +61 470 519 421</a></p>
                   </div>
                   <div>
                     <p className="font-medium mb-1" style={{ color: "var(--color-navy)" }}>✉ Email</p>
-                    <a href="mailto:info@applemigration.com.au" className="hover:underline break-all">info@applemigration.com.au</a>
+                    <p><a href="mailto:team@applemigration.com.au" className="hover:underline break-all">team@applemigration.com.au</a></p>
+                    <p><a href="mailto:visa@applemigration.com.au" className="hover:underline break-all">visa@applemigration.com.au</a></p>
                   </div>
                   <div>
                     <p className="font-medium mb-1" style={{ color: "var(--color-navy)" }}>🕐 Business Hours</p>
@@ -90,13 +92,17 @@ export default function ContactPage() {
 
                 {/* Map */}
                 <div className="rounded-lg overflow-hidden" style={{ aspectRatio: "4/3" }}>
-                  <div className="w-full h-full flex items-center justify-center text-sm" style={{ backgroundColor: "var(--color-surface)", color: "var(--color-charcoal)" }}>
-                    📍 Map embed — Collins Street, Melbourne
-                  </div>
+                  <iframe
+                    loading="lazy"
+                    src="https://maps.google.com/maps?q=470+St+Kilda+Road+Melbourne+VIC+3004&t=m&z=15&output=embed&iwloc=near"
+                    title="Apple Education & Immigration — 470 St Kilda Road, Melbourne VIC 3004"
+                    className="w-full h-full border-0"
+                    aria-label="Map showing office location"
+                  />
                 </div>
 
                 <p className="mt-4 text-xs" style={{ color: "var(--color-charcoal)", opacity: 0.5 }}>
-                  MARN 0000000 | Registered Migration Agent
+                  MARN 2318293 | ABN 37 580 471 992 | Registered Migration Agent
                 </p>
               </div>
             </div>
@@ -109,8 +115,8 @@ export default function ContactPage() {
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { icon: "📞", label: "Call Us", value: "+61 2 0000 0000", link: "tel:+61200000000" },
-              { icon: "✉", label: "Email Us", value: "info@applemigration.com.au", link: "mailto:info@applemigration.com.au" },
+              { icon: "📞", label: "Call Us", value: "+61 480 047 407", link: "tel:+61480047407" },
+              { icon: "✉", label: "Email Us", value: "team@applemigration.com.au", link: "mailto:team@applemigration.com.au" },
               { icon: "📅", label: "Book Online", value: "Free 30-min consultation", link: "/book" },
             ].map((method) => (
               <a

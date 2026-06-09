@@ -62,7 +62,7 @@ export default function StudentVisasPage() {
           </div>
           {/* MARA disclaimer */}
           <div className="border-l-4 pl-4 py-2 text-xs" style={{ borderColor: "var(--color-gold)", color: "rgba(247,245,240,0.65)" }}>
-            Apple Education & Immigration is a registered migration agency. MARN 0000000. Migration advice on this page is general in nature and does not constitute personal migration advice.
+            Apple Education & Immigration is a registered migration agency. MARN 2318293. Migration advice on this page is general in nature and does not constitute personal migration advice.
           </div>
         </div>
       </section>
@@ -122,14 +122,14 @@ export default function StudentVisasPage() {
                 </Link>
                 <hr style={{ borderColor: "var(--color-border)" }} />
                 <div className="mt-6 space-y-3 text-sm">
-                  <a href="tel:+61200000000" className="flex items-center gap-2 transition-colors duration-150 hover:underline" style={{ color: "var(--color-navy)" }}>
-                    📞 +61 2 0000 0000
+                  <a href="tel:+61480047407" className="flex items-center gap-2 transition-colors duration-150 hover:underline" style={{ color: "var(--color-navy)" }}>
+                    📞 +61 480 047 407
                   </a>
                   <a href="mailto:info@applemigration.com.au" className="flex items-center gap-2 transition-colors duration-150 hover:underline" style={{ color: "var(--color-navy)" }}>
                     ✉ info@applemigration.com.au
                   </a>
                 </div>
-                <p className="mt-6 text-xs" style={{ color: "var(--color-charcoal)", opacity: 0.5 }}>MARN 0000000 | Registered Migration Agent</p>
+                <p className="mt-6 text-xs" style={{ color: "var(--color-charcoal)", opacity: 0.5 }}>MARN 2318293 | Registered Migration Agent</p>
               </div>
             </div>
           </div>
@@ -230,7 +230,7 @@ export default function StudentVisasPage() {
       <div className="py-6 border-t" style={{ borderColor: "var(--color-border)", backgroundColor: "var(--color-surface)" }}>
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8" aria-label="MARA registration and legal disclaimer">
           <p className="text-xs" style={{ color: "var(--color-charcoal)", opacity: 0.6 }}>
-            Apple Education & Immigration | MARN 0000000 | Registered Migration Agent. Migration advice on this page is general in nature and does not constitute personal migration advice. Seek professional advice for your individual circumstances.
+            Apple Education & Immigration | MARN 2318293 | Registered Migration Agent. Migration advice on this page is general in nature and does not constitute personal migration advice. Seek professional advice for your individual circumstances.
           </p>
         </div>
       </div>
@@ -245,7 +245,7 @@ export default function StudentVisasPage() {
             <Link href="/book" className="inline-flex items-center justify-center px-8 py-4 rounded-full text-base font-semibold text-white transition-all duration-250" style={{ backgroundColor: "var(--color-navy)" }}>
               Book a Free Consultation
             </Link>
-            <a href="tel:+61200000000" className="inline-flex items-center justify-center px-8 py-4 rounded-full text-base font-semibold border-2 transition-colors duration-150" style={{ borderColor: "var(--color-navy)", color: "var(--color-navy)" }}>
+            <a href="tel:+61480047407" className="inline-flex items-center justify-center px-8 py-4 rounded-full text-base font-semibold border-2 transition-colors duration-150" style={{ borderColor: "var(--color-navy)", color: "var(--color-navy)" }}>
               Call Us Now
             </a>
           </div>

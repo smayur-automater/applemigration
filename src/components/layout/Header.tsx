@@ -308,8 +308,8 @@ export function Header() {
             </div>
 
             <div className="p-4 text-xs" style={{ color: "var(--color-charcoal)" }}>
-              <p>📞 <a href="tel:+61200000000" className="hover:underline">+61 2 0000 0000</a></p>
-              <p className="mt-1">✉ <a href="mailto:info@applemigration.com.au" className="hover:underline">info@applemigration.com.au</a></p>
+              <p>📞 <a href="tel:+61480047407" className="hover:underline">+61 480 047 407</a></p>
+              <p className="mt-1">✉ <a href="mailto:team@applemigration.com.au" className="hover:underline">team@applemigration.com.au</a></p>
             </div>
           </div>
         </div>

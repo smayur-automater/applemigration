@@ -79,15 +79,20 @@ export function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contact Us</h3>
             <address className="not-italic space-y-2 text-sm">
-              <p>Suite 100, 123 Collins Street<br />Melbourne VIC 3000</p>
+              <p>Melbourne Business Centre<br />470 St Kilda Road<br />Melbourne VIC 3004</p>
               <p>
-                <a href="tel:+61200000000" className="transition-colors duration-150 hover:text-[var(--color-gold)]">
-                  +61 2 0000 0000
+                <a href="tel:+61480047407" className="transition-colors duration-150 hover:text-[var(--color-gold)]">
+                  Admissions: +61 480 047 407
                 </a>
               </p>
               <p>
-                <a href="mailto:info@applemigration.com.au" className="transition-colors duration-150 hover:text-[var(--color-gold)]">
-                  info@applemigration.com.au
+                <a href="tel:+61470519421" className="transition-colors duration-150 hover:text-[var(--color-gold)]">
+                  Migration: +61 470 519 421
+                </a>
+              </p>
+              <p>
+                <a href="mailto:team@applemigration.com.au" className="transition-colors duration-150 hover:text-[var(--color-gold)]">
+                  team@applemigration.com.au
                 </a>
               </p>
               <p className="text-xs text-white/60">
@@ -106,7 +111,7 @@ export function Footer() {
           aria-label="MARA registration and legal disclaimer"
         >
           <p className="text-xs text-white/60">
-            <strong className="text-white/80">Apple Education & Immigration</strong> | MARN 0000000 | Registered Migration Agent |{" "}
+            <strong className="text-white/80">Apple Education & Immigration</strong> | MARN 2318293 | ABN 37 580 471 992 | Registered Migration Agent |{" "}
             <a href="https://www.omara.gov.au" target="_blank" rel="noopener noreferrer" className="underline hover:text-white/80">
               omara.gov.au
             </a>

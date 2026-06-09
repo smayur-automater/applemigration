@@ -359,7 +359,7 @@ export function ContactForm() {
       {submitState === "error" && (
         <div role="alert" className="mt-6 p-4 rounded-lg text-sm" style={{ backgroundColor: "rgba(192,57,43,0.08)", border: "1px solid var(--color-error)", color: "var(--color-error)" }}>
           Something went wrong. Please try again or{" "}
-          <a href="tel:+61200000000" className="underline">call us directly</a>.
+          <a href="tel:+61480047407" className="underline">call us directly</a>.
         </div>
       )}
 

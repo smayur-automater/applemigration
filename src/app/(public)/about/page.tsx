@@ -8,22 +8,34 @@ export const metadata: Metadata = {
 
 const team = [
   {
-    name: "Sarah Thompson",
-    role: "Principal Migration Agent",
-    credentials: "MARN 0123456",
-    bio: "Sarah has 15+ years experience in Australian immigration law with expertise in skilled migration and employer sponsorship.",
+    name: "Umesh Indukuri",
+    role: "General Manager",
+    credentials: "Management",
+    bio: "Umesh oversees all operations at Apple Education & Immigration, ensuring every client receives exceptional service throughout their migration journey.",
   },
   {
-    name: "Michael Chen",
-    role: "Senior Migration Agent",
-    credentials: "MARN 0234567",
-    bio: "Michael specialises in student visas and education pathways, having helped over 500 students achieve their study dreams.",
+    name: "Yeshan",
+    role: "Legal Advisor",
+    credentials: "MARN 2318293",
+    bio: "Yeshan possesses in-depth knowledge of visa options and requirements, guiding clients through complex paperwork with meticulous attention to detail.",
   },
   {
-    name: "Aisha Patel",
-    role: "Education Consultant",
+    name: "Ameer Sohail",
+    role: "Education Counsellor",
     credentials: "Cert. Education Agent",
-    bio: "Aisha guides students through institution selection and enrolment, with relationships across 200+ CRICOS providers.",
+    bio: "Ameer guides students through institution selection and enrolment, with strong relationships across 200+ approved education providers Australia-wide.",
+  },
+  {
+    name: "Kashif",
+    role: "Visa Specialist",
+    credentials: "Migration Specialist",
+    bio: "Kashif specialises in Australian visa applications, ensuring accurate document preparation and timely submissions for every client.",
+  },
+  {
+    name: "Jatinderjeet Kaur",
+    role: "Visa Coordinator",
+    credentials: "Visa Coordination",
+    bio: "Jatinderjeet coordinates visa applications and client communications, keeping everyone informed throughout the immigration process.",
   },
 ];
 
@@ -51,7 +63,7 @@ export default function AboutPage() {
             About Apple Education & Immigration
           </h1>
           <p className="text-lg max-w-2xl" style={{ color: "rgba(247,245,240,0.8)" }}>
-            For over 15 years, we&apos;ve helped thousands of individuals and families navigate Australia&apos;s immigration system with confidence and clarity.
+            Established in 2016, we&apos;ve helped thousands of individuals and families navigate Australia&apos;s immigration and education system with confidence and clarity.
           </p>
         </div>
       </section>
@@ -67,22 +79,22 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-base leading-relaxed" style={{ color: "var(--color-charcoal)" }}>
                 <p>
-                  Apple Education & Immigration was founded with a simple mission: make the Australian immigration process accessible, transparent, and stress-free for everyone.
+                  Apple Education & Immigration was founded in 2016 with a simple mission: simplify immigration complexities, guiding you to success. Our mission is to unite families, open opportunities, and make your journey enriching.
                 </p>
                 <p>
-                  What started as a small consultancy in Melbourne has grown into a trusted agency serving clients from over 50 countries. Our team of MARA-registered agents brings together decades of combined experience across every major visa category.
+                  Based in Melbourne, we&apos;ve grown into a trusted agency with MARA-registered migration agents (MARN 2318293) and experienced education counsellors. We serve clients across admissions, immigration, health insurance, professional year programs, and career pathways.
                 </p>
                 <p>
-                  We believe that expert immigration advice should never feel intimidating. That&apos;s why plain-English communication is at the heart of everything we do.
+                  We deliver budget-friendly visa solutions, removing financial barriers from your journey. Our goal is to provide quality services at reasonable rates, with plain-English communication at the heart of everything we do.
                 </p>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { value: "1,200+", label: "Visas Granted" },
-                { value: "15+", label: "Years Experience" },
-                { value: "50+", label: "Countries Served" },
-                { value: "98%", label: "Satisfaction Rate" },
+                { value: "2,000+", label: "Satisfied Clients" },
+                { value: "12+", label: "Years Experience" },
+                { value: "200+", label: "Approved Providers" },
+                { value: "2016", label: "Year Founded" },
               ].map((stat) => (
                 <div key={stat.label} className="p-6 rounded-xl text-center" style={{ backgroundColor: "var(--color-surface)" }}>
                   <p className="font-display font-bold text-3xl mb-1" style={{ color: "var(--color-gold)" }}>{stat.value}</p>
@@ -124,7 +136,7 @@ export default function AboutPage() {
               Meet the Team
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
             {team.map((member) => (
               <div key={member.name} className="text-center">
                 <div

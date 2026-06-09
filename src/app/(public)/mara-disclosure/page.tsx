@@ -96,7 +96,7 @@ export default function MARADisclosurePage() {
             <address className="not-italic text-base leading-relaxed" style={{ color: "var(--color-charcoal)" }}>
               <strong>Apple Education & Immigration Pty Ltd</strong><br />
               Suite 100, 123 Collins Street, Melbourne VIC 3000<br />
-              <a href="tel:+61200000000" className="underline" style={{ color: "var(--color-gold)" }}>+61 2 0000 0000</a><br />
+              <a href="tel:+61480047407" className="underline" style={{ color: "var(--color-gold)" }}>+61 480 047 407</a><br />
               <a href="mailto:info@applemigration.com.au" className="underline" style={{ color: "var(--color-gold)" }}>info@applemigration.com.au</a>
             </address>
           </section>

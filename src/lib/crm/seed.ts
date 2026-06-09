@@ -11,8 +11,8 @@ export async function ensureSeeded(): Promise<void> {
   await writeCollection('staff', [
     {
       id: generateId(),
-      name: 'Admin User',
-      email: 'admin@applemigration.com.au',
+      name: 'Rashmi',
+      email: 'rashmi@applemigration.com.au',
       passwordHash,
       role: 'admin',
       active: true,
@@ -20,8 +20,8 @@ export async function ensureSeeded(): Promise<void> {
     },
     {
       id: generateId(),
-      name: 'Sarah Thompson',
-      email: 'sarah@applemigration.com.au',
+      name: 'Yeshan',
+      email: 'yeshan@applemigration.com.au',
       passwordHash: await hashPassword(seedPassword),
       role: 'agent',
       active: true,
@@ -29,8 +29,17 @@ export async function ensureSeeded(): Promise<void> {
     },
     {
       id: generateId(),
-      name: 'Michael Chen',
-      email: 'michael@applemigration.com.au',
+      name: 'Ameer Sohail',
+      email: 'ameer@applemigration.com.au',
+      passwordHash: await hashPassword(seedPassword),
+      role: 'agent',
+      active: true,
+      createdAt: new Date().toISOString(),
+    },
+    {
+      id: generateId(),
+      name: 'Umesh Indukuri',
+      email: 'umesh@applemigration.com.au',
       passwordHash: await hashPassword(seedPassword),
       role: 'agent',
       active: true,

@@ -33,7 +33,7 @@ export default function Page() {
             </Link>
           </div>
           <div className="border-l-4 pl-4 py-2 text-xs" style={{ borderColor: "var(--color-gold)", color: "rgba(247,245,240,0.65)" }}>
-            Apple Education & Immigration is a registered migration agency. MARN 0000000. Migration advice on this page is general in nature.
+            Apple Education & Immigration is a registered migration agency. MARN 2318293. Migration advice on this page is general in nature.
           </div>
         </div>
       </section>
@@ -53,7 +53,7 @@ export default function Page() {
       <div className="py-6 border-t" style={{ borderColor: "var(--color-border)", backgroundColor: "var(--color-surface)" }}>
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs" style={{ color: "var(--color-charcoal)", opacity: 0.6 }}>
-            Apple Education & Immigration | MARN 0000000 | Registered Migration Agent. Migration advice is general in nature and does not constitute personal migration advice.
+            Apple Education & Immigration | MARN 2318293 | Registered Migration Agent. Migration advice is general in nature and does not constitute personal migration advice.
           </p>
         </div>
       </div>
@@ -67,7 +67,7 @@ export default function Page() {
             <Link href="/book" className="inline-flex items-center justify-center px-8 py-4 rounded-full text-base font-semibold text-white transition-all duration-250" style={{ backgroundColor: "var(--color-navy)" }}>
               Book a Free Consultation
             </Link>
-            <a href="tel:+61200000000" className="inline-flex items-center justify-center px-8 py-4 rounded-full text-base font-semibold border-2 transition-colors duration-150" style={{ borderColor: "var(--color-navy)", color: "var(--color-navy)" }}>
+            <a href="tel:+61480047407" className="inline-flex items-center justify-center px-8 py-4 rounded-full text-base font-semibold border-2 transition-colors duration-150" style={{ borderColor: "var(--color-navy)", color: "var(--color-navy)" }}>
               Call Us Now
             </a>
           </div>

@@ -15,7 +15,7 @@ export default function EligibilityCheckPage() {
       </div>
       {/* Help bar instead of footer */}
       <div className="border-t py-4 text-center text-sm" style={{ borderColor: "var(--color-border)", color: "var(--color-charcoal)" }}>
-        Need help? <a href="tel:+61200000000" className="font-semibold underline" style={{ color: "var(--color-navy)" }}>Call us: +61 2 0000 0000</a>
+        Need help? <a href="tel:+61480047407" className="font-semibold underline" style={{ color: "var(--color-navy)" }}>Call us: +61 480 047 407</a>
       </div>
     </div>
   );
