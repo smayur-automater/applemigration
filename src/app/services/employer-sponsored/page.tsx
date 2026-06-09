@@ -1,22 +1,15 @@
 import type { Metadata } from "next";
+import { ServicePage } from "@/components/services/ServicePage";
+import { servicesData } from "@/lib/services-data";
+
+const service = servicesData["employer-sponsored"];
 
 export const metadata: Metadata = {
-  title: "Employer Sponsored Visas",
+  title: service.seoTitle,
+  description: service.seoDescription,
+  alternates: { canonical: "/services/employer-sponsored" },
 };
 
-// TODO: Build out the Employer Sponsored Visas page
-export default function Page() {
-  return (
-    <section className="max-w-4xl mx-auto px-4 py-16">
-      <h1
-        className="text-3xl sm:text-4xl font-bold font-display mb-4"
-        style={{ color: "var(--color-deep-navy)" }}
-      >
-        Employer Sponsored Visas
-      </h1>
-      <p className="text-gray-500 italic">
-        Content coming soon — this is a route stub for <code>/services/employer-sponsored</code>.
-      </p>
-    </section>
-  );
+export default function EmployerSponsoredPage() {
+  return <ServicePage service={service} />;
 }

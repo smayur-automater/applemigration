@@ -1,22 +1,15 @@
 import type { Metadata } from "next";
+import { ServicePage } from "@/components/services/ServicePage";
+import { servicesData } from "@/lib/services-data";
+
+const service = servicesData["education-consulting"];
 
 export const metadata: Metadata = {
-  title: "Education Consulting",
+  title: service.seoTitle,
+  description: service.seoDescription,
+  alternates: { canonical: "/services/education-consulting" },
 };
 
-// TODO: Build out the Education Consulting page
-export default function Page() {
-  return (
-    <section className="max-w-4xl mx-auto px-4 py-16">
-      <h1
-        className="text-3xl sm:text-4xl font-bold font-display mb-4"
-        style={{ color: "var(--color-deep-navy)" }}
-      >
-        Education Consulting
-      </h1>
-      <p className="text-gray-500 italic">
-        Content coming soon — this is a route stub for <code>/services/education-consulting</code>.
-      </p>
-    </section>
-  );
+export default function EducationConsultingPage() {
+  return <ServicePage service={service} />;
 }
