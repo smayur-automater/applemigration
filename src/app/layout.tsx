@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { inter, playfairDisplay } from "@/lib/fonts";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -34,11 +32,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${playfairDisplay.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-      </body>
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }
