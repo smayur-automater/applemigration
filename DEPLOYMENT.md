@@ -37,10 +37,24 @@ Under **Project → Settings → Environment Variables**, add:
 Without SMTP variables the site still works — form submissions are logged to
 the function logs instead of emailed, which is convenient for previews.
 
-## 4. Deploy
+## 4. Set Production Branch (important — do this once)
 
-Click **Deploy**. Every push to the production branch redeploys automatically;
-pull requests get preview URLs.
+By default Vercel treats any non-main branch as a "Preview" deployment.
+To make every push to `main` go straight to **Production** (no preview step):
+
+1. Vercel Dashboard → your project → **Settings → Git**
+2. Under **Production Branch**, confirm it is set to `main`
+3. Under **Ignored Build Step** — leave blank (deploy on every push)
+4. Scroll to **Preview Deployments** → set to **"None"** (or leave on if you
+   want preview URLs for feature branches; they will never touch production)
+
+The `vercel.json` in this repo already sets `deploymentEnabled` to `main` only,
+so feature branches will not trigger any Vercel deployment at all — only pushes
+to `main` trigger a build, and that build always goes to Production.
+
+## 5. Deploy
+
+Click **Deploy**. Every push to `main` now redeploys Production automatically.
 
 ## 5. Custom domain
 
