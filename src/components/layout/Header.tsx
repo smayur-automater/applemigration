@@ -252,6 +252,13 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
           >
             Book Free Consult
           </Link>
+          <Link
+            href="/staff/login"
+            onClick={onClose}
+            className="text-center text-xs font-medium text-charcoal/50 transition-colors hover:text-navy"
+          >
+            Staff Login
+          </Link>
         </div>
         <div className="mt-auto pt-8 text-sm text-charcoal/70">
           <a href={site.phoneHref} className="block py-1 hover:text-navy">
@@ -351,6 +358,13 @@ export function Header() {
               className="inline-flex h-9 items-center rounded-full bg-navy px-4 text-sm font-semibold text-white transition-colors duration-(--duration-base) hover:bg-navy-light"
             >
               Book Free Consult
+            </Link>
+            <span className="h-5 w-px bg-border" aria-hidden="true" />
+            <Link
+              href="/staff/login"
+              className="text-xs font-medium text-charcoal/50 transition-colors hover:text-navy"
+            >
+              Staff Login
             </Link>
           </div>
 
