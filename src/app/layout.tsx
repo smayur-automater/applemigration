@@ -1,23 +1,20 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { inter, playfairDisplay } from "@/lib/fonts";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://applemigration.com.au"
-  ),
+  metadataBase: new URL(site.url),
   title: {
-    default: "Apple Education & Immigration | Registered Migration Agents",
+    default: "Apple Education & Immigration — Australian Visa & Education Experts",
     template: "%s | Apple Education & Immigration",
   },
   description:
-    "Apple Education & Immigration — trusted registered migration agents helping with student visas, skilled migration, partner visas, and education consulting in Australia.",
+    "MARA-registered migration agents helping with Australian student visas, skilled migration, partner and family visas, employer sponsorship, and education consulting.",
   openGraph: {
     type: "website",
     locale: "en_AU",
-    siteName: "Apple Education & Immigration",
+    siteName: site.name,
   },
   twitter: {
     card: "summary_large_image",
@@ -34,11 +31,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${playfairDisplay.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-      </body>
+      <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );
 }
