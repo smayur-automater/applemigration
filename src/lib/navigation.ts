@@ -14,20 +14,15 @@ export const serviceLinks: NavItem[] = [
 
 export const mainNav: NavItem[] = [
   { label: "Home", href: "/" },
-  {
-    label: "About",
-    href: "/about",
-    children: [
-      { label: "About Us", href: "/about" },
-      { label: "Our Team", href: "/team" },
-    ],
-  },
-  { label: "Services", href: "/services", children: serviceLinks },
-  { label: "Eligibility Check", href: "/eligibility-check" },
-  { label: "Blog", href: "/blog" },
-  { label: "Success Stories", href: "/success-stories" },
+  { label: "Discover Us", href: "/about", children: [
+    { label: "About Us", href: "/about" },
+    { label: "Our Team", href: "/team" },
+  ]},
+  { label: "Immigration", href: "/services", children: serviceLinks },
+  { label: "Student Services", href: "/services/education-consulting" },
+  { label: "Testimonials", href: "/success-stories" },
   { label: "FAQs", href: "/faqs" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 export const footerNav = {
