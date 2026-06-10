@@ -1,4 +1,8 @@
-# UX Specification — Apple Migration Service Website
+# UX Specification — Apple Education & Immigration Website
+
+> **Business:** Apple Education & Immigration — Australian immigration and student services consultancy.
+> **Logo:** Dolphin wearing graduation cap, teal/turquoise brand colour. Use provided logo asset as-is.
+> **Design Direction:** Match current site's clean minimal style with a modern upgrade — same brand DNA, elevated execution.
 
 ---
 
@@ -6,28 +10,25 @@
 
 ```
 / (Home)
-├── /services
-│   ├── /services/mac-to-mac           (Mac-to-Mac Migration)
-│   ├── /services/pc-to-mac            (PC-to-Mac Migration)
-│   ├── /services/iphone-ipad          (iPhone / iPad Data Transfer)
-│   └── /services/business             (Business & Fleet Migration)
-├── /how-it-works
-├── /pricing
-├── /about
+├── /discover-us                  (About the company)
+├── /immigration
+│   ├── /immigration/skilled-visa          (Skilled Migration)
+│   ├── /immigration/student-visa          (Student Visa - subclass 500)
+│   ├── /immigration/partner-visa          (Partner / Family Visa)
+│   ├── /immigration/employer-sponsored    (Employer Sponsored)
+│   ├── /immigration/bridging-visa         (Bridging Visa)
+│   └── /immigration/visitor-visa          (Visitor / Tourist Visa)
+├── /student-services
+│   ├── /student-services/course-selection (Course Selection)
+│   ├── /student-services/enrolment        (Enrolment Assistance)
+│   └── /student-services/post-study       (Post-Study Work Rights)
+├── /testimonial
 ├── /faq
-├── /blog                              (optional Phase 2)
-│   └── /blog/[slug]
-├── /contact
-└── /booking                           (multi-step booking flow)
-    ├── /booking/step-1-service
-    ├── /booking/step-2-details
-    ├── /booking/step-3-schedule
-    └── /booking/step-4-confirm
+├── /contact-us
+└── /booking                       (Free consultation booking)
 ```
 
-**Global elements present on every page:**
-- Sticky top navigation bar
-- Footer (links, social, legal, contact)
+**Global elements:** Sticky nav bar, footer.
 
 ---
 
@@ -35,180 +36,164 @@
 
 ### 2.1 Home (`/`)
 
+**Navigation Bar** (sticky, white, subtle bottom border on scroll)
+- Left: Logo (Apple Education & Immigration — provided asset)
+- Centre: Discover Us | Immigration | Student Services (+) | Contact Us | Testimonial
+- Right: "Free Consultation" button (teal, rounded)
+- Mobile: Hamburger → full-screen overlay with same links + CTA button
+
 **Hero Section**
-- Full-width, light background (white → very light grey gradient)
-- Headline (H1): "Seamless Apple Migrations. Zero Stress."
-- Sub-headline: "We transfer everything — files, apps, settings, and passwords — from your old device to your new Apple device. In-person or remote."
-- Primary CTA button: "Book a Migration" → `/booking`
-- Secondary CTA link: "See How It Works" → `/how-it-works`
-- Hero visual: clean illustration or photo of a technician handing a MacBook to a smiling customer (right side, desktop only; hidden on mobile below fold)
-- Trust bar beneath hero: 5 logos/badges in a row — "Apple Authorised Reseller Partner", "5★ Google Reviews", "Insured & Bonded", "Same-Day Service Available", "10,000+ Migrations Completed"
+- Full-width, white background
+- Left side (60%): text content
+  - Eyebrow label: "Registered Migration Agents | MARN XXXXXXX"
+  - H1: "Your Journey to Australia Starts Here"
+  - Sub-copy: "Expert immigration and student visa advice for individuals, families, and businesses. We make the complex simple."
+  - CTA Primary: "Book a Free Consultation" → `/booking`
+  - CTA Secondary: "Explore Visas" → `/immigration`
+- Right side (40%): hero image — diverse group of happy people, students, families (lifestyle)
+- Trust strip beneath hero (5 items inline):
+  - ✓ MARA Registered Agents
+  - ✓ 500+ Visas Approved
+  - ✓ 15+ Years Experience
+  - ✓ Free Initial Consultation
+  - ✓ 5★ Google Reviews
 
-**Services Strip**
-- Section title (H2): "What We Migrate"
-- 4 icon cards, horizontal scroll on mobile:
-  1. Mac → Mac
-  2. PC → Mac
-  3. iPhone / iPad
-  4. Business Fleet
-- Each card: icon, 1-line label, 1-sentence description, "Learn More" text link
+**Services Overview Strip**
+- Background: `#F5F5F7`
+- H2: "How We Can Help You"
+- 3-column grid (desktop) / stacked (mobile):
+  1. **Immigration Visas** — icon, headline, 1-sentence desc, "Learn More" link
+  2. **Student Services** — icon, headline, 1-sentence desc, "Learn More" link
+  3. **Post-Study Pathways** — icon, headline, 1-sentence desc, "Learn More" link
 
-**How It Works Preview**
-- Section title (H2): "Three Steps to a New Device"
-- Numbered steps (1–3), horizontal on desktop / stacked on mobile:
-  1. Book Online — "Choose your service and pick a time."
-  2. We Migrate — "Our technician transfers everything safely."
-  3. You're Done — "Enjoy your new device, nothing missing."
-- CTA: "Get Started" → `/booking`
+**Why Choose Us**
+- White background
+- H2: "Why Clients Choose Apple Education & Immigration"
+- 4 icon tiles (2×2 grid on desktop, stacked on mobile):
+  1. Registered & Accredited — MARA registered, fully compliant
+  2. Personalised Advice — Every case is unique, we treat it that way
+  3. End-to-End Support — From first consult to visa grant
+  4. Proven Track Record — 500+ successful visa outcomes
 
-**Social Proof**
-- Section title (H2): "What Our Customers Say"
-- 3-column testimonial cards (carousel on mobile)
-- Each card: star rating (5/5), quote (2–3 sentences), customer first name + city
-- Below cards: aggregate stat — "4.9 / 5 from 430+ verified reviews"
+**Featured Visa Pathways**
+- Background: `#F5F5F7`
+- H2: "Popular Visa Pathways"
+- Horizontal card row (scrollable on mobile), 4 cards:
+  - Skilled Migration, Student Visa, Partner Visa, Employer Sponsored
+  - Each card: icon, visa name, 2-line desc, "Find Out More" link
 
-**Pricing Teaser**
-- Light grey background band
-- Headline: "Transparent, Flat-Rate Pricing"
-- 3 plan cards (Personal / Professional / Business)
-- Each: plan name, price-from figure, bullet list of 4 inclusions, CTA button
-- Link: "See full pricing" → `/pricing`
+**Testimonials**
+- White background
+- H2: "What Our Clients Say"
+- 3 testimonial cards (carousel on mobile)
+- Each: star rating, quote, name + visa type granted
+- Aggregate: "4.9 / 5 from 200+ verified reviews"
 
 **FAQ Teaser**
-- 4 most common questions, accordion-style
-- Link: "View all FAQs" → `/faq`
+- H2: "Frequently Asked Questions"
+- 4 accordion items (most searched questions)
+- Link: "View All FAQs →" → `/faq`
+- Layout: H2 left (40%), accordions right (60%) — matches current site pattern
 
-**Final CTA Band**
-- Dark background (navy)
-- Headline: "Ready to make the switch?"
-- Sub-copy: "Book online in under 2 minutes."
-- Button: "Book Now" → `/booking`
-
----
-
-### 2.2 Services — Hub (`/services`)
-
-- H1: "Our Migration Services"
-- Intro paragraph (2 sentences)
-- 4 large service cards (2×2 grid on desktop, 1 column on mobile)
-  - Each: illustration/icon, H2 name, 3-sentence description, "Learn More" CTA
+**Free Consultation CTA Band**
+- Background: dark navy `#1D1C2E`
+- H2: "Ready to Start Your Australian Journey?"
+- Sub: "Book a free 30-minute consultation with one of our registered migration agents."
+- Button: "Book Free Consultation" (teal)
 
 ---
 
-### 2.3 Service Detail Pages (shared template)
+### 2.2 Discover Us (`/discover-us`)
 
-Layout (desktop: sidebar left, content right; mobile: stacked):
-
-**Hero band**
-- Breadcrumb: Home > Services > [Service Name]
-- H1: service name
-- 1-paragraph intro
-- CTA button: "Book This Service"
-
-**What's Included** (checklist with tick icons)
-
-**What We Transfer** (2-column grid of items)
-
-**Before You Come In** (prep checklist)
-
-**Pricing** (inline mini pricing card for that service)
-
-**FAQ** (3–4 service-specific questions, accordion)
-
-**Related Services** strip
+- H1: "About Apple Education & Immigration"
+- Mission statement (2 paragraphs)
+- Team section: photo grid, name, MARN number, title, bio
+- Stats band: Years active / Visas granted / Countries served / Google rating
+- Registered body logos (MARA, PIER, etc.)
+- CTA: "Talk to Our Team" → `/contact-us`
 
 ---
 
-### 2.4 How It Works (`/how-it-works`)
+### 2.3 Immigration Hub (`/immigration`)
 
-- H1: "How Apple Migration Works"
-- Detailed 5-step timeline (vertical on mobile, horizontal zigzag on desktop):
-  1. Book Online
-  2. Confirm & Prep
-  3. Drop Off or Remote Connect
-  4. Migration Performed
-  5. Review & Pick Up
-- Each step: icon, step number, title, 2–3 sentence description
-- Inline CTA after step 3: "Have questions? Read our FAQ"
-- Bottom CTA band: "Start Your Migration" → `/booking`
+- H1: "Immigration Services"
+- Intro paragraph
+- 6 service cards (2×3 grid desktop, 1 column mobile)
+  - Each: icon, visa subclass name, short description, "Learn More" CTA
 
 ---
 
-### 2.5 Pricing (`/pricing`)
+### 2.4 Visa Detail Pages (shared template)
 
-- H1: "Simple, Flat-Rate Pricing"
-- Sub-head: "No hidden fees. No surprises."
-- Toggle (optional): Personal / Business
-- 3 plan cards (highlighted "Most Popular" on Professional):
-
-  | | Personal | Professional | Business |
-  |---|---|---|---|
-  | Price | from $99 | from $149 | Custom |
-  | Devices | 1 | 1 + backup | Fleet |
-  | On-site | — | ✓ | ✓ |
-  | Priority | — | — | ✓ |
-
-- "What's included in every plan" section (shared features list)
-- FAQ strip (pricing-specific questions)
-- CTA: "Book Now" / "Get a Quote"
+**Structure:**
+- Breadcrumb: Home > Immigration > [Visa Name]
+- H1: Visa name + subclass number
+- Eligibility summary (who can apply)
+- What's included / process steps (numbered timeline)
+- Processing times + fees note
+- Document checklist (accordion)
+- "Am I eligible?" CTA → `/booking`
+- FAQ (3–4 specific questions)
+- Related visas strip
 
 ---
 
-### 2.6 About (`/about`)
+### 2.5 Student Services Hub (`/student-services`)
 
-- H1: "About Us"
-- Mission paragraph
-- Team grid (photo, name, title, 1-line bio)
-- Stats band: Years in business / Migrations completed / Cities served / Rating
-- Certifications & partners logos
-- CTA: "Work with us" → `/contact`
+- H1: "Student Services"
+- 3 service cards: Course Selection / Enrolment / Post-Study
+- Feature list: "What we help with" (checklist)
+- Institutions we work with (logo strip)
+- CTA: "Talk to a Student Advisor"
+
+---
+
+### 2.6 Testimonial (`/testimonial`)
+
+- H1: "Client Success Stories"
+- Filter bar: All | Skilled Visa | Student Visa | Partner Visa | Other
+- Masonry grid of testimonial cards
+- Each: photo (optional), quote, name, visa type, country of origin
 
 ---
 
 ### 2.7 FAQ (`/faq`)
 
 - H1: "Frequently Asked Questions"
-- Search input (filter FAQs client-side)
-- Categorised accordions: General / Pricing / Data & Privacy / Technical
-- Each item: question (bold), answer (paragraph)
+- Layout: heading + intro left, accordions right (matches current site)
+- Categorised sections: General | Student Visa | Skilled Migration | Partner Visa | Fees
+- Search field to filter questions (client-side)
+- Photo/illustration block between sections (matches current site pattern)
 - CTA band at bottom
 
 ---
 
-### 2.8 Contact (`/contact`)
+### 2.8 Contact Us (`/contact-us`)
 
 - H1: "Get in Touch"
-- 2-column layout (desktop): form left, info right
-- Form fields: Name*, Email*, Phone, Service (select), Message*, Submit button
-- Info panel: address, phone, email, business hours, embedded map
-- Privacy note beneath form: "We never share your data."
+- 2-column desktop: form left, info right
+- Form: Name*, Email*, Phone, Visa type (select)*, Message, Submit
+- Info: address, phone, email, hours, map embed
+- Note: "All enquiries handled in strict confidence."
 
 ---
 
-### 2.9 Booking Flow (`/booking/*`)
+### 2.9 Booking (`/booking`)
 
-4-step linear wizard with progress indicator at top (steps 1–4).
+3-step wizard:
 
-**Step 1 — Choose Service**
-- Radio cards for each service type (icon + label)
-- "Next" button (disabled until selection)
+**Step 1 — Your Interest**
+- What are you looking for? (radio cards): Immigration Visa / Student Services / Not Sure
+- Visa subtype dropdown (conditional)
 
 **Step 2 — Your Details**
-- Fields: Full Name*, Email*, Phone*, Device model (text)*, Notes (optional)
-- Back / Next buttons
+- Name*, Email*, Phone*, Country of citizenship*, Brief message (optional)
 
-**Step 3 — Schedule**
-- Calendar date picker
-- Time slot selector (AM / PM blocks)
-- Option: In-person or Remote
-- Back / Next buttons
-
-**Step 4 — Confirm**
-- Summary card (service, name, date/time, type)
-- Price estimate
-- Terms checkbox
-- "Confirm Booking" button
-- On success: confirmation screen with booking reference, next-steps list, "Add to Calendar" link
+**Step 3 — Choose a Time**
+- Calendar + time slots
+- In-person (Sydney office) or Phone/Video call toggle
+- Confirm button
+- Success screen: reference number, confirmation email note, next steps
 
 ---
 
@@ -216,45 +201,52 @@ Layout (desktop: sidebar left, content right; mobile: stacked):
 
 ### 3.1 Colour Palette
 
-**Direction: "Apple Store Adjacent"** — clean, premium, immediately trustworthy to Apple customers.
-Mirrors Apple's own marketing palette so visitors feel at home the moment they land.
+**Direction: Match current site DNA + modern uplift.**
+Extracted from screenshot + logo. Teal from the dolphin logo becomes the brand accent.
 
 | Token | Hex | Usage |
 |---|---|---|
-| `--color-primary` | `#0071E3` | Primary buttons, links (Apple's own blue) |
-| `--color-primary-hover` | `#0077ED` | Button hover state |
-| `--color-primary-dark` | `#0058B0` | Active / pressed state |
-| `--color-success` | `#34C759` | Checkmarks, success badges, "included" ticks |
-| `--color-navy` | `#1D2B3A` | CTA bands, footer background |
+| `--color-primary` | `#00B4B4` | Primary buttons, links, active states (logo teal) |
+| `--color-primary-dark` | `#008F8F` | Hover / pressed state |
+| `--color-primary-light` | `#E6F9F9` | Teal tint for backgrounds, badges |
+| `--color-navy` | `#1D1C2E` | Headings, footer, CTA band background |
+| `--color-navy-soft` | `#2E2D45` | Secondary dark sections |
 | `--color-surface` | `#F5F5F7` | Alternating section backgrounds, card fills |
-| `--color-white` | `#FFFFFF` | Page base, card backgrounds, hero |
-| `--color-text-primary` | `#1D1D1F` | All headings and body text |
-| `--color-text-secondary` | `#6E6E73` | Captions, meta, placeholder text |
-| `--color-border` | `#D2D2D7` | Input borders, dividers, card strokes |
-| `--color-danger` | `#FF3B30` | Form validation errors |
+| `--color-white` | `#FFFFFF` | Page base, nav, cards |
+| `--color-text-primary` | `#1D1C2E` | All headings — matches current site navy |
+| `--color-text-body` | `#444455` | Body copy |
+| `--color-text-secondary` | `#6E6E80` | Captions, meta, placeholders |
+| `--color-border` | `#E5E5EA` | Card borders, input borders, dividers |
+| `--color-success` | `#34C759` | Checkmarks, approval badges |
+| `--color-danger` | `#FF3B30` | Form errors |
 
-**Design principles (Option A):**
-- Generous white space — let content breathe
-- Section alternation: white → `#F5F5F7` → white to create rhythm without heavy borders
-- Shadows: very subtle (`0 2px 12px rgba(0,0,0,0.06)`) — never harsh
-- Photography / illustration: clean, bright, Apple-style lifestyle imagery
-- Gradient: allowed only for hero overlay — `linear-gradient(135deg, #FFFFFF 60%, #F5F5F7 100%)`
-- Icons: SF Symbols style (outline weight, `#1D1D1F` or `#0071E3`)
+**Key design principles:**
+- White backgrounds dominate — matches current site feel
+- `#F5F5F7` used for alternating sections and card backgrounds
+- Teal `#00B4B4` reserved for CTAs, active links, key icons only (not overused)
+- Navy `#1D1C2E` for all headings — strong, authoritative (matches current site)
+- No heavy drop shadows — cards use `1px border + very soft shadow`
+- Logo always displayed at full colour, never recoloured
+
+---
 
 ### 3.2 Typography
 
-| Token | Font | Size | Weight | Line Height |
-|---|---|---|---|---|
-| H1 | SF Pro Display / Inter | 48px (desktop) / 32px (mobile) | 700 | 1.1 |
-| H2 | SF Pro Display / Inter | 36px / 26px | 700 | 1.2 |
-| H3 | Inter | 24px / 20px | 600 | 1.3 |
-| Body Large | Inter | 18px | 400 | 1.6 |
-| Body | Inter | 16px | 400 | 1.6 |
-| Small / Caption | Inter | 13px | 400 | 1.5 |
-| Button | Inter | 16px | 600 | 1 |
-| Label | Inter | 12px | 500 | 1.4 |
+| Role | Font | Size Desktop | Size Mobile | Weight | Line Height |
+|---|---|---|---|---|---|
+| H1 | Poppins | 48px | 32px | 700 | 1.15 |
+| H2 | Poppins | 36px | 26px | 700 | 1.2 |
+| H3 | Poppins | 24px | 20px | 600 | 1.3 |
+| Body Large | Poppins | 18px | 16px | 400 | 1.7 |
+| Body | Poppins | 16px | 15px | 400 | 1.7 |
+| Caption / Meta | Poppins | 13px | 12px | 400 | 1.5 |
+| Button | Poppins | 15px | 15px | 600 | 1 |
+| Nav Link | Poppins | 15px | 16px | 500 | 1 |
 
-**Web font stack:** `'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`
+**Web font:** `'Poppins', -apple-system, BlinkMacSystemFont, sans-serif`
+(Poppins matches the rounded, modern feel visible in the current site's typography)
+
+---
 
 ### 3.3 Spacing Scale (8px base)
 
@@ -271,283 +263,246 @@ Mirrors Apple's own marketing palette so visitors feel at home the moment they l
 --space-10: 128px
 ```
 
+---
+
 ### 3.4 Breakpoints
 
-| Name | Min Width | Layout |
+| Name | Width | Layout |
 |---|---|---|
 | `sm` | 0px | 1 column, 16px gutters |
 | `md` | 768px | 2 columns, 24px gutters |
-| `lg` | 1024px | 3–4 columns, 32px gutters |
+| `lg` | 1024px | Full nav, 3–4 columns, 32px gutters |
 | `xl` | 1280px | Max content width 1200px, centred |
+
+---
 
 ### 3.5 Component Library
 
-**Button**
-- Primary: `--color-primary` fill, white text, 8px radius, 48px height, 16px horizontal padding
-- Secondary: white fill, `--color-primary` border + text
-- Destructive: `--color-danger`
-- Disabled: 40% opacity, not-allowed cursor
-- States: default / hover (darken 10%) / focus (2px `--color-primary` outline, 2px offset) / active (scale 0.98)
+**Navigation Bar**
+- Height: 72px desktop / 60px mobile
+- Background: `#FFFFFF`, border-bottom `1px solid #E5E5EA` on scroll
+- Logo: left-aligned, 48px tall
+- Nav links: Poppins 500 15px, `#1D1C2E`, hover → `#00B4B4`
+- Active link: `#00B4B4` with underline
+- CTA button: teal filled, right-aligned
+- "Student Services" has a `+` dropdown indicator (matches current site)
+
+**Button — Primary**
+- Background: `#00B4B4`
+- Text: white, Poppins 600 15px
+- Border-radius: 8px
+- Height: 48px, padding: 0 28px
+- Hover: `#008F8F`
+- Focus: 2px `#00B4B4` outline, 2px offset
+- Active: scale(0.97)
+
+**Button — Secondary / Ghost**
+- Border: `2px solid #00B4B4`
+- Text: `#00B4B4`
+- Background: transparent
+- Hover: background `#E6F9F9`
+
+**Button — Navy (for dark sections)**
+- Background: `#FFFFFF`
+- Text: `#1D1C2E`
+- Hover: background `#F5F5F7`
 
 **Card**
-- Background: white
-- Border: 1px `--color-border`
+- Background: `#FFFFFF`
+- Border: `1px solid #E5E5EA`
 - Border-radius: 16px
-- Box-shadow: `0 2px 12px rgba(0,0,0,0.06)`
-- Hover: shadow increases to `0 8px 32px rgba(0,0,0,0.10)`
+- Shadow: `0 2px 16px rgba(0,0,0,0.06)`
+- Hover: shadow `0 8px 32px rgba(0,0,0,0.10)`, border-color `#00B4B4`
+
+**Accordion** (matches current site pattern)
+- Full-width rows
+- Question: Poppins 600 16px, `#1D1C2E`
+- Toggle icon: `+` / `−` in a light grey circle (exactly as current site)
+- Open state: background tint `#F5F5F7`, border-left `3px solid #00B4B4`
+- Smooth height transition 250ms ease
+- ARIA: `aria-expanded` on button, `aria-controls` on panel
 
 **Input / Textarea**
-- Border: 1px `--color-border`, 8px radius
-- Height: 48px (input), auto (textarea, min 120px)
-- Focus: border becomes `--color-primary`, no box-shadow ring
-- Error state: border `--color-danger`, error message beneath in `--color-danger`
+- Border: `1px solid #E5E5EA`, radius 8px
+- Height: 48px (input), min 120px (textarea)
+- Focus: border `#00B4B4`
+- Error: border `#FF3B30`, message below in `#FF3B30`
+- Placeholder: `#6E6E80`
 
-**Navigation Bar**
-- Height: 64px desktop / 56px mobile
-- Background: white, `box-shadow: 0 1px 0 rgba(0,0,0,0.08)` on scroll
-- Logo left, nav links centre (desktop), hamburger right (mobile)
-- Active link: `--color-primary` underline
+**Trust/Stats Bar**
+- Horizontal row of 4–5 items separated by thin vertical dividers
+- Each: icon + number/label, `#1D1C2E` text
+- Background: white or `#F5F5F7`
 
-**Badge / Tag**
-- Small pill, 4px radius, 12px text
-- Variants: info (blue), success (green), warning (amber)
+**Testimonial Card**
+- White card, 16px radius
+- Star row: filled teal stars
+- Quote: italic body text
+- Name + visa type: bold name, caption visa type in teal
 
-**Accordion**
-- Border-bottom separator only
-- Chevron icon rotates 180° when open
-- Smooth height transition (300ms ease)
-
-**Progress Stepper** (booking flow)
-- Horizontal bar, 4 numbered circles connected by lines
-- Completed: filled `--color-primary` circle with checkmark
-- Current: outlined `--color-primary` circle
-- Upcoming: grey circle
-
-**Toast / Alert**
-- Fixed bottom-right, 320px wide, 48px min-height
-- Variants: success (green left border), error (red), info (blue)
-- Auto-dismiss after 5 seconds, manual close X
+**Progress Stepper** (booking)
+- 3 circles connected by lines
+- Complete: teal fill + white checkmark
+- Current: teal outline
+- Upcoming: `#E5E5EA` circle
 
 ---
 
 ## 4. COPY DECK
 
-### 4.1 Global Navigation
+### 4.1 Navigation
 
 ```
-Logo: [AppleMigration logo mark] + "AppleMigration"
-Nav links: Services | How It Works | Pricing | About | FAQ
-CTA button: Book Now
-Mobile menu: same links stacked + Book Now full-width button
+Logo alt text: "Apple Education & Immigration"
+Links: Discover Us | Immigration | Student Services | Contact Us | Testimonial
+CTA: Free Consultation
 ```
 
 ### 4.2 Home Page
 
 **Hero**
 ```
-H1: Seamless Apple Migrations. Zero Stress.
-Sub: We transfer everything — files, apps, settings, and passwords —
-     from your old device to your shiny new Apple device.
-     In-person or remote. Same-day slots available.
-CTA1: Book a Migration
-CTA2: See How It Works
+Eyebrow: MARA Registered Migration Agents
+H1: Your Journey to Australia Starts Here
+Sub: Expert immigration and student visa advice for individuals,
+     families, and businesses. Clear guidance. Real results.
+CTA1: Book a Free Consultation
+CTA2: Explore Visas →
 ```
 
 **Trust Bar**
 ```
-✓ Apple Ecosystem Specialists
-★ 4.9 / 5 Google Rating
-🔒 Insured & Bonded
-⚡ Same-Day Available
-✓ 10,000+ Migrations Done
+✓ MARA Registered Agents
+★ 4.9 / 5 Google Reviews
+🎓 Student Visa Specialists
+✓ 500+ Visas Approved
+✓ Free Initial Consultation
 ```
 
 **Services Strip**
 ```
-Section label: WHAT WE MIGRATE
-H2: Every Apple Migration, Covered
+H2: How We Can Help You
 
-Card 1 — Mac to Mac
-"Upgrading your MacBook or iMac? We move every file, app, setting,
-and account — so your new Mac feels like home from day one."
+Immigration Visas
+"Skilled migration, partner visas, employer sponsorship and more.
+We match you with the right pathway and guide you every step."
 
-Card 2 — PC to Mac
-"Switching from Windows? We migrate your documents, photos, emails,
-and contacts, and help you get comfortable in macOS."
+Student Services
+"Course selection, enrolment support, and student visa applications.
+We help international students study in Australia with confidence."
 
-Card 3 — iPhone & iPad
-"New iPhone day? We transfer contacts, messages, photos, and app data
-in minutes — no iCloud plan required."
-
-Card 4 — Business Fleet
-"Rolling out new Macs across your team? We handle bulk migrations,
-MDM setup, and on-site deployment."
+Post-Study Pathways
+"Graduated in Australia? We help you explore your work rights,
+graduate visas, and permanent residency options."
 ```
 
-**How It Works**
+**Why Choose Us**
 ```
-H2: Three Steps to a New Device
+H2: Why Clients Choose Us
 
-1. Book Online
-   "Choose your service, pick a convenient time, and tell us about
-   your devices. Takes less than 2 minutes."
+Registered & Accredited
+"All advice from MARA-registered agents. Compliant, ethical,
+and up to date with the latest Department of Home Affairs rulings."
 
-2. We Migrate
-   "Our certified technician transfers everything safely and
-   completely — usually in 1–3 hours."
+Personalised Advice
+"No cookie-cutter solutions. We assess your unique circumstances
+and recommend the best pathway for your situation."
 
-3. You're Done
-   "Collect your new device, fully set up, everything where you
-   left it. No missing files. No surprises."
+End-to-End Support
+"From initial consultation to visa grant, we're with you at
+every step — document preparation, lodgement, and beyond."
 
-CTA: Get Started →
-```
-
-**Testimonials**
-```
-H2: What Our Customers Say
-
-Review 1 ★★★★★
-"I was terrified of losing 10 years of photos switching to a new Mac.
-The team transferred absolutely everything in two hours. Outstanding."
-— Sarah M., Sydney
-
-Review 2 ★★★★★
-"Switched from a Dell laptop to a MacBook Pro. They even migrated my
-Outlook emails and calendar. Couldn't believe how smooth it was."
-— James T., Melbourne
-
-Review 3 ★★★★★
-"Used them for our 12-person office Mac refresh. Professional, fast,
-and zero downtime. Already booked them for next quarter."
-— Rachel K., Brisbane
-
-Aggregate: Rated 4.9 / 5 from 430+ verified Google reviews
-```
-
-**Pricing Teaser**
-```
-H2: Transparent, Flat-Rate Pricing
-Sub: No hidden fees. What you see is what you pay.
-
-Personal — from $99
-✓ 1 device
-✓ Up to 500 GB transferred
-✓ All files, apps & settings
-✓ 30-day support guarantee
-
-Professional — from $149  [MOST POPULAR]
-✓ 1 device + external backup
-✓ Unlimited data transfer
-✓ On-site option available
-✓ Priority booking
-
-Business — Custom Quote
-✓ Multiple devices / fleet
-✓ MDM & profile setup
-✓ On-site deployment
-✓ Dedicated account manager
-
-[Book Now]  [See Full Pricing →]
+Proven Results
+"Over 500 successful visa outcomes for clients from 30+ countries.
+Your success is our track record."
 ```
 
 **FAQ Teaser**
 ```
-Q: How long does a migration take?
-A: Most personal migrations take 1–3 hours depending on data size.
-   We'll give you an estimate at booking.
+H2: Frequently Asked Questions
+Sub: At the core of our dedication to delivering outstanding
+     immigration solutions is our trusted team of experts.
 
-Q: Do I need to be there the whole time?
-A: No — just drop off your devices and we'll call when it's ready.
+Q: Can I study two courses simultaneously?
+A: Yes, you can study two courses if you are meeting conditions
+   of your student visa and studying your principal course.
 
-Q: What if something goes wrong?
-A: We back up before we start. If anything is missing, we fix it free.
-   Covered by our 30-day guarantee.
+Q: Can I change my education provider?
+A: Yes, with certain conditions. We can advise you on the
+   process and ensure you remain compliant with your visa.
 
-Q: Can you migrate remotely?
-A: Yes. We offer secure screen-share remote migrations for Mac-to-Mac
-   and most iPhone transfers.
+Q: Can I study professional year on a Bridging Visa?
+A: This depends on the type of Bridging Visa and its conditions.
+   Contact us for a personalised assessment.
 
-[View all FAQs →]
+Q: What would be the best time to lodge TR (485) visa?
+A: Generally 3–6 months before your student visa expires. We
+   recommend a consultation to review your specific timeline.
+
+[View All FAQs →]
 ```
 
-**Final CTA Band**
+**CTA Band**
 ```
-Headline: Ready to make the switch?
-Sub: Book online in under 2 minutes. Same-day slots available.
-Button: Book Now →
+H2: Ready to Start Your Australian Journey?
+Sub: Book a free 30-minute consultation with one of our
+     registered migration agents. No obligation, no jargon.
+Button: Book Free Consultation
 ```
 
 ### 4.3 Booking Flow Microcopy
 
 ```
-Step 1 header: "What would you like to migrate?"
-Step 1 helper: "Select the service that best fits your needs.
-                Not sure? We'll confirm the details after you book."
+Step 1: "What can we help you with?"
+Step 2: "Tell us about yourself"
+Step 3: "Choose a time that suits you"
 
-Step 2 header: "Tell us about yourself"
-Required field asterisk note: "* Required fields"
-Email helper: "We'll send your confirmation here."
-Phone helper: "So we can reach you if anything changes."
+Email helper: "We'll send your confirmation here. No spam."
+Phone helper: "In case we need to reach you before your appointment."
 
-Step 3 header: "Pick a date and time"
-Remote toggle label: "I'd prefer a remote session"
-Remote toggle helper: "Works for Mac-to-Mac and most iPhone transfers."
-No slots available: "No slots today — try another date."
+No slots: "No availability on this date — try the next available day."
 
-Step 4 header: "Confirm your booking"
-Terms label: "I agree to the Terms of Service and Privacy Policy."
-Submit button: "Confirm Booking"
-Success heading: "You're booked! 🎉"
-Success sub: "Check your email for confirmation and next steps."
-Booking ref label: "Booking reference:"
+Success heading: "You're booked!"
+Success sub: "We'll send a confirmation to your email shortly.
+              One of our agents will be in touch to prepare for your consultation."
 ```
 
-### 4.4 Form Error Messages
-
-```
-Required empty: "This field is required."
-Invalid email: "Please enter a valid email address."
-Invalid phone: "Please enter a valid phone number."
-No date selected: "Please select a date."
-No time selected: "Please select a time slot."
-Terms not accepted: "Please accept the terms to continue."
-Generic server error: "Something went wrong. Please try again or call us."
-```
-
-### 4.5 Footer
+### 4.4 Footer
 
 ```
 Column 1 — Brand
 [Logo]
-Your local Apple migration specialists.
-Insured, certified, and trusted by 10,000+ customers.
-[Social icons: Facebook | Instagram | LinkedIn | Google]
+Apple Education & Immigration
+Registered Migration Agents — MARN XXXXXXX
+Helping Australians and internationals navigate
+the visa system since [year].
 
-Column 2 — Services
-Mac to Mac Migration
-PC to Mac Migration
-iPhone & iPad Transfer
-Business Fleet Migration
+Column 2 — Immigration
+Skilled Migration
+Student Visa
+Partner Visa
+Employer Sponsored
+Bridging Visa
+Visitor Visa
 
 Column 3 — Company
-About Us
-How It Works
-Pricing
+Discover Us
+Student Services
+Testimonials
 FAQ
-Blog
-Contact
+Contact Us
+Book a Consultation
 
 Column 4 — Contact
-📍 123 Tech Street, Sydney NSW 2000
-📞 1800 APP MIGRATE
-✉ hello@applemigration.com.au
-Mon–Fri 8am–6pm, Sat 9am–4pm
+📍 [Office Address], NSW, Australia
+📞 [Phone Number]
+✉ info@applemigration.com.au
+Mon–Fri 9am–5pm AEST
 
-Legal row:
-© 2026 AppleMigration. All rights reserved.
+Legal:
+© 2026 Apple Education & Immigration. All rights reserved.
 Privacy Policy | Terms of Service | Sitemap
-"Apple, Mac, iPhone and iPad are trademarks of Apple Inc."
+Migration advice provided by registered migration agents (MARN XXXXXXX).
 ```
 
 ---
@@ -558,91 +513,88 @@ Privacy Policy | Terms of Service | Sitemap
 [Landing on /]
       │
       ▼
-[Hero — reads headline & sub-copy]
+[Hero — reads headline, spots MARA registered trust signal]
       │
-      ├─► [Trust bar scanned]
-      │
-      ▼
-[Scrolls to Services strip]
-      │
-      ├─► "Learn More" on a service card ──► [/services/[service]] ──┐
+      ├─► [Nav: Immigration] ──► [/immigration hub]
+      │         │
+      │         └──► [Visa detail page] ──► "Am I Eligible?" CTA ──►┐
+      │                                                               │
+      ├─► [Nav: Student Services] ──► [/student-services] ──────────►│
       │                                                               │
       ▼                                                               │
-[How It Works preview]                                               │
+[Scrolls — Why Choose Us builds trust]                               │
       │                                                               │
       ▼                                                               │
-[Testimonials — social proof builds trust]                           │
+[Testimonials — social proof]                                        │
       │                                                               │
       ▼                                                               │
-[Pricing teaser — anchors value]                                     │
+[FAQ teaser — handles objections]                                    │
       │                                                               │
-      ├─► "See full pricing" ──► [/pricing]                          │
-      │        │                                                      │
-      │        └─► CTA on pricing ──────────────────────────────────►│
+      ├─► "View All FAQs" ──► [/faq] ──────────────────────────────►│
       │                                                               │
       ▼                                                               │
-[Final CTA band / "Book Now"]  ◄───────────────────────────────────►│
+[CTA Band — "Book Free Consultation"]  ◄───────────────────────────►│
       │                                                               │
       ▼                                                               ▼
-[/booking — Step 1: Select service] ◄──────────────────────────────┘
+[/booking — Step 1: Select interest] ◄─────────────────────────────┘
       │
       ▼
-[Step 2: Enter details]
+[Step 2: Personal details + citizenship]
       │
       ▼
-[Step 3: Choose date / time / in-person or remote]
+[Step 3: Pick date, time, in-person or phone/video]
       │
       ▼
-[Step 4: Review & confirm]
+[Confirmation screen → email sent]
       │
       ▼
-[Confirmation screen — email sent]
+[Agent calls/emails to prepare for consultation]
       │
       ▼
-[Customer awaits confirmation email]
-      │
-      ▼
-[Day of migration: arrives / remote session starts]
-      │
-      ▼
-[Migration complete — happy customer]
+[Client becomes a case]
 ```
 
-**Secondary paths:**
-- `/faq` ← linked from nav, pricing page, and service pages (handles objections)
-- `/contact` ← for users who prefer not to self-book or have a custom requirement
-- `/about` ← trust-seekers who want to vet the company before booking
+---
+
+## 6. LOGO USAGE
+
+- Use the provided logo asset (dolphin + graduation cap, "Apple Education & Immigration" text)
+- Minimum width: 120px
+- Clear space: equal to cap height of the "A" on all sides
+- On white/light backgrounds: full colour
+- On dark/navy backgrounds: white version (if available) or place on white pill container
+- Never stretch, recolour, or add effects to the logo
+- SVG format preferred; PNG fallback at 2× resolution
 
 ---
 
-## 6. ACCESSIBILITY REQUIREMENTS (WCAG 2.1 AA)
+## 7. ACCESSIBILITY (WCAG 2.1 AA)
 
-1. **Colour contrast** — all text/background combos must meet 4.5:1 (normal text) and 3:1 (large text). Primary blue `#0071E3` on white passes at 4.6:1.
-2. **Focus indicators** — all interactive elements must have a visible 2px focus ring using `--color-primary`. Never `outline: none` without a custom equivalent.
-3. **Keyboard navigation** — full tab order across all interactive elements; booking wizard navigable without mouse.
-4. **Screen readers** — semantic HTML (`<nav>`, `<main>`, `<header>`, `<footer>`, `<section>`, `<article>`). All images have descriptive `alt` text; decorative images have `alt=""`.
-5. **Form labels** — every input has an associated `<label>` (not placeholder-only). Error messages linked via `aria-describedby`.
-6. **Accordion** — uses `<button>` with `aria-expanded` toggled; answer panel has matching `aria-controls` / `id`.
-7. **Booking stepper** — current step indicated with `aria-current="step"`.
-8. **Motion** — respect `prefers-reduced-motion`; all transitions wrapped in `@media (prefers-reduced-motion: no-preference)`.
-9. **Touch targets** — minimum 44×44px on all interactive elements.
-10. **Page titles** — unique, descriptive `<title>` on every route.
-11. **Skip link** — "Skip to main content" visible on focus at top of every page.
-12. **Language** — `lang="en"` on `<html>`.
+1. Contrast — `#1D1C2E` on white = 16.7:1 (exceeds). Teal `#00B4B4` on white = 3.1:1 (large text only; use dark text for small labels on teal backgrounds).
+2. Focus rings — 2px `#00B4B4` outline on all interactive elements.
+3. Keyboard navigation — full tab order; accordion and booking wizard keyboard operable.
+4. Screen readers — semantic HTML, all images with alt text, logo alt = "Apple Education & Immigration".
+5. Form accessibility — every input has `<label>`, errors via `aria-describedby`.
+6. Accordion — `<button>` with `aria-expanded`, panel with `aria-controls`.
+7. Motion — all transitions inside `@media (prefers-reduced-motion: no-preference)`.
+8. Touch targets — 44×44px minimum.
+9. Skip link — "Skip to main content" visible on focus.
+10. Language — `<html lang="en">`.
 
 ---
 
-## 7. RESPONSIVE BEHAVIOUR SUMMARY
+## 8. RESPONSIVE BEHAVIOUR
 
-| Element | Mobile (< 768px) | Tablet (768–1023px) | Desktop (≥ 1024px) |
+| Element | Mobile < 768px | Tablet 768–1023px | Desktop ≥ 1024px |
 |---|---|---|---|
-| Nav | Hamburger menu, full-screen overlay | Hamburger or condensed | Full horizontal links + CTA |
-| Hero image | Hidden | Right-aligned, 40% width | Right-aligned, 50% width |
-| Services cards | 1 column, horizontal scroll | 2 columns | 4 columns |
-| Testimonials | Single card, swipeable carousel | 2 columns | 3 columns |
-| Pricing cards | Stacked | 2 columns | 3 columns |
-| Footer | Stacked, 1 column | 2 columns | 4 columns |
-| Booking wizard | Full-width steps | Centred 560px | Centred 640px |
+| Nav | Hamburger, full-screen overlay | Hamburger | Full horizontal |
+| Hero | Stacked, image below text | Side by side 50/50 | Side by side 60/40 |
+| Services strip | 1 column | 2 columns | 3 columns |
+| Visa cards | 1 column | 2 columns | 4 columns |
+| FAQ layout | Stacked | Stacked | 40/60 split (matches current) |
+| Testimonials | Carousel | 2 columns | 3 columns |
+| Footer | 1 column | 2 columns | 4 columns |
+| Booking wizard | Full width | Centred 560px | Centred 640px |
 
 ---
 
