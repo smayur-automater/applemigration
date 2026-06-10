@@ -38,9 +38,10 @@
 
 **Navigation Bar** (sticky, white, subtle bottom border on scroll)
 - Left: Logo (Apple Education & Immigration — provided asset)
-- Centre: Discover Us | Immigration | Student Services (+) | Contact Us | Testimonial
-- Right: "Free Consultation" button (teal, rounded)
-- Mobile: Hamburger → full-screen overlay with same links + CTA button
+- Centre (logical order): Home 🏠 | Discover Us | Immigration ▾ | Student Services ▾ | Testimonials | FAQ | Contact Us
+- Right: "Free Consultation" button (teal, rounded) + "Staff Login" text link (small, `#6E6E80`, separated by a `|` divider)
+- "Immigration" and "Student Services" are dropdowns (▾ chevron indicator)
+- Mobile: Hamburger → full-screen overlay with same links stacked, "Free Consultation" full-width teal button at bottom, "Staff Login" small link below it
 
 **Hero Section**
 - Full-width, white background
@@ -282,10 +283,12 @@ Extracted from screenshot + logo. Teal from the dolphin logo becomes the brand a
 - Height: 72px desktop / 60px mobile
 - Background: `#FFFFFF`, border-bottom `1px solid #E5E5EA` on scroll
 - Logo: left-aligned, 48px tall
-- Nav links: Poppins 500 15px, `#1D1C2E`, hover → `#00B4B4`
-- Active link: `#00B4B4` with underline
-- CTA button: teal filled, right-aligned
-- "Student Services" has a `+` dropdown indicator (matches current site)
+- Nav link order: Home 🏠 | Discover Us | Immigration ▾ | Student Services ▾ | Testimonials | FAQ | Contact Us
+- Nav link style: Poppins 500 15px, `#1D1C2E`, hover → `#00B4B4`
+- Active link: `#00B4B4` with 2px underline
+- Dropdowns: Immigration and Student Services show a ▾ chevron; panel appears on hover/click with sub-links listed
+- Right side (left to right): "Free Consultation" teal button | vertical divider | "Staff Login" (Poppins 400 13px, `#6E6E80`, hover `#1D1C2E`, links to `/staff/login`)
+- Mobile: hamburger icon right; overlay has links stacked, "Free Consultation" full-width button, "Staff Login" small centred link below
 
 **Button — Primary**
 - Background: `#00B4B4`
@@ -354,8 +357,21 @@ Extracted from screenshot + logo. Teal from the dolphin logo becomes the brand a
 
 ```
 Logo alt text: "Apple Education & Immigration"
-Links: Discover Us | Immigration | Student Services | Contact Us | Testimonial
-CTA: Free Consultation
+Nav order: 🏠 Home | Discover Us | Immigration ▾ | Student Services ▾ | Testimonials | FAQ | Contact Us
+Right side: [Free Consultation] (teal button)  |  Staff Login (small muted link → /staff/login)
+
+Immigration dropdown:
+  - Skilled Migration
+  - Student Visa (subclass 500)
+  - Partner Visa
+  - Employer Sponsored
+  - Bridging Visa
+  - Visitor Visa
+
+Student Services dropdown:
+  - Course Selection
+  - Enrolment Assistance
+  - Post-Study Work Rights
 ```
 
 ### 4.2 Home Page
