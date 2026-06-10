@@ -61,6 +61,26 @@ pull requests get preview URLs.
       and confirm Performance / Accessibility / SEO ≥ 90
 - [ ] Verify the MARN appears in the footer on every page
 
+## Staff CRM (`/staff`)
+
+The staff CRM (login at `/staff/login`) needs these environment variables:
+
+| Name | Purpose |
+|---|---|
+| `CRM_SESSION_SECRET` | JWT signing secret — set a long random string in production |
+| `CRM_SEED_PASSWORD` | Initial password for the seeded staff accounts |
+| `CRM_DATA_DIR` | Optional: where CRM JSON data is stored (e.g. a mounted volume) |
+
+**Storage caveat:** the CRM stores data as JSON files. On Vercel (and other
+serverless hosts) the deployment filesystem is read-only, so the app
+automatically falls back to `/tmp` — login works, but **CRM data (clients,
+cases, tasks) is ephemeral**: it disappears on redeploys and is not shared
+between serverless instances. Staff accounts survive because they are
+re-seeded from `CRM_SEED_PASSWORD` on demand. For real production use of the
+CRM, either host on a server/container with a persistent disk (set
+`CRM_DATA_DIR` to a mounted volume) or replace `src/lib/crm/db.ts` with a
+database — all storage access goes through that one module.
+
 ## Notes & limitations
 
 - **Rate limiting** for the forms is in-memory per server instance

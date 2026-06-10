@@ -9,7 +9,15 @@ export async function loginAction(
   email: string,
   password: string
 ): Promise<{ error?: string }> {
-  await ensureSeeded();
+  try {
+    await ensureSeeded();
+  } catch (error) {
+    console.error('[crm] staff seeding failed (is the data dir writable?):', error);
+    return {
+      error:
+        'The staff system storage is unavailable right now. Please contact the site administrator.',
+    };
+  }
 
   const staff = await readCollection('staff');
   const user = staff.find(
