@@ -1,37 +1,47 @@
 @import "tailwindcss";
 
-/* ── Design system tokens (DESIGN_SPEC.md §1) ── */
+/* ── Design system tokens ── */
 @theme {
   /* ─── Colour ──────────────────────────────────────────── */
-  --color-navy:        #1A2E4A;   /* Primary – Deep Navy      */
-  --color-gold:        #D4A843;   /* Accent  – Warm Gold      */
-  --color-sky:         #4A90C4;   /* Secondary – Sky Blue     */
-  --color-off-white:   #F7F5F0;   /* Page background          */
-  --color-charcoal:    #2D2D2D;   /* Body text                */
-  --color-white:       #FFFFFF;
-  --color-navy-light:  #243D5F;   /* Hover state on navy      */
-  --color-gold-light:  #E0BC6A;   /* Hover state on gold      */
-  --color-gold-dark:   #B8922E;   /* Active/pressed gold      */
-  --color-sky-light:   #6BACD4;   /* Hover state on sky       */
-  --color-error:       #C0392B;
-  --color-success:     #27AE60;
-  --color-warning:     #E67E22;
-  --color-border:      #D9D4CC;   /* Subtle dividers          */
-  --color-surface:     #EFEDE8;   /* Card/panel backgrounds   */
+  --color-red:         #E8231A;   /* Primary – Vibrant Red    */
+  --color-red-light:   #FF4A3D;   /* Hover state on red       */
+  --color-red-dark:    #C41910;   /* Active/pressed red       */
+  --color-red-tint:    #FFF0EF;   /* Light red tint surface   */
+  --color-red-subtle:  #FFE4E2;   /* Card/panel backgrounds   */
+
+  --color-navy:        #1A1A2E;   /* Dark text (near black)   */
+  --color-charcoal:    #3D3D4E;   /* Body text                */
+  --color-muted:       #6B6B80;   /* Secondary / captions     */
+
+  --color-white:       #FFFFFF;   /* Page base                */
+  --color-off-white:   #FAFAFA;   /* Subtle section alt       */
+  --color-surface:     #FFF0EF;   /* Card tint                */
+  --color-border:      #FFD6D3;   /* Dividers / input borders */
+
+  --color-error:       #DC2626;
+  --color-success:     #16A34A;
+  --color-warning:     #D97706;
+
+  /* gold kept as alias so existing Tailwind classes don't break */
+  --color-gold:        #E8231A;
+  --color-gold-light:  #FF4A3D;
+  --color-gold-dark:   #C41910;
+  --color-navy-light:  #2D2D45;
+  --color-sky:         #E8231A;
 
   /* ─── Typography ─────────────────────────────────────── */
-  --font-display: var(--font-playfair), Georgia, serif;
+  --font-display: var(--font-poppins), system-ui, sans-serif;
   --font-body:    var(--font-inter), system-ui, sans-serif;
-  --font-sans:    var(--font-inter), system-ui, sans-serif;
+  --font-sans:    var(--font-poppins), system-ui, sans-serif;
 
   /* ─── Shadows ────────────────────────────────────────── */
-  --shadow-xs:  0 1px 2px 0 rgb(26 46 74 / 0.06);
-  --shadow-sm:  0 1px 3px 0 rgb(26 46 74 / 0.10), 0 1px 2px -1px rgb(26 46 74 / 0.10);
-  --shadow-md:  0 4px 6px -1px rgb(26 46 74 / 0.10), 0 2px 4px -2px rgb(26 46 74 / 0.10);
-  --shadow-lg:  0 10px 15px -3px rgb(26 46 74 / 0.10), 0 4px 6px -4px rgb(26 46 74 / 0.10);
-  --shadow-xl:  0 20px 25px -5px rgb(26 46 74 / 0.10), 0 8px 10px -6px rgb(26 46 74 / 0.10);
-  --shadow-2xl: 0 25px 50px -12px rgb(26 46 74 / 0.25);
-  --shadow-gold: 0 0 0 3px rgb(212 168 67 / 0.35);  /* focus ring */
+  --shadow-xs:  0 1px 2px 0 rgb(232 35 26 / 0.06);
+  --shadow-sm:  0 1px 3px 0 rgb(232 35 26 / 0.10), 0 1px 2px -1px rgb(232 35 26 / 0.08);
+  --shadow-md:  0 4px 6px -1px rgb(232 35 26 / 0.10), 0 2px 4px -2px rgb(232 35 26 / 0.08);
+  --shadow-lg:  0 10px 15px -3px rgb(232 35 26 / 0.10), 0 4px 6px -4px rgb(232 35 26 / 0.06);
+  --shadow-xl:  0 20px 25px -5px rgb(232 35 26 / 0.10), 0 8px 10px -6px rgb(232 35 26 / 0.06);
+  --shadow-2xl: 0 25px 50px -12px rgb(232 35 26 / 0.20);
+  --shadow-gold: 0 0 0 3px rgb(232 35 26 / 0.25);  /* focus ring */
 }
 
 :root {
@@ -66,9 +76,9 @@ html {
 }
 
 body {
-  background: var(--color-off-white);
+  background: var(--color-white);
   color: var(--color-charcoal);
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   line-height: 1.625;
 }
 
@@ -79,6 +89,7 @@ h4,
 h5,
 h6 {
   color: var(--color-navy);
+  font-family: var(--font-display);
 }
 
 /* Main content fade-in on route render */
@@ -114,7 +125,7 @@ input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-red);
   outline-offset: 2px;
 }
 
