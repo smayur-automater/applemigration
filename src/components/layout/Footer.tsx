@@ -22,13 +22,13 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="bg-navy text-off-white">
+    <footer className="bg-red text-white">
       <div className="mx-auto max-w-[var(--max-w-content)] px-[clamp(1rem,4vw,2rem)]">
         {/* Top strip */}
         <div className="grid grid-cols-1 gap-10 py-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <p className="font-display text-xl font-bold text-white">
-              Apple <span className="text-gold">Education &amp; Immigration</span>
+              Apple <span className="text-white">Education &amp; Immigration</span>
             </p>
             <p className="mt-3 text-sm text-white/75">
               Helping students, professionals, and families build their Australian future with
@@ -42,7 +42,7 @@ export function Footer() {
                   aria-label={s.label}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex size-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors duration-(--duration-fast) hover:bg-gold hover:text-navy"
+                  className="flex size-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors duration-(--duration-fast) hover:bg-white/20"
                 >
                   <svg aria-hidden="true" className="size-5 fill-current" viewBox="0 0 24 24">
                     <path d={s.path} />
@@ -59,7 +59,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/75 transition-colors duration-(--duration-fast) hover:text-gold hover:underline"
+                    className="text-sm text-white/75 transition-colors duration-(--duration-fast) hover:text-white hover:underline"
                   >
                     {link.label}
                   </Link>
@@ -75,7 +75,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/75 transition-colors duration-(--duration-fast) hover:text-gold hover:underline"
+                    className="text-sm text-white/75 transition-colors duration-(--duration-fast) hover:text-white hover:underline"
                   >
                     {link.label}
                   </Link>
@@ -89,12 +89,12 @@ export function Footer() {
             <address className="space-y-2.5 text-sm not-italic text-white/75">
               <p>{site.address}</p>
               <p>
-                <a href={site.phoneHref} className="transition-colors duration-(--duration-fast) hover:text-gold hover:underline">
+                <a href={site.phoneHref} className="transition-colors duration-(--duration-fast) hover:text-white hover:underline">
                   {site.phone}
                 </a>
               </p>
               <p>
-                <a href={site.emailHref} className="transition-colors duration-(--duration-fast) hover:text-gold hover:underline">
+                <a href={site.emailHref} className="transition-colors duration-(--duration-fast) hover:text-white hover:underline">
                   {site.email}
                 </a>
               </p>
@@ -124,7 +124,7 @@ export function Footer() {
               <span key={link.href}>
                 <Link
                   href={link.href}
-                  className="transition-colors duration-(--duration-fast) hover:text-gold hover:underline"
+                  className="transition-colors duration-(--duration-fast) hover:text-white hover:underline"
                 >
                   {link.label}
                 </Link>

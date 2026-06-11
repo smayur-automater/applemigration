@@ -10,11 +10,8 @@ function Logo() {
   return (
     <Link href="/" className="flex shrink-0 items-center gap-2" aria-label={`${site.name} — home`}>
       <svg aria-hidden="true" className="size-8" viewBox="0 0 32 32" fill="none">
-        <circle cx="16" cy="16" r="15" stroke="var(--color-gold)" strokeWidth="2" />
-        <path
-          d="M16 7c-3 3.5-4.5 7-4.5 10.5 0 3 1.8 6 4.5 7.5 2.7-1.5 4.5-4.5 4.5-7.5C20.5 14 19 10.5 16 7Z"
-          fill="var(--color-gold)"
-        />
+        <circle cx="16" cy="16" r="16" fill="var(--color-red)" />
+        <text x="16" y="21" textAnchor="middle" fontSize="14" fontWeight="800" fill="white" fontFamily="system-ui, sans-serif">A</text>
       </svg>
       <span className="font-display text-lg font-bold leading-tight text-navy">
         Apple <span className="hidden sm:inline">Education &amp; Immigration</span>
@@ -241,14 +238,14 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
           <Link
             href="/eligibility-check"
             onClick={onClose}
-            className="inline-flex h-11 items-center justify-center rounded-full border-2 border-gold px-6 font-semibold text-navy transition-colors hover:bg-gold hover:text-white"
+            className="inline-flex h-11 items-center justify-center rounded-full border-2 border-red px-6 font-semibold text-red transition-colors hover:bg-red hover:text-white"
           >
             Check Your Eligibility
           </Link>
           <Link
             href="/book"
             onClick={onClose}
-            className="inline-flex h-11 items-center justify-center rounded-full bg-navy px-6 font-semibold text-white transition-colors hover:bg-navy-light"
+            className="inline-flex h-11 items-center justify-center rounded-full bg-red px-6 font-semibold text-white transition-colors hover:bg-red-light"
           >
             Book Free Consult
           </Link>
@@ -349,13 +346,13 @@ export function Header() {
           <div className="hidden items-center gap-3 lg:flex">
             <Link
               href="/eligibility-check"
-              className="inline-flex h-9 items-center rounded-full border-2 border-gold px-4 text-sm font-semibold text-navy transition-colors duration-(--duration-base) hover:bg-gold hover:text-white"
+              className="inline-flex h-9 items-center rounded-full border-2 border-red px-4 text-sm font-semibold text-red transition-colors duration-(--duration-base) hover:bg-red hover:text-white"
             >
               Check Eligibility
             </Link>
             <Link
               href="/book"
-              className="inline-flex h-9 items-center rounded-full bg-navy px-4 text-sm font-semibold text-white transition-colors duration-(--duration-base) hover:bg-navy-light"
+              className="inline-flex h-9 items-center rounded-full bg-red px-4 text-sm font-semibold text-white transition-colors duration-(--duration-base) hover:bg-red-light"
             >
               Book Free Consult
             </Link>

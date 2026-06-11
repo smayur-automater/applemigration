@@ -22,13 +22,13 @@ type ButtonProps = ButtonBaseProps &
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-navy text-white hover:bg-navy-light active:scale-[0.98] shadow-sm hover:shadow-md font-semibold",
+    "bg-red text-white hover:bg-red-light active:scale-[0.98] shadow-sm hover:shadow-md font-semibold",
   secondary:
-    "border-2 border-gold text-navy hover:bg-gold hover:text-white font-semibold bg-transparent",
-  ghost: "text-navy hover:bg-surface font-medium bg-transparent",
+    "border-2 border-red text-red hover:bg-red hover:text-white font-semibold bg-transparent",
+  ghost: "text-red hover:bg-red-tint font-medium bg-transparent",
   "ghost-light": "text-white hover:bg-white/10 font-medium bg-transparent",
   gold:
-    "bg-gold text-navy hover:bg-gold-light active:bg-gold-dark shadow-sm hover:shadow-md font-semibold",
+    "bg-red text-white hover:bg-red-light active:bg-red-dark shadow-sm hover:shadow-md font-semibold",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
