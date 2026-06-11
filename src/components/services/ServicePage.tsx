@@ -10,6 +10,7 @@ import {
   BookIcon,
   BriefcaseIcon,
   BuildingIcon,
+  GlobeIcon,
   GraduationCapIcon,
   HeartIcon,
   MailIcon,
@@ -24,6 +25,8 @@ const serviceIcons: Record<string, React.ReactNode> = {
   "partner-family-visas": <HeartIcon />,
   "employer-sponsored": <BuildingIcon />,
   "education-consulting": <BookIcon />,
+  "new-zealand-visas": <GlobeIcon />,
+  "german-opportunity-card": <BriefcaseIcon />,
 };
 
 export function ServicePage({ service }: { service: ServiceData }) {

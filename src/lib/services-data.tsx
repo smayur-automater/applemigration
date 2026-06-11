@@ -402,6 +402,191 @@ export const servicesData: Record<string, ServiceData> = {
     relatedSlugs: ["skilled-migration", "student-visas", "partner-family-visas"],
   },
 
+  "new-zealand-visas": {
+    slug: "new-zealand-visas",
+    navLabel: "New Zealand Visas",
+    seoTitle: "New Zealand Visa Consultants Australia | Student, Skilled & Work Visas",
+    seoDescription:
+      "Expert guidance on New Zealand visas — student visas, Skilled Migrant Category, Essential Skills work visas, and resident visas. Advice from Australian-based international migration consultants.",
+    heroTitle: "New Zealand Visa Services",
+    heroSubtitle:
+      "Planning to study, work, or settle in New Zealand? Our internationally experienced consultants guide you through New Zealand's immigration pathways — from student visas to permanent residency.",
+    overviewHeading: "Why Choose New Zealand?",
+    overviewParagraphs: [
+      "New Zealand offers world-class education, a strong job market, and one of the most liveable environments on the planet. Its immigration system, managed by Immigration New Zealand (INZ), uses a points-based Skilled Migrant Category alongside dedicated student, work, and resident visa streams.",
+      "For many clients, New Zealand is either a complementary pathway alongside Australian immigration or the primary destination of choice. Its smaller population means skilled occupations see faster processing, and the pathway from temporary work to permanent residency is often more direct than comparable Australian streams.",
+      "Because our team works across both Australian and New Zealand immigration contexts, we can map out the full picture — including how choices in one country may affect your options in the other — and give you advice that accounts for both.",
+    ],
+    requirementsHeading: "Key Requirements (vary by visa type)",
+    requirements: [
+      "Valid passport from an eligible country",
+      "Evidence of funds, health insurance, and accommodation (student/visitor visas)",
+      "Job offer or skills assessment for work and skilled resident categories",
+      "English language proficiency (IELTS, PTE, or equivalent — varies by stream)",
+      "Health and character checks (police clearances, chest X-ray where required)",
+      "For skilled residence: points score under the Skilled Migrant Category (SMC)",
+    ],
+    processHeading: "How We Help With Your New Zealand Visa",
+    processSteps: [
+      {
+        title: "Free Consultation",
+        description: "We assess your eligibility across NZ visa streams and flag how NZ fits alongside any Australian plans.",
+      },
+      {
+        title: "Pathway Selection",
+        description: "We identify the right visa — student, Essential Skills, SMC, or resident — based on your goals, occupation, and timeline.",
+      },
+      {
+        title: "Document Preparation",
+        description: "Complete preparation of your application, supporting statements, and evidence to INZ's standard.",
+      },
+      {
+        title: "Lodgement & Follow-Up",
+        description: "We lodge via the INZ online system, manage any Requests for Information, and track progress.",
+      },
+      {
+        title: "Grant & Next Steps",
+        description: "On grant, we advise on arrival conditions, post-study or work rights, and your pathway to permanent residence.",
+      },
+    ],
+    infoCardsHeading: "New Zealand Visa Options",
+    infoCards: [
+      { icon: <GraduationCapIcon />, title: "Student Visa", description: "Study at New Zealand universities, polytechnics, and schools on a fee-paying student visa." },
+      { icon: <BriefcaseIcon />, title: "Essential Skills Work Visa", description: "Temporary work visa for roles where employers cannot find NZ residents for the job." },
+      { icon: <GlobeIcon />, title: "Skilled Migrant Category", description: "Points-based pathway to NZ permanent residency for skilled professionals." },
+      { icon: <HeartIcon />, title: "Partner & Family", description: "Partner of a New Zealander or resident? We handle partnership-based resident applications too." },
+    ],
+    faqHeading: "New Zealand Visa FAQs",
+    faqs: [
+      {
+        question: "Can Australians move to New Zealand freely?",
+        answer:
+          "Yes — Australian citizens and permanent residents have the right to live and work in New Zealand indefinitely under the Trans-Tasman Travel Arrangement. However, they are not automatically NZ residents, which matters for some entitlements. If you're planning NZ residency for family members who aren't Australian, you'll still need to go through INZ.",
+      },
+      {
+        question: "How does the Skilled Migrant Category work?",
+        answer:
+          "The SMC is a points-tested ballot. You submit an Expression of Interest (EOI) to a pool, and INZ selects the highest-scoring applicants regularly. Points are awarded for age, skilled employment in NZ, qualifications, and partner qualifications. Invitations to apply for residence follow selection from the pool.",
+      },
+      {
+        question: "Can I study in New Zealand and then work?",
+        answer:
+          "Yes. Most students who complete a degree-level qualification in NZ are eligible for a Post-Study Work visa of 1–3 years, similar in concept to Australia's Temporary Graduate (485) visa. This is a strong platform toward skilled residence.",
+      },
+      {
+        question: "Is NZ immigration faster than Australia?",
+        answer:
+          "For certain occupations — particularly healthcare, engineering, and trades — NZ can have shorter wait times for skilled categories. Processing times change frequently; we compare current timeframes at your consultation.",
+      },
+      {
+        question: "Can you help with NZ immigration if we're based in Australia?",
+        answer:
+          "Yes. We advise NZ-bound clients from our Australian offices. Many of our clients pursue both Australia and NZ options simultaneously, or use NZ as a stepping stone. We can map both pathways in a single consultation.",
+      },
+      {
+        question: "What is the difference between a work visa and a resident visa in NZ?",
+        answer:
+          "Work visas are temporary — they're tied to an employer or sector and have an expiry date. Resident visas give you the right to live, work, and study in NZ indefinitely. The SMC, some work-to-residence pathways, and family-based streams all lead to resident visas.",
+      },
+    ],
+    relatedSlugs: ["skilled-migration", "student-visas", "employer-sponsored"],
+  },
+
+  "german-opportunity-card": {
+    slug: "german-opportunity-card",
+    navLabel: "German Opportunity Card",
+    seoTitle: "German Opportunity Card (Chancenkarte) | Expert Visa Guidance",
+    seoDescription:
+      "Interested in Germany's Chancenkarte (Opportunity Card)? Our consultants guide skilled professionals through eligibility, points scoring, and application for Germany's new job-seeking visa.",
+    heroTitle: "German Opportunity Card (Chancenkarte)",
+    heroSubtitle:
+      "Germany's new points-based job-seeker visa lets skilled professionals live in Germany for up to one year to find work — without a job offer. We guide you through every step of the application.",
+    overviewHeading: "What Is the German Opportunity Card?",
+    overviewParagraphs: [
+      "The Chancenkarte (Opportunity Card) was introduced by Germany in June 2024 under the Skilled Immigration Act reforms. It's designed to attract qualified workers from outside the EU by letting them enter Germany to search for work — for up to one year — without needing a job offer upfront.",
+      "The visa operates on a points system. Applicants are scored on qualifications, professional experience, language skills, age, and prior connection to Germany. You need either a recognised German or equivalent qualification that scores enough points, or a professionally recognised qualification from your home country combined with at least two years of relevant experience, to be eligible.",
+      "During the year on the Opportunity Card, holders can work up to 20 hours per week in any job while continuing their job search in their primary field. When you receive a qualifying job offer, you can convert directly to a skilled worker visa without leaving Germany.",
+    ],
+    requirementsHeading: "Eligibility Requirements",
+    requirements: [
+      "Recognised university degree or vocational qualification (must be recognised or recognisable in Germany)",
+      "Minimum 2 years of relevant professional experience in the past 5 years",
+      "Basic German language skills (A1 level) or recognised English proficiency (B2+)",
+      "Sufficient financial means for the stay (approx. €1,027/month or blocked account)",
+      "Valid passport and clean criminal record",
+      "Points score: typically 6+ points via the scoring matrix (qualifications, language, age, Germany connection, spouse qualifications)",
+    ],
+    processHeading: "How We Guide You Through the Chancenkarte",
+    processSteps: [
+      {
+        title: "Eligibility Assessment",
+        description: "We assess your qualifications, experience, language level, and points score to confirm whether the Chancenkarte is the right pathway for you.",
+      },
+      {
+        title: "Qualification Recognition",
+        description: "Many non-EU qualifications need an equivalency assessment. We coordinate this through anabin, ENIC-NARIC, or the relevant authority for your profession.",
+      },
+      {
+        title: "Document Preparation",
+        description: "We prepare your full application package: financial proof, qualification documents, language certificates, employment history, and personal statement.",
+      },
+      {
+        title: "German Embassy Lodgement",
+        description: "We guide you through lodging at the German embassy or consulate in your country of residence, including appointment booking and interview preparation.",
+      },
+      {
+        title: "Arrival & Job-Search Support",
+        description: "Once in Germany, we connect you with job-search resources and advise on converting your Opportunity Card to a full skilled worker visa when you receive an offer.",
+      },
+    ],
+    infoCardsHeading: "How the Points System Works",
+    infoCards: [
+      { icon: <GraduationCapIcon />, title: "Qualifications (up to 4 pts)", description: "Recognised degree or vocational qualification — with bonus points for STEM fields and Germany-specific qualifications." },
+      { icon: <GlobeIcon />, title: "Language Skills (up to 2 pts)", description: "German B2+ earns 2 points. German A2/B1 or English B2 earns 1 point. A1 is the minimum for eligibility." },
+      { icon: <BriefcaseIcon />, title: "Professional Experience (up to 2 pts)", description: "2–5 years earns 1 point. More than 5 years of qualified experience earns 2 points." },
+      { icon: <BuildingIcon />, title: "Other Factors (up to 3 pts)", description: "Age under 35 (+1), previous stay in Germany (+1), spouse also qualifies (+1). Most applicants need 6 points to qualify." },
+    ],
+    faqHeading: "German Opportunity Card FAQs",
+    faqs: [
+      {
+        question: "Do I need a job offer to apply?",
+        answer:
+          "No — that's the defining feature of the Chancenkarte. You enter Germany to find work. This is unlike the standard skilled worker visa (Fachkräftevisum), which requires a specific job offer from a German employer before you apply.",
+      },
+      {
+        question: "Can I work while on the Opportunity Card?",
+        answer:
+          "Yes, but only up to 20 hours per week in any job (i.e. not necessarily in your skilled field) while you search. Once you secure a qualifying job offer in your occupation, you apply to convert to a full skilled worker visa and can work full-time.",
+      },
+      {
+        question: "What qualifications does Germany recognise?",
+        answer:
+          "German universities and vocational qualifications are automatically recognised. Foreign qualifications are assessed for equivalency — the process and authority depend on your profession. Regulated professions (medicine, law, engineering in some states) require formal recognition; others may be assessed more quickly. We manage this for you.",
+      },
+      {
+        question: "How much money do I need to show?",
+        answer:
+          "You must demonstrate you can support yourself without working full-time. The standard approach is a German blocked account (Sperrkonto) with approximately €12,324 (12 months × €1,027), which is released monthly. Alternatively, a formal commitment from a person in Germany or sufficient savings documented by bank statements may be accepted.",
+      },
+      {
+        question: "How long does the application take?",
+        answer:
+          "German embassy processing times vary significantly by country — from a few weeks to several months. The qualification recognition step is often the longest part of the preparation. We recommend starting 4–6 months before your intended travel date.",
+      },
+      {
+        question: "Can I bring my family?",
+        answer:
+          "Yes. Spouses and minor children can accompany Opportunity Card holders to Germany. A qualifying spouse also adds 1 point to your score. Family members may work up to 10 hours per week while you're on the Opportunity Card.",
+      },
+      {
+        question: "What happens after I find a job?",
+        answer:
+          "Once you receive a qualifying job offer in your skilled occupation, your employer files the relevant paperwork and you apply to convert your Opportunity Card to a Skilled Worker Visa (Fachkräftevisum) without leaving Germany. From there, after a qualifying work period, you can apply for permanent residence (Niederlassungserlaubnis) or the EU long-term resident permit.",
+      },
+    ],
+    relatedSlugs: ["skilled-migration", "employer-sponsored", "education-consulting"],
+  },
+
   "education-consulting": {
     slug: "education-consulting",
     navLabel: "Education Consulting",
@@ -522,5 +707,17 @@ export const serviceSummaries = [
     title: "Education Consulting",
     description:
       "Course and institution selection, enrolment, and admission support for international students.",
+  },
+  {
+    slug: "new-zealand-visas",
+    title: "New Zealand Visas",
+    description:
+      "Student, work, and skilled resident visas for New Zealand — advised by internationally experienced migration consultants.",
+  },
+  {
+    slug: "german-opportunity-card",
+    title: "German Opportunity Card",
+    description:
+      "Germany's Chancenkarte lets skilled professionals enter without a job offer. We handle qualification recognition and the full application.",
   },
 ];

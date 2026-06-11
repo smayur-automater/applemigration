@@ -10,6 +10,8 @@ export const serviceLinks: NavItem[] = [
   { label: "Partner & Family Visas", href: "/services/partner-family-visas" },
   { label: "Employer Sponsored", href: "/services/employer-sponsored" },
   { label: "Education Consulting", href: "/services/education-consulting" },
+  { label: "New Zealand Visas", href: "/services/new-zealand-visas" },
+  { label: "German Opportunity Card", href: "/services/german-opportunity-card" },
 ];
 
 export const mainNav: NavItem[] = [
