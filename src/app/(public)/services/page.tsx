@@ -41,7 +41,7 @@ export default function ServicesPage() {
           </div>
         </Container>
       </Section>
-      <CTABanner variant="navy" heading="Not Sure Which Service You Need?" subtext="Take the free 3-minute eligibility check, or book a consultation and we'll point you in the right direction." />
+      <CTABanner variant="light" heading="Not Sure Which Service You Need?" subtext="Take the free 3-minute eligibility check, or book a consultation and we'll point you in the right direction." />
     </>
   );
 }

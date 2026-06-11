@@ -34,7 +34,7 @@ export default function SuccessStoriesPage() {
           </p>
         </Container>
       </Section>
-      <CTABanner variant="gold" heading="Ready to Write Your Own Success Story?" />
+      <CTABanner variant="red" heading="Ready to Write Your Own Success Story?" />
     </>
   );
 }

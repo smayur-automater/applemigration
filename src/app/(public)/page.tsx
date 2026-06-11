@@ -305,7 +305,7 @@ export default function HomePage() {
       </Section>
 
       {/* Section 8 — CTA Banner */}
-      <CTABanner variant="gold" />
+      <CTABanner variant="red" />
     </>
   );
 }

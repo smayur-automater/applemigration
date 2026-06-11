@@ -30,7 +30,7 @@ export default function BlogPage() {
           </div>
         </Container>
       </Section>
-      <CTABanner variant="gold" />
+      <CTABanner variant="red" />
     </>
   );
 }

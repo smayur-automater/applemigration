@@ -133,7 +133,7 @@ export default function MaraDisclosurePage() {
           </div>
         </Container>
       </div>
-      <CTABanner variant="navy" />
+      <CTABanner variant="light" />
     </>
   );
 }

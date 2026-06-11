@@ -219,7 +219,7 @@ export function ServicePage({ service }: { service: ServiceData }) {
       </div>
 
       {/* Section 7 — CTA Banner */}
-      <CTABanner variant="gold" />
+      <CTABanner variant="red" />
     </>
   );
 }

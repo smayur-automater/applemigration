@@ -154,7 +154,7 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      <CTABanner variant="gold" />
+      <CTABanner variant="red" />
     </>
   );
 }
