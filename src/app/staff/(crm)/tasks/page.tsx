@@ -15,7 +15,7 @@ function clientNameFor(clients: Client[], clientId?: string) {
 function TaskList({ items, clients, emptyMsg }: { items: Task[]; clients: Client[]; emptyMsg: string }) {
   if (items.length === 0) {
     return (
-      <p className="text-sm py-2" style={{ color: 'var(--color-charcoal)', opacity: 0.5 }}>{emptyMsg}</p>
+      <p className="text-sm py-2" style={{ color: 'var(--color-slate-600)', opacity: 0.5 }}>{emptyMsg}</p>
     );
   }
   return (
@@ -28,10 +28,10 @@ function TaskList({ items, clients, emptyMsg }: { items: Task[]; clients: Client
         >
           <TaskToggle taskId={t.id} completed={t.completed} />
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium" style={{ color: 'var(--color-navy)', textDecoration: t.completed ? 'line-through' : 'none' }}>
+            <p className="text-sm font-medium" style={{ color: 'var(--color-slate-900)', textDecoration: t.completed ? 'line-through' : 'none' }}>
               {t.title}
             </p>
-            <p className="text-xs mt-0.5" style={{ color: 'var(--color-charcoal)', opacity: 0.5 }}>
+            <p className="text-xs mt-0.5" style={{ color: 'var(--color-slate-600)', opacity: 0.5 }}>
               {clientNameFor(clients, t.clientId) ? `${clientNameFor(clients, t.clientId)} · ` : ''}
               Due {new Date(t.dueDate).toLocaleDateString('en-AU')}
             </p>
@@ -46,7 +46,7 @@ function TaskList({ items, clients, emptyMsg }: { items: Task[]; clients: Client
 function Section({ title, items, clients, accent, emptyMsg }: { title: string; items: Task[]; clients: Client[]; accent?: string; emptyMsg: string }) {
   return (
     <div>
-      <h3 className="font-semibold text-sm uppercase tracking-wider mb-3" style={{ color: accent ?? 'var(--color-charcoal)', opacity: accent ? 1 : 0.5 }}>
+      <h3 className="font-semibold text-sm uppercase tracking-wider mb-3" style={{ color: accent ?? 'var(--color-slate-600)', opacity: accent ? 1 : 0.5 }}>
         {title} ({items.length})
       </h3>
       <TaskList items={items} clients={clients} emptyMsg={emptyMsg} />

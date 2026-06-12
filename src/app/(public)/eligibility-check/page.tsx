@@ -12,16 +12,16 @@ export const metadata: Metadata = {
 
 export default function EligibilityCheckPage() {
   return (
-    <div className="flex min-h-[calc(100svh-var(--header-h))] flex-col bg-off-white">
+    <div className="flex min-h-[calc(100svh-var(--header-h))] flex-col bg-slate-50">
       <div className="flex flex-1 items-start justify-center px-4 py-10 sm:py-16">
         <div className="w-full">
           <h1 className="sr-only">Australian visa eligibility check</h1>
           <EligibilityQuiz />
         </div>
       </div>
-      <div className="bg-surface py-4 text-center text-sm text-charcoal/80">
+      <div className="bg-slate-100 py-4 text-center text-sm text-slate-500">
         Need help?{" "}
-        <a href={site.phoneHref} className="font-semibold text-navy underline underline-offset-2 hover:text-gold-dark">
+        <a href={site.phoneHref} className="font-semibold text-slate-900 underline underline-offset-2 hover:text-accent-hover">
           Call us on {site.phone}
         </a>
       </div>

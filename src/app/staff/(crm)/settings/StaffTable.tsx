@@ -20,7 +20,7 @@ interface Props {
 
 const roleColors: Record<Role, string> = {
   admin: 'var(--color-error)',
-  agent: 'var(--color-gold-dark)',
+  agent: 'var(--color-accent-dark)',
   receptionist: 'var(--color-sky)',
 };
 
@@ -33,7 +33,7 @@ export function StaffTable({ staff, currentUserId }: Props) {
         <thead>
           <tr className="border-b" style={{ borderColor: 'var(--color-border)' }}>
             {['Name', 'Email', 'Role', 'Status', ''].map((h) => (
-              <th key={h} className="text-left pb-3 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--color-charcoal)', opacity: 0.5 }}>
+              <th key={h} className="text-left pb-3 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--color-slate-600)', opacity: 0.5 }}>
                 {h}
               </th>
             ))}
@@ -42,10 +42,10 @@ export function StaffTable({ staff, currentUserId }: Props) {
         <tbody>
           {staff.map((s) => (
             <tr key={s.id} className="border-b last:border-0" style={{ borderColor: 'var(--color-border)' }}>
-              <td className="py-3 pr-4 font-medium" style={{ color: 'var(--color-navy)' }}>
+              <td className="py-3 pr-4 font-medium" style={{ color: 'var(--color-slate-900)' }}>
                 {s.name} {s.id === currentUserId && <span className="text-xs opacity-50">(you)</span>}
               </td>
-              <td className="py-3 pr-4 text-xs" style={{ color: 'var(--color-charcoal)', opacity: 0.7 }}>{s.email}</td>
+              <td className="py-3 pr-4 text-xs" style={{ color: 'var(--color-slate-600)', opacity: 0.7 }}>{s.email}</td>
               <td className="py-3 pr-4">
                 <span className="text-xs font-semibold capitalize px-2 py-0.5 rounded-full" style={{ backgroundColor: `${roleColors[s.role]}22`, color: roleColors[s.role] }}>
                   {s.role}

@@ -46,10 +46,10 @@ export function BookingForm() {
   if (state.status === "success") {
     return (
       <div role="alert" className="rounded-lg border border-success/40 bg-success/10 p-8">
-        <h2 className="text-xl font-semibold text-navy">Booking Request Received</h2>
+        <h2 className="text-xl font-semibold text-slate-900">Booking Request Received</h2>
         {state.summary ? (
           <>
-            <dl className="mt-4 space-y-2 text-sm text-charcoal/85">
+            <dl className="mt-4 space-y-2 text-sm text-slate-600">
               <div className="flex gap-2">
                 <dt className="font-semibold">Name:</dt>
                 <dd>{state.summary.name}</dd>
@@ -67,13 +67,13 @@ export function BookingForm() {
                 <dd className="capitalize">{state.summary.consultationType.replace("-", " ")}</dd>
               </div>
             </dl>
-            <p className="mt-4 text-sm text-charcoal/80">
+            <p className="mt-4 text-sm text-slate-500">
               We&rsquo;ll confirm your appointment by email at{" "}
               <strong>{state.summary.email}</strong> within 1 business day.
             </p>
           </>
         ) : (
-          <p className="mt-2 text-sm text-charcoal/80">We&rsquo;ll be in touch shortly.</p>
+          <p className="mt-2 text-sm text-slate-500">We&rsquo;ll be in touch shortly.</p>
         )}
       </div>
     );
@@ -175,7 +175,7 @@ export function BookingForm() {
       </FormField>
 
       <fieldset className="sm:col-span-2">
-        <legend className="text-sm font-semibold text-navy">
+        <legend className="text-sm font-semibold text-slate-900">
           Consultation Type
           <span aria-hidden="true" className="text-error">
             {" "}*
@@ -185,7 +185,7 @@ export function BookingForm() {
           {consultationTypes.map((ct) => (
             <label
               key={ct.value}
-              className="flex flex-1 cursor-pointer items-center gap-2.5 rounded-md border border-border bg-white px-4 py-3 text-sm font-medium text-charcoal transition-colors duration-(--duration-fast) has-checked:border-gold has-checked:bg-gold/10 has-checked:text-navy"
+              className="flex flex-1 cursor-pointer items-center gap-2.5 rounded-md border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 transition-colors duration-(--duration-fast) has-checked:border-accent has-checked:bg-accent/10 has-checked:text-slate-900"
             >
               <input
                 type="radio"
@@ -193,7 +193,7 @@ export function BookingForm() {
                 value={ct.value}
                 required
                 disabled={pending}
-                className="size-[18px] accent-[var(--color-navy)]"
+                className="size-[18px] accent-accent"
               />
               {ct.label}
             </label>

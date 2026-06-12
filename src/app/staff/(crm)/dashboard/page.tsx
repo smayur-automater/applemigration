@@ -54,10 +54,10 @@ export default async function DashboardPage() {
   return (
     <div className="space-y-6 max-w-5xl">
       <div>
-        <h2 className="text-2xl font-bold mb-1" style={{ color: 'var(--color-navy)' }}>
+        <h2 className="text-2xl font-bold mb-1" style={{ color: 'var(--color-slate-900)' }}>
           Welcome back, {session.name.split(' ')[0]} 👋
         </h2>
-        <p className="text-sm" style={{ color: 'var(--color-charcoal)', opacity: 0.6 }}>
+        <p className="text-sm" style={{ color: 'var(--color-slate-600)', opacity: 0.6 }}>
           {new Date().toLocaleDateString('en-AU', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
         </p>
       </div>
@@ -71,14 +71,14 @@ export default async function DashboardPage() {
             className="block bg-white rounded-xl p-5 border-l-4 transition-all duration-150"
             style={{
               boxShadow: 'var(--shadow-sm)',
-              borderLeftColor: s.alert ? 'var(--color-error)' : 'var(--color-gold)',
+              borderLeftColor: s.alert ? 'var(--color-error)' : 'var(--color-accent)',
             }}
           >
             <div className="text-2xl mb-2" aria-hidden="true">{s.icon}</div>
-            <p className="text-2xl font-bold font-display" style={{ color: s.alert ? 'var(--color-error)' : 'var(--color-navy)' }}>
+            <p className="text-2xl font-bold font-display" style={{ color: s.alert ? 'var(--color-error)' : 'var(--color-slate-900)' }}>
               {s.value}
             </p>
-            <p className="text-xs font-medium mt-1" style={{ color: 'var(--color-charcoal)', opacity: 0.7 }}>
+            <p className="text-xs font-medium mt-1" style={{ color: 'var(--color-slate-600)', opacity: 0.7 }}>
               {s.label}
             </p>
           </Link>
@@ -89,24 +89,24 @@ export default async function DashboardPage() {
         {/* Recent Clients */}
         <div className="bg-white rounded-xl p-6" style={{ boxShadow: 'var(--shadow-sm)' }}>
           <div className="flex items-center justify-between mb-4">
-            <h3 className="font-semibold" style={{ color: 'var(--color-navy)' }}>Recent Clients</h3>
-            <Link href="/staff/clients" className="text-xs font-semibold" style={{ color: 'var(--color-gold)' }}>
+            <h3 className="font-semibold" style={{ color: 'var(--color-slate-900)' }}>Recent Clients</h3>
+            <Link href="/staff/clients" className="text-xs font-semibold" style={{ color: 'var(--color-accent)' }}>
               View all →
             </Link>
           </div>
           {recentClients.length === 0 ? (
-            <p className="text-sm" style={{ color: 'var(--color-charcoal)', opacity: 0.5 }}>No clients yet.</p>
+            <p className="text-sm" style={{ color: 'var(--color-slate-600)', opacity: 0.5 }}>No clients yet.</p>
           ) : (
             <ul className="space-y-3">
               {recentClients.map((c) => (
                 <li key={c.id}>
                   <Link
                     href={`/staff/clients/${c.id}`}
-                    className="flex items-center justify-between hover:bg-[var(--color-surface)] rounded-lg px-2 py-1.5 -mx-2 transition-colors"
+                    className="flex items-center justify-between hover:bg-[var(--color-slate-100)] rounded-lg px-2 py-1.5 -mx-2 transition-colors"
                   >
                     <div>
-                      <p className="text-sm font-medium" style={{ color: 'var(--color-navy)' }}>{c.name}</p>
-                      <p className="text-xs" style={{ color: 'var(--color-charcoal)', opacity: 0.6 }}>
+                      <p className="text-sm font-medium" style={{ color: 'var(--color-slate-900)' }}>{c.name}</p>
+                      <p className="text-xs" style={{ color: 'var(--color-slate-600)', opacity: 0.6 }}>
                         {c.citizenship} · {c.email}
                       </p>
                     </div>
@@ -121,13 +121,13 @@ export default async function DashboardPage() {
         {/* Upcoming Tasks */}
         <div className="bg-white rounded-xl p-6" style={{ boxShadow: 'var(--shadow-sm)' }}>
           <div className="flex items-center justify-between mb-4">
-            <h3 className="font-semibold" style={{ color: 'var(--color-navy)' }}>My Tasks</h3>
-            <Link href="/staff/tasks" className="text-xs font-semibold" style={{ color: 'var(--color-gold)' }}>
+            <h3 className="font-semibold" style={{ color: 'var(--color-slate-900)' }}>My Tasks</h3>
+            <Link href="/staff/tasks" className="text-xs font-semibold" style={{ color: 'var(--color-accent)' }}>
               View all →
             </Link>
           </div>
           {recentTasks.length === 0 ? (
-            <p className="text-sm" style={{ color: 'var(--color-charcoal)', opacity: 0.5 }}>All caught up! 🎉</p>
+            <p className="text-sm" style={{ color: 'var(--color-slate-600)', opacity: 0.5 }}>All caught up! 🎉</p>
           ) : (
             <ul className="space-y-3">
               {recentTasks.map((t) => (
@@ -136,8 +136,8 @@ export default async function DashboardPage() {
                     <PriorityBadge priority={t.priority} />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-sm font-medium truncate" style={{ color: 'var(--color-navy)' }}>{t.title}</p>
-                    <p className="text-xs" style={{ color: t.dueDate.slice(0, 10) < today ? 'var(--color-error)' : 'var(--color-charcoal)', opacity: 0.7 }}>
+                    <p className="text-sm font-medium truncate" style={{ color: 'var(--color-slate-900)' }}>{t.title}</p>
+                    <p className="text-xs" style={{ color: t.dueDate.slice(0, 10) < today ? 'var(--color-error)' : 'var(--color-slate-600)', opacity: 0.7 }}>
                       Due {new Date(t.dueDate).toLocaleDateString('en-AU')}
                     </p>
                   </div>
@@ -150,15 +150,15 @@ export default async function DashboardPage() {
 
       {/* Quick actions */}
       <div className="bg-white rounded-xl p-6" style={{ boxShadow: 'var(--shadow-sm)' }}>
-        <h3 className="font-semibold mb-4" style={{ color: 'var(--color-navy)' }}>Quick Actions</h3>
+        <h3 className="font-semibold mb-4" style={{ color: 'var(--color-slate-900)' }}>Quick Actions</h3>
         <div className="flex flex-wrap gap-3">
-          <Link href="/staff/clients/new" className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-white transition-all duration-150" style={{ backgroundColor: 'var(--color-navy)' }}>
+          <Link href="/staff/clients/new" className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium text-white transition-all duration-150" style={{ backgroundColor: 'var(--color-slate-900)' }}>
             + New Client
           </Link>
-          <Link href="/staff/cases" className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold border-2 transition-colors duration-150" style={{ borderColor: 'var(--color-gold)', color: 'var(--color-navy)' }}>
+          <Link href="/staff/cases" className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium border-2 transition-colors duration-150" style={{ borderColor: 'var(--color-accent)', color: 'var(--color-slate-900)' }}>
             View Cases
           </Link>
-          <Link href="/staff/tasks" className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold border transition-colors duration-150" style={{ borderColor: 'var(--color-border)', color: 'var(--color-navy)' }}>
+          <Link href="/staff/tasks" className="inline-flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium border transition-colors duration-150" style={{ borderColor: 'var(--color-border)', color: 'var(--color-slate-900)' }}>
             My Tasks
           </Link>
         </div>

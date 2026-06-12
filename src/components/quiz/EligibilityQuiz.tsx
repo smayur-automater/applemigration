@@ -417,19 +417,19 @@ export function EligibilityQuiz() {
   if (state.finished) {
     const results = computeResults(state.answers);
     return (
-      <div className="mx-auto w-full max-w-[640px] rounded-xl bg-white p-6 shadow-lg sm:p-10">
-        <h2 className="font-display text-2xl font-bold text-navy sm:text-3xl">
+      <div className="mx-auto w-full max-w-[640px] rounded-lg border border-slate-200 bg-white p-6 sm:p-10">
+        <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
           {state.skippedContact
             ? "Based on your answers, you may be eligible for:"
             : `Here's What We Found${contact.firstName ? `, ${contact.firstName}` : ""}`}
         </h2>
         <ul className="mt-8 space-y-4">
           {results.map((r) => (
-            <li key={r.name} className="rounded-lg border border-border p-6">
+            <li key={r.name} className="rounded-lg border border-slate-200 p-6">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <h3 className="font-semibold text-navy">{r.name}</h3>
+                <h3 className="font-semibold text-slate-900">{r.name}</h3>
                 <span
-                  className={`rounded-full px-3 py-0.5 text-xs font-semibold uppercase tracking-[0.05em] ${
+                  className={`rounded px-2 py-0.5 text-xs font-medium ${
                     r.confidence === "High"
                       ? "bg-success/15 text-success"
                       : "bg-warning/15 text-warning"
@@ -438,10 +438,10 @@ export function EligibilityQuiz() {
                   {r.confidence} confidence
                 </span>
               </div>
-              <p className="mt-2 text-sm text-charcoal/80">{r.description}</p>
+              <p className="mt-2 text-sm text-slate-500">{r.description}</p>
               <Link
                 href={r.href}
-                className="mt-3 inline-block text-sm font-semibold text-gold-dark underline-offset-2 hover:underline"
+                className="mt-3 inline-block text-sm font-semibold text-accent-dark underline-offset-2 hover:underline"
               >
                 Learn more
               </Link>
@@ -453,11 +453,11 @@ export function EligibilityQuiz() {
         </Button>
         <button
           onClick={() => dispatch({ type: "reset" })}
-          className="mt-4 w-full rounded-full py-2 font-medium text-navy hover:bg-surface"
+          className="mt-4 w-full rounded-md py-2 font-medium text-slate-900 hover:bg-slate-100"
         >
           Start Again
         </button>
-        <p className="mt-6 text-center text-xs text-charcoal/60">
+        <p className="mt-6 text-center text-xs text-slate-400">
           Results are indicative only and do not constitute migration advice. MARN {site.marn}.
         </p>
       </div>
@@ -467,7 +467,7 @@ export function EligibilityQuiz() {
   const progress = ((state.stepIndex + 1) / total) * 100;
 
   return (
-    <div className="mx-auto w-full max-w-[640px] rounded-xl bg-white p-6 shadow-lg sm:p-10">
+    <div className="mx-auto w-full max-w-[640px] rounded-lg border border-slate-200 bg-white p-6 sm:p-10">
       {/* Progress */}
       <div
         role="progressbar"
@@ -475,21 +475,21 @@ export function EligibilityQuiz() {
         aria-valuemin={1}
         aria-valuemax={total}
         aria-label={`Step ${state.stepIndex + 1} of ${total}`}
-        className="h-2 w-full overflow-hidden rounded-full bg-surface"
+        className="h-2 w-full overflow-hidden rounded-full bg-slate-100"
       >
         <div
-          className="h-full rounded-full bg-gold transition-[width] duration-(--duration-slow)"
+          className="h-full rounded-full bg-accent transition-[width] duration-(--duration-slow)"
           style={{ width: `${progress}%` }}
         />
       </div>
-      <p ref={liveRef} aria-live="polite" className="mt-2 text-sm text-charcoal/60">
+      <p ref={liveRef} aria-live="polite" className="mt-2 text-sm text-slate-400">
         Step {state.stepIndex + 1} of {total}
       </p>
 
       {/* Question */}
       <div key={step.id} className="mt-6 animate-[fadeIn_200ms_var(--ease-out)]">
-        <h2 className="font-display text-xl font-bold text-navy sm:text-2xl">{step.question}</h2>
-        {step.subtext && <p className="mt-2 text-sm text-charcoal/70">{step.subtext}</p>}
+        <h2 className="text-xl font-semibold tracking-tight text-slate-900 sm:text-2xl">{step.question}</h2>
+        {step.subtext && <p className="mt-2 text-sm text-slate-500">{step.subtext}</p>}
 
         {(step.type === "single-choice" || step.type === "english") && (
           <div role="radiogroup" aria-label={step.question} className="mt-6 flex flex-col gap-3">
@@ -503,12 +503,12 @@ export function EligibilityQuiz() {
                   onClick={() => selectAndAdvance(opt.value)}
                   className={`rounded-lg border-2 px-5 py-4 text-left transition-colors duration-(--duration-fast) ${
                     selected
-                      ? "border-gold bg-gold/10 font-semibold text-navy"
-                      : "border-border bg-white text-charcoal hover:border-gold/60"
+                      ? "border-accent bg-accent/10 font-semibold text-slate-900"
+                      : "border-slate-200 bg-white text-slate-700 hover:border-accent/60"
                   }`}
                 >
                   {opt.label}
-                  {opt.note && <span className="mt-1 block text-xs text-charcoal/60">{opt.note}</span>}
+                  {opt.note && <span className="mt-1 block text-xs text-slate-400">{opt.note}</span>}
                 </button>
               );
             })}
@@ -526,7 +526,7 @@ export function EligibilityQuiz() {
               value={currentAnswer ?? ""}
               onChange={(e) => dispatch({ type: "answer", id: "country", value: e.target.value })}
               placeholder="Start typing your country…"
-              className="h-11 w-full rounded-md border border-border bg-white px-3.5 focus:border-gold focus:shadow-[var(--shadow-gold)] focus:outline-none"
+              className="h-11 w-full rounded-md border border-slate-200 bg-white px-3.5 focus:border-accent focus:shadow-[0 0 0 3px rgb(29 78 216 / 0.12)] focus:outline-none"
             />
             <datalist id="quiz-country-list">
               {countries.map((c) => (
@@ -539,7 +539,7 @@ export function EligibilityQuiz() {
         {step.type === "contact" && (
           <div className="mt-6 flex flex-col gap-4">
             <div>
-              <label htmlFor="quiz-firstName" className="text-sm font-semibold text-navy">
+              <label htmlFor="quiz-firstName" className="text-sm font-semibold text-slate-900">
                 First Name <span aria-hidden="true" className="text-error">*</span>
               </label>
               <TextInput
@@ -552,7 +552,7 @@ export function EligibilityQuiz() {
               />
             </div>
             <div>
-              <label htmlFor="quiz-email" className="text-sm font-semibold text-navy">
+              <label htmlFor="quiz-email" className="text-sm font-semibold text-slate-900">
                 Email Address <span aria-hidden="true" className="text-error">*</span>
               </label>
               <TextInput
@@ -566,8 +566,8 @@ export function EligibilityQuiz() {
               />
             </div>
             <div>
-              <label htmlFor="quiz-phone" className="text-sm font-semibold text-navy">
-                Phone <span className="font-normal text-charcoal/60">(optional)</span>
+              <label htmlFor="quiz-phone" className="text-sm font-semibold text-slate-900">
+                Phone <span className="font-normal text-slate-400">(optional)</span>
               </label>
               <TextInput
                 id="quiz-phone"
@@ -578,16 +578,16 @@ export function EligibilityQuiz() {
                 className="mt-1.5"
               />
             </div>
-            <label className="flex items-start gap-3 text-sm text-charcoal/85">
+            <label className="flex items-start gap-3 text-sm text-slate-600">
               <input
                 type="checkbox"
                 checked={contact.consent}
                 onChange={(e) => setContact({ ...contact, consent: e.target.checked })}
-                className="mt-0.5 size-[18px] shrink-0 accent-[var(--color-navy)]"
+                className="mt-0.5 size-[18px] shrink-0 accent-accent"
               />
               <span>
                 I agree to be contacted by {site.name}.{" "}
-                <Link href="/privacy-policy" className="font-semibold text-navy underline underline-offset-2">
+                <Link href="/privacy-policy" className="font-semibold text-slate-900 underline underline-offset-2">
                   Privacy Policy
                 </Link>{" "}
                 applies.
@@ -603,7 +603,7 @@ export function EligibilityQuiz() {
             </Button>
             <button
               onClick={() => dispatch({ type: "finish", skippedContact: true })}
-              className="rounded-full py-2 text-sm font-medium text-charcoal/70 hover:bg-surface hover:text-navy"
+              className="rounded-md py-2 text-sm font-medium text-slate-500 hover:bg-slate-100 hover:text-slate-900"
             >
               View results without saving
             </button>

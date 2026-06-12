@@ -12,9 +12,9 @@ interface Props {
 }
 
 const inputCls = "w-full px-3 py-2 rounded-lg border text-sm outline-none";
-const inputStyle = { borderColor: 'var(--color-border)', color: 'var(--color-charcoal)' };
+const inputStyle = { borderColor: 'var(--color-border)', color: 'var(--color-slate-600)' };
 const labelCls = "block text-sm font-medium mb-1";
-const labelStyle = { color: 'var(--color-navy)' };
+const labelStyle = { color: 'var(--color-slate-900)' };
 
 export function NewClientForm({ agents, currentUserId, currentRole }: Props) {
   const router = useRouter();
@@ -108,16 +108,16 @@ export function NewClientForm({ agents, currentUserId, currentRole }: Props) {
         <button
           type="submit"
           disabled={isPending}
-          className="px-6 py-2.5 rounded-full text-sm font-semibold text-white disabled:opacity-70"
-          style={{ backgroundColor: 'var(--color-navy)' }}
+          className="px-6 py-2.5 rounded-md text-sm font-medium text-white disabled:opacity-70"
+          style={{ backgroundColor: 'var(--color-slate-900)' }}
         >
           {isPending ? 'Creating…' : 'Create Client'}
         </button>
         <button
           type="button"
           onClick={() => router.back()}
-          className="px-6 py-2.5 rounded-full text-sm font-semibold border"
-          style={{ borderColor: 'var(--color-border)', color: 'var(--color-navy)' }}
+          className="px-6 py-2.5 rounded-md text-sm font-medium border"
+          style={{ borderColor: 'var(--color-border)', color: 'var(--color-slate-900)' }}
         >
           Cancel
         </button>

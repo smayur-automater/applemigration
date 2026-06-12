@@ -33,7 +33,7 @@ export function LoginForm() {
     width: '100%',
     padding: '0 12px',
     fontSize: '1rem',
-    color: 'var(--color-charcoal)',
+    color: 'var(--color-slate-600)',
     outline: 'none',
   };
 
@@ -44,7 +44,7 @@ export function LoginForm() {
           <label
             htmlFor="email"
             className="block text-sm font-medium mb-1.5"
-            style={{ color: 'var(--color-navy)' }}
+            style={{ color: 'var(--color-slate-900)' }}
           >
             Email address
           </label>
@@ -63,7 +63,7 @@ export function LoginForm() {
           <label
             htmlFor="password"
             className="block text-sm font-medium mb-1.5"
-            style={{ color: 'var(--color-navy)' }}
+            style={{ color: 'var(--color-slate-900)' }}
           >
             Password
           </label>
@@ -98,7 +98,7 @@ export function LoginForm() {
         disabled={isPending}
         aria-busy={isPending}
         className="w-full mt-6 py-3 rounded-full font-semibold text-white transition-all duration-250 disabled:opacity-70 flex items-center justify-center gap-2"
-        style={{ backgroundColor: 'var(--color-navy)' }}
+        style={{ backgroundColor: 'var(--color-slate-900)' }}
       >
         {isPending && (
           <svg

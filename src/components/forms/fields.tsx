@@ -25,7 +25,7 @@ export function FormField({
 }: FieldWrapperProps) {
   return (
     <div role="group" className={`flex flex-col gap-1.5 ${className}`}>
-      <label htmlFor={id} className="text-sm font-semibold text-navy">
+      <label htmlFor={id} className="text-sm font-semibold text-slate-900">
         {label}
         {required && (
           <span aria-hidden="true" className="text-error">
@@ -35,7 +35,7 @@ export function FormField({
       </label>
       {children}
       {hint && (
-        <p id={`${id}-hint`} className="text-sm text-charcoal/60">
+        <p id={`${id}-hint`} className="text-sm text-slate-400">
           {hint}
         </p>
       )}
@@ -52,7 +52,7 @@ export function FormField({
 }
 
 const inputBase =
-  "h-11 w-full rounded-md border bg-white px-3.5 text-charcoal transition-[border-color,box-shadow] duration-(--duration-fast) focus:border-gold focus:shadow-[var(--shadow-gold)] focus:outline-none disabled:opacity-60";
+  "h-11 w-full rounded-md border bg-white px-3.5 text-slate-700 transition-[border-color,box-shadow] duration-(--duration-fast) focus:border-accent focus:shadow-[0 0 0 3px rgb(29 78 216 / 0.12)] focus:outline-none disabled:opacity-60";
 
 export function describedBy(id: string, hasHint?: boolean, hasError?: boolean) {
   const ids = [hasHint && `${id}-hint`, hasError && `${id}-error`].filter(Boolean);
@@ -66,7 +66,7 @@ export function TextInput({
 }: InputHTMLAttributes<HTMLInputElement> & { invalid?: boolean }) {
   return (
     <input
-      className={`${inputBase} ${invalid ? "border-error bg-error/5" : "border-border"} ${className}`}
+      className={`${inputBase} ${invalid ? "border-error bg-error/5" : "border-slate-200"} ${className}`}
       aria-invalid={invalid || undefined}
       {...props}
     />
@@ -82,7 +82,7 @@ export function SelectInput({
   return (
     <div className="relative">
       <select
-        className={`${inputBase} appearance-none pr-10 ${invalid ? "border-error bg-error/5" : "border-border"} ${className}`}
+        className={`${inputBase} appearance-none pr-10 ${invalid ? "border-error bg-error/5" : "border-slate-200"} ${className}`}
         aria-invalid={invalid || undefined}
         {...props}
       >
@@ -90,7 +90,7 @@ export function SelectInput({
       </select>
       <svg
         aria-hidden="true"
-        className="pointer-events-none absolute right-3.5 top-1/2 size-4 -translate-y-1/2 text-charcoal/60"
+        className="pointer-events-none absolute right-3.5 top-1/2 size-4 -translate-y-1/2 text-slate-400"
         viewBox="0 0 20 20"
         fill="currentColor"
       >
@@ -107,8 +107,8 @@ export function TextareaInput({
 }: TextareaHTMLAttributes<HTMLTextAreaElement> & { invalid?: boolean }) {
   return (
     <textarea
-      className={`min-h-[120px] w-full resize-y rounded-md border bg-white px-3.5 py-2.5 text-charcoal transition-[border-color,box-shadow] duration-(--duration-fast) focus:border-gold focus:shadow-[var(--shadow-gold)] focus:outline-none disabled:opacity-60 ${
-        invalid ? "border-error bg-error/5" : "border-border"
+      className={`min-h-[120px] w-full resize-y rounded-md border bg-white px-3.5 py-2.5 text-slate-700 transition-[border-color,box-shadow] duration-(--duration-fast) focus:border-accent focus:shadow-[0 0 0 3px rgb(29 78 216 / 0.12)] focus:outline-none disabled:opacity-60 ${
+        invalid ? "border-error bg-error/5" : "border-slate-200"
       } ${className}`}
       aria-invalid={invalid || undefined}
       {...props}

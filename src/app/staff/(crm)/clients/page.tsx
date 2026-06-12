@@ -74,7 +74,7 @@ export default async function ClientsPage({
             <button
               type="submit"
               className="px-4 py-2 rounded-lg text-sm font-semibold text-white"
-              style={{ backgroundColor: 'var(--color-navy)' }}
+              style={{ backgroundColor: 'var(--color-slate-900)' }}
             >
               Filter
             </button>
@@ -82,8 +82,8 @@ export default async function ClientsPage({
         </div>
         <Link
           href="/staff/clients/new"
-          className="shrink-0 px-4 py-2 rounded-full text-sm font-semibold text-white"
-          style={{ backgroundColor: 'var(--color-gold)', color: 'var(--color-navy)' }}
+          className="shrink-0 px-4 py-2 rounded-md text-sm font-medium text-white"
+          style={{ backgroundColor: 'var(--color-accent)', color: '#fff' }}
         >
           + New Client
         </Link>
@@ -92,7 +92,7 @@ export default async function ClientsPage({
       {/* Table */}
       <div className="bg-white rounded-xl overflow-hidden" style={{ boxShadow: 'var(--shadow-sm)' }}>
         <div className="px-6 py-4 border-b flex items-center justify-between" style={{ borderColor: 'var(--color-border)' }}>
-          <p className="text-sm font-medium" style={{ color: 'var(--color-charcoal)', opacity: 0.6 }}>
+          <p className="text-sm font-medium" style={{ color: 'var(--color-slate-600)', opacity: 0.6 }}>
             {filtered.length} client{filtered.length !== 1 ? 's' : ''}
           </p>
         </div>
@@ -100,8 +100,8 @@ export default async function ClientsPage({
         {filtered.length === 0 ? (
           <div className="p-12 text-center">
             <p className="text-4xl mb-3">👥</p>
-            <p className="text-sm" style={{ color: 'var(--color-charcoal)', opacity: 0.5 }}>No clients found.</p>
-            <Link href="/staff/clients/new" className="inline-block mt-4 text-sm font-semibold" style={{ color: 'var(--color-gold)' }}>
+            <p className="text-sm" style={{ color: 'var(--color-slate-600)', opacity: 0.5 }}>No clients found.</p>
+            <Link href="/staff/clients/new" className="inline-block mt-4 text-sm font-semibold" style={{ color: 'var(--color-accent)' }}>
               Add your first client →
             </Link>
           </div>
@@ -111,7 +111,7 @@ export default async function ClientsPage({
               <thead>
                 <tr className="border-b" style={{ borderColor: 'var(--color-border)' }}>
                   {['Name', 'Citizenship', 'Status', 'Assigned Agent', 'Created'].map((h) => (
-                    <th key={h} className="text-left px-6 py-3 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--color-charcoal)', opacity: 0.5 }}>
+                    <th key={h} className="text-left px-6 py-3 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--color-slate-600)', opacity: 0.5 }}>
                       {h}
                     </th>
                   ))}
@@ -121,19 +121,19 @@ export default async function ClientsPage({
                 {filtered.map((c) => (
                   <tr
                     key={c.id}
-                    className="border-b last:border-0 hover:bg-[var(--color-surface)] transition-colors"
+                    className="border-b last:border-0 hover:bg-[var(--color-slate-100)] transition-colors"
                     style={{ borderColor: 'var(--color-border)' }}
                   >
                     <td className="px-6 py-4">
-                      <Link href={`/staff/clients/${c.id}`} className="font-medium hover:underline" style={{ color: 'var(--color-navy)' }}>
+                      <Link href={`/staff/clients/${c.id}`} className="font-medium hover:underline" style={{ color: 'var(--color-slate-900)' }}>
                         {c.name}
                       </Link>
-                      <p className="text-xs mt-0.5" style={{ color: 'var(--color-charcoal)', opacity: 0.5 }}>{c.email}</p>
+                      <p className="text-xs mt-0.5" style={{ color: 'var(--color-slate-600)', opacity: 0.5 }}>{c.email}</p>
                     </td>
-                    <td className="px-6 py-4" style={{ color: 'var(--color-charcoal)' }}>{c.citizenship}</td>
+                    <td className="px-6 py-4" style={{ color: 'var(--color-slate-600)' }}>{c.citizenship}</td>
                     <td className="px-6 py-4"><StatusBadge status={c.status} /></td>
-                    <td className="px-6 py-4" style={{ color: 'var(--color-charcoal)' }}>{agentName(c.assignedAgentId)}</td>
-                    <td className="px-6 py-4 text-xs" style={{ color: 'var(--color-charcoal)', opacity: 0.5 }}>
+                    <td className="px-6 py-4" style={{ color: 'var(--color-slate-600)' }}>{agentName(c.assignedAgentId)}</td>
+                    <td className="px-6 py-4 text-xs" style={{ color: 'var(--color-slate-600)', opacity: 0.5 }}>
                       {new Date(c.createdAt).toLocaleDateString('en-AU')}
                     </td>
                   </tr>

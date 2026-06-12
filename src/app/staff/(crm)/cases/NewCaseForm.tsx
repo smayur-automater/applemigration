@@ -48,13 +48,13 @@ export function NewCaseForm({ clientId, agents, currentUserId }: Props) {
   };
 
   const inputCls = "w-full px-3 py-2 rounded-lg border text-sm outline-none";
-  const inputStyle = { borderColor: 'var(--color-border)', color: 'var(--color-charcoal)' };
+  const inputStyle = { borderColor: 'var(--color-border)', color: 'var(--color-slate-600)' };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--color-navy)' }}>Visa Type *</label>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--color-slate-900)' }}>Visa Type *</label>
           <select
             name="visa"
             required
@@ -70,7 +70,7 @@ export function NewCaseForm({ clientId, agents, currentUserId }: Props) {
           </select>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--color-navy)' }}>Assign To</label>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--color-slate-900)' }}>Assign To</label>
           <select name="assignedAgentId" className={inputCls} style={{ ...inputStyle, height: '40px' }}>
             {agents.map((a) => (
               <option key={a.id} value={a.id} selected={a.id === currentUserId}>{a.name}</option>
@@ -78,19 +78,19 @@ export function NewCaseForm({ clientId, agents, currentUserId }: Props) {
           </select>
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--color-navy)' }}>Lodgement Date</label>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--color-slate-900)' }}>Lodgement Date</label>
           <input type="date" name="lodgementDate" className={inputCls} style={inputStyle} />
         </div>
       </div>
       <div>
-        <label className="block text-sm font-medium mb-1" style={{ color: 'var(--color-navy)' }}>Notes</label>
+        <label className="block text-sm font-medium mb-1" style={{ color: 'var(--color-slate-900)' }}>Notes</label>
         <textarea name="notes" rows={2} className={inputCls} style={inputStyle} />
       </div>
       <div className="flex gap-3">
-        <button type="submit" disabled={isPending} className="px-5 py-2 rounded-full text-sm font-semibold text-white disabled:opacity-70" style={{ backgroundColor: 'var(--color-navy)' }}>
+        <button type="submit" disabled={isPending} className="px-5 py-2 rounded-md text-sm font-medium text-white disabled:opacity-70" style={{ backgroundColor: 'var(--color-slate-900)' }}>
           {isPending ? 'Creating…' : 'Open Case'}
         </button>
-        <button type="button" onClick={() => router.back()} className="px-5 py-2 rounded-full text-sm font-semibold border" style={{ borderColor: 'var(--color-border)', color: 'var(--color-navy)' }}>
+        <button type="button" onClick={() => router.back()} className="px-5 py-2 rounded-md text-sm font-medium border" style={{ borderColor: 'var(--color-border)', color: 'var(--color-slate-900)' }}>
           Cancel
         </button>
       </div>

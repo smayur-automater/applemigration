@@ -44,7 +44,7 @@ export default async function CasesPage({
     <div className="max-w-5xl space-y-6">
       {showNewCaseForm && preselectedClient && (
         <div className="bg-white rounded-xl p-6" style={{ boxShadow: 'var(--shadow-sm)' }}>
-          <h3 className="font-bold text-lg mb-4" style={{ color: 'var(--color-navy)' }}>
+          <h3 className="font-bold text-lg mb-4" style={{ color: 'var(--color-slate-900)' }}>
             New Case for {preselectedClient.name}
           </h3>
           <NewCaseForm
@@ -68,7 +68,7 @@ export default async function CasesPage({
               <option key={s} value={s}>{s.charAt(0).toUpperCase() + s.slice(1)}</option>
             ))}
           </select>
-          <button type="submit" className="px-4 py-2 rounded-lg text-sm font-semibold text-white" style={{ backgroundColor: 'var(--color-navy)' }}>
+          <button type="submit" className="px-4 py-2 rounded-lg text-sm font-semibold text-white" style={{ backgroundColor: 'var(--color-slate-900)' }}>
             Filter
           </button>
         </form>
@@ -76,14 +76,14 @@ export default async function CasesPage({
 
       <div className="bg-white rounded-xl overflow-hidden" style={{ boxShadow: 'var(--shadow-sm)' }}>
         <div className="px-6 py-4 border-b" style={{ borderColor: 'var(--color-border)' }}>
-          <p className="text-sm font-medium" style={{ color: 'var(--color-charcoal)', opacity: 0.6 }}>
+          <p className="text-sm font-medium" style={{ color: 'var(--color-slate-600)', opacity: 0.6 }}>
             {filtered.length} case{filtered.length !== 1 ? 's' : ''}
           </p>
         </div>
         {filtered.length === 0 ? (
           <div className="p-12 text-center">
             <p className="text-4xl mb-3">📁</p>
-            <p className="text-sm" style={{ color: 'var(--color-charcoal)', opacity: 0.5 }}>No cases found.</p>
+            <p className="text-sm" style={{ color: 'var(--color-slate-600)', opacity: 0.5 }}>No cases found.</p>
           </div>
         ) : (
           <div className="overflow-x-auto">
@@ -91,7 +91,7 @@ export default async function CasesPage({
               <thead>
                 <tr className="border-b" style={{ borderColor: 'var(--color-border)' }}>
                   {['Client', 'Visa', 'Status', 'Lodged', 'Opened'].map((h) => (
-                    <th key={h} className="text-left px-6 py-3 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--color-charcoal)', opacity: 0.5 }}>
+                    <th key={h} className="text-left px-6 py-3 text-xs font-semibold uppercase tracking-wider" style={{ color: 'var(--color-slate-600)', opacity: 0.5 }}>
                       {h}
                     </th>
                   ))}
@@ -99,20 +99,20 @@ export default async function CasesPage({
               </thead>
               <tbody>
                 {filtered.map((c) => (
-                  <tr key={c.id} className="border-b last:border-0 hover:bg-[var(--color-surface)] transition-colors" style={{ borderColor: 'var(--color-border)' }}>
+                  <tr key={c.id} className="border-b last:border-0 hover:bg-[var(--color-slate-100)] transition-colors" style={{ borderColor: 'var(--color-border)' }}>
                     <td className="px-6 py-4">
-                      <Link href={`/staff/cases/${c.id}`} className="font-medium hover:underline" style={{ color: 'var(--color-navy)' }}>
+                      <Link href={`/staff/cases/${c.id}`} className="font-medium hover:underline" style={{ color: 'var(--color-slate-900)' }}>
                         {clientName(c.clientId)}
                       </Link>
                     </td>
-                    <td className="px-6 py-4" style={{ color: 'var(--color-charcoal)' }}>
+                    <td className="px-6 py-4" style={{ color: 'var(--color-slate-600)' }}>
                       {c.visaType} <span className="text-xs opacity-60">{c.subclass}</span>
                     </td>
                     <td className="px-6 py-4"><StatusBadge status={c.status} /></td>
-                    <td className="px-6 py-4 text-xs" style={{ color: 'var(--color-charcoal)', opacity: 0.6 }}>
+                    <td className="px-6 py-4 text-xs" style={{ color: 'var(--color-slate-600)', opacity: 0.6 }}>
                       {c.lodgementDate ? new Date(c.lodgementDate).toLocaleDateString('en-AU') : '—'}
                     </td>
-                    <td className="px-6 py-4 text-xs" style={{ color: 'var(--color-charcoal)', opacity: 0.5 }}>
+                    <td className="px-6 py-4 text-xs" style={{ color: 'var(--color-slate-600)', opacity: 0.5 }}>
                       {new Date(c.createdAt).toLocaleDateString('en-AU')}
                     </td>
                   </tr>

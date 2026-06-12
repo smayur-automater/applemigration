@@ -18,7 +18,7 @@ export function PageHero({ title, subtitle, breadcrumbs, children }: PageHeroPro
           </div>
         )}
         <div className="max-w-[600px]">
-          <h1 className="font-display text-[clamp(2.25rem,5vw,3.25rem)] font-bold leading-tight text-white">
+          <h1 className="text-[clamp(2.25rem,5vw,3.25rem)] font-semibold tracking-tight leading-tight text-white">
             {title}
           </h1>
           {subtitle && <p className="mt-4 text-lg text-white/85">{subtitle}</p>}

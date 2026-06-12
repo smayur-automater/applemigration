@@ -45,7 +45,7 @@ export function Sidebar({ role, userName, open, onClose }: SidebarProps) {
         className={`fixed inset-y-0 left-0 z-30 w-64 flex flex-col transition-transform duration-250 lg:static lg:translate-x-0 ${
           open ? 'translate-x-0' : '-translate-x-full'
         }`}
-        style={{ backgroundColor: 'var(--color-navy)' }}
+        style={{ backgroundColor: 'var(--color-slate-900)' }}
       >
         {/* Logo */}
         <div
@@ -82,7 +82,7 @@ export function Sidebar({ role, userName, open, onClose }: SidebarProps) {
               {isActive(item.href) && (
                 <span
                   className="ml-auto w-1.5 h-1.5 rounded-full"
-                  style={{ backgroundColor: 'var(--color-gold)' }}
+                  style={{ backgroundColor: 'var(--color-accent)' }}
                 />
               )}
             </Link>
@@ -97,7 +97,7 @@ export function Sidebar({ role, userName, open, onClose }: SidebarProps) {
           <div className="flex items-center gap-3">
             <div
               className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white shrink-0"
-              style={{ backgroundColor: 'var(--color-gold)', color: 'var(--color-navy)' }}
+              style={{ backgroundColor: 'var(--color-accent)', color: '#fff' }}
             >
               {userName.charAt(0).toUpperCase()}
             </div>

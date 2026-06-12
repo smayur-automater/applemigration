@@ -19,15 +19,15 @@ export default function MaraDisclosurePage() {
           <Breadcrumb
             items={[{ label: "Home", href: "/" }, { label: "MARA Disclosure" }]}
           />
-          <h1 className="mt-8 font-display text-[clamp(2rem,4vw,3rem)] font-bold text-navy">
+          <h1 className="mt-8 text-[clamp(2rem,4vw,3rem)] font-semibold tracking-tight text-slate-900">
             MARA Disclosure Statement
           </h1>
-          <p className="mt-2 text-sm text-charcoal/60">Last updated: 9 June 2026</p>
-          <hr className="my-8 border-t-2 border-gold" />
+          <p className="mt-2 text-sm text-slate-400">Last updated: 9 June 2026</p>
+          <hr className="my-8 border-t-2 border-accent" />
 
-          <div className="space-y-10 text-charcoal/90">
+          <div className="space-y-10 text-slate-700/90">
             <section>
-              <h2 className="font-display text-2xl font-bold text-navy">Our Registration</h2>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Our Registration</h2>
               <p className="mt-3">
                 {site.name} Pty Ltd provides immigration assistance through registered migration
                 agents. Our principal agent is registered with the Office of the Migration Agents
@@ -37,7 +37,7 @@ export default function MaraDisclosurePage() {
                   href="https://www.mara.gov.au/search-the-register-of-migration-agents"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-semibold text-navy underline underline-offset-2 hover:text-gold-dark"
+                  className="font-semibold text-slate-900 underline underline-offset-2 hover:text-accent-hover"
                 >
                   MARA public register
                 </a>
@@ -46,7 +46,7 @@ export default function MaraDisclosurePage() {
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-bold text-navy">Code of Conduct</h2>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Code of Conduct</h2>
               <p className="mt-3">
                 All registered migration agents must comply with the Migration Agents Code of
                 Conduct, prescribed under the Migration Act 1958 and the Migration Agents
@@ -58,7 +58,7 @@ export default function MaraDisclosurePage() {
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-bold text-navy">Complaints Procedure</h2>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Complaints Procedure</h2>
               <p className="mt-3">
                 If you are not satisfied with our service, please raise the issue with your agent
                 or our principal first — most concerns can be resolved directly. If you remain
@@ -68,7 +68,7 @@ export default function MaraDisclosurePage() {
                   href="https://www.mara.gov.au"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-semibold text-navy underline underline-offset-2 hover:text-gold-dark"
+                  className="font-semibold text-slate-900 underline underline-offset-2 hover:text-accent-hover"
                 >
                   mara.gov.au
                 </a>
@@ -78,7 +78,7 @@ export default function MaraDisclosurePage() {
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-bold text-navy">Fees and Charges</h2>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Fees and Charges</h2>
               <p className="mt-3">
                 Before you engage us, we provide a written Agreement for Services and Fees
                 setting out the services we will perform, our professional fees, and any
@@ -90,7 +90,7 @@ export default function MaraDisclosurePage() {
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-bold text-navy">Cooling-Off Period</h2>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Cooling-Off Period</h2>
               <p className="mt-3">
                 Consistent with the Code of Conduct and applicable consumer law, you may withdraw
                 from an Agreement for Services and Fees within the cooling-off period specified
@@ -100,7 +100,7 @@ export default function MaraDisclosurePage() {
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-bold text-navy">
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
                 Limitations of This Website
               </h2>
               <p className="mt-3">
@@ -113,19 +113,19 @@ export default function MaraDisclosurePage() {
             </section>
 
             <section>
-              <h2 className="font-display text-2xl font-bold text-navy">Contact</h2>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Contact</h2>
               <p className="mt-3">
                 {site.name}
                 <br />
                 {site.address}
                 <br />
                 Phone:{" "}
-                <a href={site.phoneHref} className="font-semibold text-navy underline underline-offset-2 hover:text-gold-dark">
+                <a href={site.phoneHref} className="font-semibold text-slate-900 underline underline-offset-2 hover:text-accent-hover">
                   {site.phone}
                 </a>
                 <br />
                 Email:{" "}
-                <a href={site.emailHref} className="font-semibold text-navy underline underline-offset-2 hover:text-gold-dark">
+                <a href={site.emailHref} className="font-semibold text-slate-900 underline underline-offset-2 hover:text-accent-hover">
                   {site.email}
                 </a>
               </p>

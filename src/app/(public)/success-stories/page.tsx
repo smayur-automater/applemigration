@@ -28,7 +28,7 @@ export default function SuccessStoriesPage() {
               <TestimonialCard key={t.name} {...t} />
             ))}
           </div>
-          <p className="mt-10 text-center text-sm text-charcoal/60">
+          <p className="mt-10 text-center text-sm text-slate-400">
             Testimonials reflect individual experiences. Every case is different, and past
             outcomes don&rsquo;t guarantee future results.
           </p>

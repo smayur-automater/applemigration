@@ -48,23 +48,23 @@ export default async function BlogPostPage({
             ]}
           />
           <article className="mt-8">
-            <div className="flex items-center gap-2 text-sm text-charcoal/60">
-              <span className="rounded-sm bg-surface px-2 py-0.5 font-semibold text-navy">
+            <div className="flex items-center gap-2 text-sm text-slate-400">
+              <span className="rounded-sm bg-slate-100 px-2 py-0.5 font-semibold text-slate-900">
                 {post.category}
               </span>
               <time dateTime={post.date}>{post.displayDate}</time>
               <span aria-hidden="true">·</span>
               <span>{post.readTime}</span>
             </div>
-            <h1 className="mt-4 font-display text-[clamp(2rem,4vw,2.75rem)] font-bold leading-tight text-navy">
+            <h1 className="mt-4 text-[clamp(2rem,4vw,2.75rem)] font-semibold tracking-tight leading-tight text-slate-900">
               {post.title}
             </h1>
-            <div className="mt-8 space-y-5 text-lg leading-relaxed text-charcoal/90">
+            <div className="mt-8 space-y-5 text-lg leading-relaxed text-slate-700/90">
               {post.body.map((paragraph, i) => (
                 <p key={i}>{paragraph}</p>
               ))}
             </div>
-            <hr className="my-10 border-border" />
+            <hr className="my-10 border-slate-200" />
             <MaraDisclaimer variant="inline" />
           </article>
         </Container>

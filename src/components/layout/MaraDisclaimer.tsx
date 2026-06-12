@@ -10,7 +10,7 @@ export function MaraDisclaimer({ variant = "strip", className = "" }: MaraDiscla
     return (
       <p
         aria-label="MARA registration and legal disclaimer"
-        className={`text-xs text-charcoal/60 ${className}`}
+        className={`text-xs text-slate-400 ${className}`}
       >
         {site.name} | MARN {site.marn} | Registered Migration Agent. {maraDisclaimerText}
       </p>
@@ -19,7 +19,7 @@ export function MaraDisclaimer({ variant = "strip", className = "" }: MaraDiscla
   return (
     <div
       aria-label="MARA registration and legal disclaimer"
-      className={`border-l-4 border-gold bg-white/10 py-3 pl-4 pr-4 text-sm ${className}`}
+      className={`border-l-2 border-slate-600 py-1 pl-4 text-[13px] leading-relaxed text-slate-400 ${className}`}
     >
       {site.name} is a registered migration agency. MARN {site.marn}. Migration advice on this
       page is general in nature and does not constitute personal migration advice.

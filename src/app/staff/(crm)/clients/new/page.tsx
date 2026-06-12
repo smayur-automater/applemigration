@@ -20,12 +20,12 @@ export default async function NewClientPage() {
   return (
     <div className="max-w-2xl">
       <div className="flex items-center gap-3 mb-6">
-        <Link href="/staff/clients" className="text-sm" style={{ color: 'var(--color-charcoal)', opacity: 0.6 }}>
+        <Link href="/staff/clients" className="text-sm" style={{ color: 'var(--color-slate-600)', opacity: 0.6 }}>
           ← Clients
         </Link>
       </div>
       <div className="bg-white rounded-xl p-6 sm:p-8" style={{ boxShadow: 'var(--shadow-sm)' }}>
-        <h2 className="font-bold text-xl mb-6" style={{ color: 'var(--color-navy)' }}>New Client</h2>
+        <h2 className="font-bold text-xl mb-6" style={{ color: 'var(--color-slate-900)' }}>New Client</h2>
         <NewClientForm agents={agents} currentUserId={session.staffId} currentRole={session.role} />
       </div>
     </div>

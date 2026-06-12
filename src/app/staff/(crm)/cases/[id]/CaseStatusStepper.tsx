@@ -49,13 +49,13 @@ export function CaseStatusStepper({ caseId, currentStatus, canEdit }: Props) {
                 <div
                   className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold shrink-0"
                   style={{
-                    backgroundColor: isDone ? 'var(--color-success)' : isCurrent ? 'var(--color-gold)' : 'var(--color-surface)',
-                    color: isDone || isCurrent ? 'white' : 'var(--color-charcoal)',
+                    backgroundColor: isDone ? 'var(--color-success)' : isCurrent ? 'var(--color-accent)' : 'var(--color-slate-100)',
+                    color: isDone || isCurrent ? 'white' : 'var(--color-slate-600)',
                   }}
                 >
                   {isDone ? '✓' : idx + 1}
                 </div>
-                <p className="text-xs mt-1 text-center" style={{ color: isCurrent ? 'var(--color-navy)' : 'var(--color-charcoal)', opacity: isCurrent ? 1 : 0.5, fontWeight: isCurrent ? 600 : 400 }}>
+                <p className="text-xs mt-1 text-center" style={{ color: isCurrent ? 'var(--color-slate-900)' : 'var(--color-slate-600)', opacity: isCurrent ? 1 : 0.5, fontWeight: isCurrent ? 600 : 400 }}>
                   {step.label}
                 </p>
               </div>
@@ -73,8 +73,8 @@ export function CaseStatusStepper({ caseId, currentStatus, canEdit }: Props) {
         <button
           onClick={advance}
           disabled={isPending}
-          className="mt-4 px-4 py-2 rounded-full text-sm font-semibold border-2 transition-colors duration-150 disabled:opacity-70"
-          style={{ borderColor: 'var(--color-gold)', color: 'var(--color-navy)' }}
+          className="mt-4 px-4 py-2 rounded-md text-sm font-medium border-2 transition-colors duration-150 disabled:opacity-70"
+          style={{ borderColor: 'var(--color-accent)', color: 'var(--color-slate-900)' }}
         >
           {isPending ? 'Updating…' : `Advance to ${steps[currentIdx + 1]?.label} →`}
         </button>

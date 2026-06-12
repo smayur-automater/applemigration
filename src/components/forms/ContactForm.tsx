@@ -69,10 +69,10 @@ export function ContactForm() {
           <circle cx="12" cy="12" r="10" />
           <path strokeLinecap="round" strokeLinejoin="round" d="m8.5 12.5 2.5 2.5 5-6" />
         </svg>
-        <h3 className="text-xl font-semibold text-navy">
+        <h3 className="text-xl font-semibold text-slate-900">
           Thank you{state.firstName ? `, ${state.firstName}` : ""}!
         </h3>
-        <p className="mt-2 text-charcoal/80">We&rsquo;ll be in touch within 1 business day.</p>
+        <p className="mt-2 text-slate-500">We&rsquo;ll be in touch within 1 business day.</p>
         <Button
           variant="ghost"
           className="mt-6"
@@ -226,18 +226,18 @@ export function ContactForm() {
       />
 
       <div className="sm:col-span-2">
-        <label className="flex items-start gap-3 text-sm text-charcoal/85">
+        <label className="flex items-start gap-3 text-sm text-slate-600">
           <input
             type="checkbox"
             name="consent"
             required
             aria-required="true"
             disabled={pending}
-            className="mt-0.5 size-[18px] shrink-0 accent-[var(--color-navy)]"
+            className="mt-0.5 size-[18px] shrink-0 accent-accent"
           />
           <span>
             I agree to the{" "}
-            <Link href="/privacy-policy" className="font-semibold text-navy underline underline-offset-2 hover:text-gold-dark">
+            <Link href="/privacy-policy" className="font-semibold text-slate-900 underline underline-offset-2 hover:text-accent-hover">
               Privacy Policy
             </Link>
             <span aria-hidden="true" className="text-error">

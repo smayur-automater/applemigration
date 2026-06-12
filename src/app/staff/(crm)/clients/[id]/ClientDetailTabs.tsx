@@ -27,7 +27,7 @@ export function ClientDetailTabs({ client, cases, notes, tasks, currentUserId, c
   const [isPending, startTransition] = useTransition();
 
   const tabBtnStyle = (t: Tab) => ({
-    color: tab === t ? 'var(--color-navy)' : 'var(--color-charcoal)',
+    color: tab === t ? 'var(--color-slate-900)' : 'var(--color-slate-600)',
     opacity: tab === t ? 1 : 0.6,
     padding: '8px 16px',
     fontSize: '0.875rem',
@@ -35,7 +35,7 @@ export function ClientDetailTabs({ client, cases, notes, tasks, currentUserId, c
     cursor: 'pointer',
     background: 'none',
     border: 'none',
-    borderBottom: `2px solid ${tab === t ? 'var(--color-gold)' : 'transparent'}`,
+    borderBottom: `2px solid ${tab === t ? 'var(--color-accent)' : 'transparent'}`,
   } as React.CSSProperties);
 
   const submitNote = () => {
@@ -68,7 +68,7 @@ export function ClientDetailTabs({ client, cases, notes, tasks, currentUserId, c
         {(['cases', 'notes', 'tasks'] as Tab[]).map((t) => (
           <button key={t} style={tabBtnStyle(t)} onClick={() => setTab(t)}>
             {t.charAt(0).toUpperCase() + t.slice(1)}
-            <span className="ml-1.5 text-xs px-1.5 py-0.5 rounded-full" style={{ backgroundColor: 'var(--color-surface)', color: 'var(--color-navy)' }}>
+            <span className="ml-1.5 text-xs px-1.5 py-0.5 rounded-full" style={{ backgroundColor: 'var(--color-slate-100)', color: 'var(--color-slate-900)' }}>
               {t === 'cases' ? cases.length : t === 'notes' ? notes.length : tasks.length}
             </span>
           </button>
@@ -80,20 +80,20 @@ export function ClientDetailTabs({ client, cases, notes, tasks, currentUserId, c
         {tab === 'cases' && (
           <div className="space-y-3">
             {cases.length === 0 ? (
-              <p className="text-sm" style={{ color: 'var(--color-charcoal)', opacity: 0.5 }}>No cases yet.</p>
+              <p className="text-sm" style={{ color: 'var(--color-slate-600)', opacity: 0.5 }}>No cases yet.</p>
             ) : (
               cases.map((c) => (
                 <Link
                   key={c.id}
                   href={`/staff/cases/${c.id}`}
-                  className="flex items-center justify-between p-4 rounded-lg border hover:bg-[var(--color-surface)] transition-colors"
+                  className="flex items-center justify-between p-4 rounded-lg border hover:bg-[var(--color-slate-100)] transition-colors"
                   style={{ borderColor: 'var(--color-border)' }}
                 >
                   <div>
-                    <p className="font-medium text-sm" style={{ color: 'var(--color-navy)' }}>
+                    <p className="font-medium text-sm" style={{ color: 'var(--color-slate-900)' }}>
                       {c.visaType} — Subclass {c.subclass}
                     </p>
-                    <p className="text-xs mt-0.5" style={{ color: 'var(--color-charcoal)', opacity: 0.5 }}>
+                    <p className="text-xs mt-0.5" style={{ color: 'var(--color-slate-600)', opacity: 0.5 }}>
                       Opened {new Date(c.createdAt).toLocaleDateString('en-AU')}
                     </p>
                   </div>
@@ -105,7 +105,7 @@ export function ClientDetailTabs({ client, cases, notes, tasks, currentUserId, c
               <Link
                 href={`/staff/cases?clientId=${client.id}`}
                 className="inline-block text-sm font-semibold mt-2"
-                style={{ color: 'var(--color-gold)' }}
+                style={{ color: 'var(--color-accent)' }}
               >
                 + Open New Case
               </Link>
@@ -128,22 +128,22 @@ export function ClientDetailTabs({ client, cases, notes, tasks, currentUserId, c
               <button
                 onClick={submitNote}
                 disabled={isPending || !noteText.trim()}
-                className="mt-2 px-4 py-2 rounded-full text-sm font-semibold text-white disabled:opacity-60"
-                style={{ backgroundColor: 'var(--color-navy)' }}
+                className="mt-2 px-4 py-2 rounded-md text-sm font-medium text-white disabled:opacity-60"
+                style={{ backgroundColor: 'var(--color-slate-900)' }}
               >
                 {isPending ? 'Saving…' : 'Add Note'}
               </button>
             </div>
             <div className="space-y-3">
               {notes.map((n) => (
-                <div key={n.id} className="p-4 rounded-lg" style={{ backgroundColor: 'var(--color-surface)' }}>
-                  <p className="text-sm" style={{ color: 'var(--color-charcoal)' }}>{n.content}</p>
-                  <p className="text-xs mt-2" style={{ color: 'var(--color-charcoal)', opacity: 0.5 }}>
+                <div key={n.id} className="p-4 rounded-lg" style={{ backgroundColor: 'var(--color-slate-100)' }}>
+                  <p className="text-sm" style={{ color: 'var(--color-slate-600)' }}>{n.content}</p>
+                  <p className="text-xs mt-2" style={{ color: 'var(--color-slate-600)', opacity: 0.5 }}>
                     {n.authorName} · {new Date(n.createdAt).toLocaleString('en-AU')}
                   </p>
                 </div>
               ))}
-              {notes.length === 0 && <p className="text-sm" style={{ color: 'var(--color-charcoal)', opacity: 0.5 }}>No notes yet.</p>}
+              {notes.length === 0 && <p className="text-sm" style={{ color: 'var(--color-slate-600)', opacity: 0.5 }}>No notes yet.</p>}
             </div>
           </div>
         )}
@@ -181,7 +181,7 @@ export function ClientDetailTabs({ client, cases, notes, tasks, currentUserId, c
                   onClick={submitTask}
                   disabled={isPending || !taskTitle.trim() || !taskDue}
                   className="px-4 py-2 rounded-lg text-sm font-semibold text-white disabled:opacity-60"
-                  style={{ backgroundColor: 'var(--color-navy)' }}
+                  style={{ backgroundColor: 'var(--color-slate-900)' }}
                 >
                   Add
                 </button>
@@ -206,17 +206,17 @@ export function ClientDetailTabs({ client, cases, notes, tasks, currentUserId, c
                     {t.completed && <span className="text-white text-xs">✓</span>}
                   </button>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm" style={{ color: 'var(--color-navy)', textDecoration: t.completed ? 'line-through' : 'none' }}>
+                    <p className="text-sm" style={{ color: 'var(--color-slate-900)', textDecoration: t.completed ? 'line-through' : 'none' }}>
                       {t.title}
                     </p>
-                    <p className="text-xs" style={{ color: 'var(--color-charcoal)', opacity: 0.5 }}>
+                    <p className="text-xs" style={{ color: 'var(--color-slate-600)', opacity: 0.5 }}>
                       Due {new Date(t.dueDate).toLocaleDateString('en-AU')}
                     </p>
                   </div>
                   <PriorityBadge priority={t.priority} />
                 </div>
               ))}
-              {tasks.length === 0 && <p className="text-sm" style={{ color: 'var(--color-charcoal)', opacity: 0.5 }}>No tasks.</p>}
+              {tasks.length === 0 && <p className="text-sm" style={{ color: 'var(--color-slate-600)', opacity: 0.5 }}>No tasks.</p>}
             </div>
           </div>
         )}

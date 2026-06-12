@@ -32,10 +32,10 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ id:
 
   return (
     <div className="max-w-4xl space-y-6">
-      <div className="flex items-center gap-2 text-sm" style={{ color: 'var(--color-charcoal)', opacity: 0.6 }}>
+      <div className="flex items-center gap-2 text-sm" style={{ color: 'var(--color-slate-600)', opacity: 0.6 }}>
         <Link href="/staff/cases" className="hover:underline">Cases</Link>
         <span>/</span>
-        <span style={{ opacity: 1, color: 'var(--color-navy)' }}>
+        <span style={{ opacity: 1, color: 'var(--color-slate-900)' }}>
           {caseData.visaType} — {client?.name}
         </span>
       </div>
@@ -43,10 +43,10 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ id:
       <div className="bg-white rounded-xl p-6" style={{ boxShadow: 'var(--shadow-sm)' }}>
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
           <div>
-            <h2 className="text-xl font-bold" style={{ color: 'var(--color-navy)' }}>
+            <h2 className="text-xl font-bold" style={{ color: 'var(--color-slate-900)' }}>
               {caseData.visaType} (Subclass {caseData.subclass})
             </h2>
-            <Link href={`/staff/clients/${client?.id}`} className="text-sm hover:underline mt-1 inline-block" style={{ color: 'var(--color-gold)' }}>
+            <Link href={`/staff/clients/${client?.id}`} className="text-sm hover:underline mt-1 inline-block" style={{ color: 'var(--color-accent)' }}>
               {client?.name} →
             </Link>
           </div>
@@ -67,23 +67,23 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ id:
             { label: 'Decision', value: caseData.decisionDate ? new Date(caseData.decisionDate).toLocaleDateString('en-AU') : 'Pending' },
           ].map((item) => (
             <div key={item.label}>
-              <p className="text-xs font-medium uppercase tracking-wider mb-1" style={{ color: 'var(--color-charcoal)', opacity: 0.5 }}>{item.label}</p>
-              <p className="text-sm font-medium" style={{ color: 'var(--color-navy)' }}>{item.value}</p>
+              <p className="text-xs font-medium uppercase tracking-wider mb-1" style={{ color: 'var(--color-slate-600)', opacity: 0.5 }}>{item.label}</p>
+              <p className="text-sm font-medium" style={{ color: 'var(--color-slate-900)' }}>{item.value}</p>
             </div>
           ))}
         </div>
 
         {caseData.notes && (
-          <div className="mt-6 p-4 rounded-lg" style={{ backgroundColor: 'var(--color-surface)' }}>
-            <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: 'var(--color-charcoal)', opacity: 0.5 }}>Case Notes</p>
-            <p className="text-sm" style={{ color: 'var(--color-charcoal)' }}>{caseData.notes}</p>
+          <div className="mt-6 p-4 rounded-lg" style={{ backgroundColor: 'var(--color-slate-100)' }}>
+            <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: 'var(--color-slate-600)', opacity: 0.5 }}>Case Notes</p>
+            <p className="text-sm" style={{ color: 'var(--color-slate-600)' }}>{caseData.notes}</p>
           </div>
         )}
       </div>
 
       {/* Case notes */}
       <div className="bg-white rounded-xl p-6" style={{ boxShadow: 'var(--shadow-sm)' }}>
-        <h3 className="font-semibold mb-4" style={{ color: 'var(--color-navy)' }}>Activity Log</h3>
+        <h3 className="font-semibold mb-4" style={{ color: 'var(--color-slate-900)' }}>Activity Log</h3>
         <form action={async (fd: FormData) => {
           'use server';
           const content = fd.get('content') as string;
@@ -96,20 +96,20 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ id:
             className="w-full px-3 py-2 rounded-lg border text-sm resize-none outline-none mb-2"
             style={{ borderColor: 'var(--color-border)' }}
           />
-          <button type="submit" className="px-4 py-2 rounded-full text-sm font-semibold text-white" style={{ backgroundColor: 'var(--color-navy)' }}>
+          <button type="submit" className="px-4 py-2 rounded-md text-sm font-medium text-white" style={{ backgroundColor: 'var(--color-slate-900)' }}>
             Add Note
           </button>
         </form>
         <div className="mt-4 space-y-3">
           {caseNotes.map((n) => (
-            <div key={n.id} className="p-3 rounded-lg" style={{ backgroundColor: 'var(--color-surface)' }}>
-              <p className="text-sm" style={{ color: 'var(--color-charcoal)' }}>{n.content}</p>
-              <p className="text-xs mt-1" style={{ color: 'var(--color-charcoal)', opacity: 0.5 }}>
+            <div key={n.id} className="p-3 rounded-lg" style={{ backgroundColor: 'var(--color-slate-100)' }}>
+              <p className="text-sm" style={{ color: 'var(--color-slate-600)' }}>{n.content}</p>
+              <p className="text-xs mt-1" style={{ color: 'var(--color-slate-600)', opacity: 0.5 }}>
                 {n.authorName} · {new Date(n.createdAt).toLocaleString('en-AU')}
               </p>
             </div>
           ))}
-          {caseNotes.length === 0 && <p className="text-sm" style={{ color: 'var(--color-charcoal)', opacity: 0.5 }}>No activity yet.</p>}
+          {caseNotes.length === 0 && <p className="text-sm" style={{ color: 'var(--color-slate-600)', opacity: 0.5 }}>No activity yet.</p>}
         </div>
       </div>
     </div>

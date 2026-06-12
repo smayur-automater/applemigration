@@ -48,40 +48,40 @@ export default function ContactPage() {
       <Section size="lg" bg="default">
         <Container className="grid gap-12 lg:grid-cols-[60%_1fr]">
           <div>
-            <h2 className="mb-6 text-2xl font-semibold text-navy">Send Us a Message</h2>
+            <h2 className="mb-6 text-2xl font-semibold text-slate-900">Send Us a Message</h2>
             <ContactForm />
           </div>
 
           <aside>
             <div className="rounded-lg bg-white p-8 shadow-sm lg:sticky lg:top-[calc(var(--header-h)+16px)]">
-              <h3 className="text-xl font-semibold text-navy">Contact Information</h3>
-              <address className="mt-4 space-y-3 text-sm not-italic text-charcoal/85">
+              <h3 className="text-xl font-semibold text-slate-900">Contact Information</h3>
+              <address className="mt-4 space-y-3 text-sm not-italic text-slate-600">
                 <p>
                   <a
                     href={site.mapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline underline-offset-2 transition-colors duration-(--duration-fast) hover:text-gold-dark"
+                    className="underline underline-offset-2 transition-colors duration-(--duration-fast) hover:text-accent-hover"
                   >
                     {site.address}
                   </a>
                 </p>
                 <p>
-                  <a href={site.phoneHref} className="font-medium text-navy hover:text-gold-dark">
+                  <a href={site.phoneHref} className="font-medium text-slate-900 hover:text-accent-hover">
                     {site.phone}
                   </a>
                 </p>
                 <p>
-                  <a href={site.emailHref} className="font-medium text-navy hover:text-gold-dark">
+                  <a href={site.emailHref} className="font-medium text-slate-900 hover:text-accent-hover">
                     {site.email}
                   </a>
                 </p>
               </address>
 
-              <h3 className="mt-6 text-sm font-semibold uppercase tracking-wide text-navy">
+              <h3 className="mt-6 text-sm font-semibold uppercase tracking-wide text-slate-900">
                 Business Hours
               </h3>
-              <table className="mt-2 w-full text-sm text-charcoal/85">
+              <table className="mt-2 w-full text-sm text-slate-600">
                 <tbody>
                   {site.hours.map((row) => (
                     <tr key={row.days}>
@@ -94,16 +94,16 @@ export default function ContactPage() {
                 </tbody>
               </table>
 
-              <h3 className="mt-6 text-sm font-semibold uppercase tracking-wide text-navy">
+              <h3 className="mt-6 text-sm font-semibold uppercase tracking-wide text-slate-900">
                 Emergency / After Hours
               </h3>
-              <p className="mt-1 text-sm text-charcoal/80">
+              <p className="mt-1 text-sm text-slate-500">
                 For urgent visa matters (e.g. imminent visa expiry), email us with
                 &ldquo;URGENT&rdquo; in the subject line and we&rsquo;ll respond as soon as
                 possible.
               </p>
 
-              <h3 className="mt-6 text-sm font-semibold uppercase tracking-wide text-navy">
+              <h3 className="mt-6 text-sm font-semibold uppercase tracking-wide text-slate-900">
                 Office Location
               </h3>
               <iframe
@@ -127,13 +127,13 @@ export default function ContactPage() {
               <Link
                 key={m.label}
                 href={m.href}
-                className="flex flex-col items-center gap-2 rounded-lg border border-border p-8 text-center transition-[box-shadow,transform] duration-(--duration-base) hover:-translate-y-0.5 hover:shadow-md"
+                className="flex flex-col items-center gap-2 rounded-lg border border-slate-200 p-8 text-center transition-[box-shadow,transform] duration-(--duration-base) hover:border-slate-300 hover:shadow-sm"
               >
-                <span className="flex size-12 items-center justify-center rounded-full bg-surface text-navy">
+                <span className="flex size-12 items-center justify-center rounded-full bg-slate-100 text-slate-900">
                   {m.icon}
                 </span>
-                <span className="font-semibold text-navy">{m.label}</span>
-                <span className="text-sm text-charcoal/75">{m.value}</span>
+                <span className="font-semibold text-slate-900">{m.label}</span>
+                <span className="text-sm text-slate-500">{m.value}</span>
               </Link>
             ))}
           </div>

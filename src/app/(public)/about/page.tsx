@@ -57,10 +57,10 @@ export default function AboutPage() {
         <Container className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <Kicker>Our Story</Kicker>
-            <h2 className="mt-3 font-display text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-navy">
+            <h2 className="mt-3 text-[clamp(1.75rem,4vw,2.5rem)] font-semibold tracking-tight text-slate-900">
               Built on a Simple Idea: Migration Advice People Can Trust
             </h2>
-            <div className="mt-6 space-y-4 text-charcoal/85">
+            <div className="mt-6 space-y-4 text-slate-600">
               <p>
                 Apple Education &amp; Immigration began in 2011 helping international students
                 find the right course in Australia. We quickly saw the same problem again and
@@ -81,15 +81,15 @@ export default function AboutPage() {
           </div>
           <div>
             <h3 className="sr-only">Company milestones</h3>
-            <ol className="relative space-y-8 border-l-2 border-gold/40 pl-8">
+            <ol className="relative space-y-8 border-l-2 border-accent/40 pl-8">
               {milestones.map((m) => (
                 <li key={m.year} className="relative">
                   <span
                     aria-hidden="true"
-                    className="absolute -left-[41px] flex size-5 items-center justify-center rounded-full border-2 border-gold bg-off-white"
+                    className="absolute -left-[41px] flex size-5 items-center justify-center rounded-full border-2 border-accent bg-slate-50"
                   />
-                  <span className="font-display text-xl font-bold text-gold-dark">{m.year}</span>
-                  <p className="text-charcoal/85">{m.event}</p>
+                  <span className="text-xl font-semibold tabular-nums text-accent">{m.year}</span>
+                  <p className="text-slate-600">{m.event}</p>
                 </li>
               ))}
             </ol>
@@ -100,13 +100,13 @@ export default function AboutPage() {
       <Section size="lg" bg="navy" aria-label="Our values">
         <Container>
           <Kicker>What We Stand For</Kicker>
-          <h2 className="mt-3 max-w-2xl font-display text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-white">
+          <h2 className="mt-3 max-w-2xl text-[clamp(1.75rem,4vw,2.5rem)] font-semibold tracking-tight text-white">
             The Values Behind Every Application We Lodge
           </h2>
           <div className="mt-12 grid gap-8 sm:grid-cols-2">
             {values.map((v) => (
               <div key={v.title} className="flex gap-4">
-                <span className="mt-1 flex size-8 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold">
+                <span className="mt-1 flex size-8 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
                   <CheckIcon />
                 </span>
                 <div>
@@ -124,7 +124,7 @@ export default function AboutPage() {
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
               <Kicker>Meet the Team</Kicker>
-              <h2 className="mt-3 font-display text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-navy">
+              <h2 className="mt-3 text-[clamp(1.75rem,4vw,2.5rem)] font-semibold tracking-tight text-slate-900">
                 The People Behind Your Application
               </h2>
             </div>
@@ -142,8 +142,8 @@ export default function AboutPage() {
 
       <Section size="md" bg="surface" aria-label="Registration details">
         <Container size="prose" className="text-center">
-          <h2 className="font-display text-2xl font-bold text-navy">Registered. Insured. Accountable.</h2>
-          <p className="mt-4 text-charcoal/85">
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Registered. Insured. Accountable.</h2>
+          <p className="mt-4 text-slate-600">
             {site.name} operates under MARN {site.marn}, regulated by the Office of the
             Migration Agents Registration Authority. Read our full disclosure statement,
             including our complaints procedure and your rights as a client.

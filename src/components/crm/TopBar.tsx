@@ -48,13 +48,13 @@ export function TopBar({ userName, onMenuToggle }: TopBarProps) {
           onClick={onMenuToggle}
           aria-label="Toggle navigation"
           className="lg:hidden p-2 rounded-md"
-          style={{ color: 'var(--color-navy)' }}
+          style={{ color: 'var(--color-slate-900)' }}
         >
           <svg aria-hidden="true" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
-        <h1 className="font-semibold text-lg" style={{ color: 'var(--color-navy)' }}>
+        <h1 className="font-semibold text-lg" style={{ color: 'var(--color-slate-900)' }}>
           {getTitle(pathname)}
         </h1>
       </div>
@@ -64,13 +64,13 @@ export function TopBar({ userName, onMenuToggle }: TopBarProps) {
         <button
           onClick={() => setShowDropdown(!showDropdown)}
           className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-colors duration-150"
-          style={{ color: 'var(--color-navy)' }}
+          style={{ color: 'var(--color-slate-900)' }}
           aria-expanded={showDropdown}
           aria-haspopup="true"
         >
           <div
             className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold"
-            style={{ backgroundColor: 'var(--color-gold)', color: 'var(--color-navy)' }}
+            style={{ backgroundColor: 'var(--color-accent)', color: '#fff' }}
           >
             {userName.charAt(0).toUpperCase()}
           </div>
@@ -88,7 +88,7 @@ export function TopBar({ userName, onMenuToggle }: TopBarProps) {
             <button
               onClick={handleSignOut}
               disabled={isPending}
-              className="w-full text-left px-4 py-2 text-sm transition-colors duration-150 hover:bg-[var(--color-surface)]"
+              className="w-full text-left px-4 py-2 text-sm transition-colors duration-150 hover:bg-[var(--color-slate-100)]"
               style={{ color: 'var(--color-error)' }}
             >
               {isPending ? 'Signing out…' : '🚪 Sign out'}

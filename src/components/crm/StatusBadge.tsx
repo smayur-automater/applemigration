@@ -3,22 +3,22 @@ import type { ClientStatus, CaseStatus } from '@/lib/crm/types';
 type Status = ClientStatus | CaseStatus;
 
 const statusConfig: Record<Status, { label: string; bg: string; color: string }> = {
-  lead:       { label: 'Lead',       bg: 'rgba(74,144,196,0.15)',  color: 'var(--color-sky)' },
-  active:     { label: 'Active',     bg: 'rgba(39,174,96,0.15)',   color: 'var(--color-success)' },
-  granted:    { label: 'Granted',    bg: 'rgba(212,168,67,0.2)',   color: 'var(--color-gold-dark)' },
-  closed:     { label: 'Closed',     bg: 'rgba(45,45,45,0.1)',     color: 'var(--color-charcoal)' },
-  assessment: { label: 'Assessment', bg: 'rgba(74,144,196,0.15)',  color: 'var(--color-sky)' },
-  documents:  { label: 'Documents',  bg: 'rgba(230,126,34,0.15)', color: 'var(--color-warning)' },
-  lodged:     { label: 'Lodged',     bg: 'rgba(212,168,67,0.2)',   color: 'var(--color-gold-dark)' },
-  decision:   { label: 'Decision',   bg: 'rgba(74,144,196,0.15)',  color: 'var(--color-sky)' },
-  refused:    { label: 'Refused',    bg: 'rgba(192,57,43,0.12)',   color: 'var(--color-error)' },
+  lead:       { label: 'Lead',       bg: '#EFF6FF', color: '#1D4ED8' },
+  active:     { label: 'Active',     bg: '#F0FDF4', color: '#15803D' },
+  granted:    { label: 'Granted',    bg: '#F0FDF4', color: '#15803D' },
+  closed:     { label: 'Closed',     bg: '#F1F5F9', color: '#475569' },
+  assessment: { label: 'Assessment', bg: '#EFF6FF', color: '#1D4ED8' },
+  documents:  { label: 'Documents',  bg: '#FFFBEB', color: '#B45309' },
+  lodged:     { label: 'Lodged',     bg: '#EFF6FF', color: '#1D4ED8' },
+  decision:   { label: 'Decision',   bg: '#FFFBEB', color: '#B45309' },
+  refused:    { label: 'Refused',    bg: '#FEF2F2', color: '#B91C1C' },
 };
 
 export function StatusBadge({ status }: { status: Status }) {
-  const cfg = statusConfig[status] ?? { label: status, bg: 'var(--color-surface)', color: 'var(--color-charcoal)' };
+  const cfg = statusConfig[status] ?? { label: status, bg: '#F1F5F9', color: '#475569' };
   return (
     <span
-      className="inline-block text-xs font-semibold px-2.5 py-1 rounded-full"
+      className="inline-block rounded px-2 py-0.5 text-xs font-medium capitalize"
       style={{ backgroundColor: cfg.bg, color: cfg.color }}
     >
       {cfg.label}

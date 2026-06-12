@@ -21,12 +21,12 @@ export default async function SettingsPage() {
   return (
     <div className="max-w-3xl space-y-8">
       <div className="bg-white rounded-xl p-6" style={{ boxShadow: 'var(--shadow-sm)' }}>
-        <h2 className="font-bold text-lg mb-6" style={{ color: 'var(--color-navy)' }}>Staff Accounts</h2>
+        <h2 className="font-bold text-lg mb-6" style={{ color: 'var(--color-slate-900)' }}>Staff Accounts</h2>
         <StaffTable staff={safeStaff} currentUserId={session.staffId} />
       </div>
 
       <div className="bg-white rounded-xl p-6" style={{ boxShadow: 'var(--shadow-sm)' }}>
-        <h2 className="font-bold text-lg mb-6" style={{ color: 'var(--color-navy)' }}>Add Staff Member</h2>
+        <h2 className="font-bold text-lg mb-6" style={{ color: 'var(--color-slate-900)' }}>Add Staff Member</h2>
         <NewStaffForm />
       </div>
     </div>

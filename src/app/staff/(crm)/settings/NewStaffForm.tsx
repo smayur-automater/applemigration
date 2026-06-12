@@ -5,7 +5,7 @@ import { createStaffAction } from './actions';
 import type { Role } from '@/lib/crm/types';
 
 const inputCls = "w-full px-3 py-2 rounded-lg border text-sm outline-none";
-const inputStyle = { borderColor: 'var(--color-border)', color: 'var(--color-charcoal)' };
+const inputStyle = { borderColor: 'var(--color-border)', color: 'var(--color-slate-600)' };
 
 export function NewStaffForm() {
   const [isPending, startTransition] = useTransition();
@@ -33,19 +33,19 @@ export function NewStaffForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--color-navy)' }}>Full Name *</label>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--color-slate-900)' }}>Full Name *</label>
           <input name="name" required className={inputCls} style={inputStyle} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--color-navy)' }}>Email *</label>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--color-slate-900)' }}>Email *</label>
           <input name="email" type="email" required className={inputCls} style={inputStyle} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--color-navy)' }}>Temporary Password *</label>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--color-slate-900)' }}>Temporary Password *</label>
           <input name="password" type="password" required minLength={8} className={inputCls} style={inputStyle} />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--color-navy)' }}>Role *</label>
+          <label className="block text-sm font-medium mb-1" style={{ color: 'var(--color-slate-900)' }}>Role *</label>
           <select name="role" className={inputCls} style={{ ...inputStyle, height: '40px' }}>
             <option value="agent">Agent</option>
             <option value="receptionist">Receptionist</option>
@@ -64,8 +64,8 @@ export function NewStaffForm() {
       <button
         type="submit"
         disabled={isPending}
-        className="px-6 py-2.5 rounded-full text-sm font-semibold text-white disabled:opacity-70"
-        style={{ backgroundColor: 'var(--color-navy)' }}
+        className="px-6 py-2.5 rounded-md text-sm font-medium text-white disabled:opacity-70"
+        style={{ backgroundColor: 'var(--color-slate-900)' }}
       >
         {isPending ? 'Creating…' : 'Create Staff Account'}
       </button>

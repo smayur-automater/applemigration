@@ -6,8 +6,8 @@ export interface Crumb {
 }
 
 export function Breadcrumb({ items, light = false }: { items: Crumb[]; light?: boolean }) {
-  const base = light ? "text-white/70" : "text-charcoal/60";
-  const link = light ? "hover:text-white" : "hover:text-navy";
+  const base = light ? "text-white/70" : "text-slate-400";
+  const link = light ? "hover:text-white" : "hover:text-slate-900";
   return (
     <nav aria-label="Breadcrumb">
       <ol className={`flex flex-wrap items-center gap-2 text-sm ${base}`}>
@@ -20,7 +20,7 @@ export function Breadcrumb({ items, light = false }: { items: Crumb[]; light?: b
                   {item.label}
                 </Link>
               ) : (
-                <span aria-current={isLast ? "page" : undefined} className={light ? "text-white" : "text-navy"}>
+                <span aria-current={isLast ? "page" : undefined} className={light ? "text-white" : "text-slate-900"}>
                   {item.label}
                 </span>
               )}

@@ -9,7 +9,7 @@ const cfg: Record<Priority, { label: string; bg: string; color: string }> = {
 export function PriorityBadge({ priority }: { priority: Priority }) {
   const c = cfg[priority];
   return (
-    <span className="inline-block text-xs font-semibold px-2 py-0.5 rounded-full" style={{ backgroundColor: c.bg, color: c.color }}>
+    <span className="inline-block text-xs font-semibold px-2 py-0.5 rounded" style={{ backgroundColor: c.bg, color: c.color }}>
       {c.label}
     </span>
   );

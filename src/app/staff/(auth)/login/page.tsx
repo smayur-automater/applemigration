@@ -11,13 +11,13 @@ export default function LoginPage() {
   return (
     <div
       className="min-h-screen flex items-center justify-center px-4"
-      style={{ backgroundColor: 'var(--color-navy)' }}
+      style={{ backgroundColor: 'var(--color-slate-900)' }}
     >
       <div className="w-full max-w-sm">
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="text-5xl mb-3">🍎</div>
-          <h1 className="font-display font-bold text-white text-xl">
+          <h1 className="font-bold text-white text-xl">
             Apple Education & Immigration
           </h1>
           <p className="text-sm mt-1" style={{ color: 'rgba(247,245,240,0.6)' }}>
@@ -31,7 +31,7 @@ export default function LoginPage() {
         >
           <h2
             className="font-semibold text-xl mb-6"
-            style={{ color: 'var(--color-navy)' }}
+            style={{ color: 'var(--color-slate-900)' }}
           >
             Sign in to your account
           </h2>
