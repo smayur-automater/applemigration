@@ -1,42 +1,46 @@
-import { Button } from "@/components/ui/Button";
+import Link from "next/link";
+import { ArrowRight, Phone } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { site } from "@/lib/site";
 
 interface CTABannerProps {
-  variant?: "red" | "light";
+  variant?: "dark" | "light" | "red" | "navy";
   heading?: string;
   subtext?: string;
 }
 
 export function CTABanner({
-  variant = "red",
+  variant = "dark",
   heading = "Ready to Take the Next Step?",
   subtext = "Speak with a MARA-registered agent today — no commitment, no jargon.",
 }: CTABannerProps) {
-  const isDark = variant === "red";
+  const isDark = variant === "dark" || variant === "navy" || variant === "red";
   return (
-    <section className={isDark ? "bg-red py-16" : "bg-red-tint py-16"}>
+    <section className={isDark ? "bg-slate-900 py-16" : "bg-slate-50 py-16 border-y border-slate-200"}>
       <Container className="flex flex-col items-center gap-6 text-center">
-        <h2
-          className={`font-display text-3xl font-bold sm:text-4xl ${isDark ? "text-white" : "text-navy"}`}
-        >
+        <h2 className={`text-3xl font-bold tracking-tight sm:text-4xl ${isDark ? "text-white" : "text-slate-900"}`}>
           {heading}
         </h2>
-        <p className={`max-w-xl text-lg ${isDark ? "text-white/90" : "text-charcoal"}`}>{subtext}</p>
-        <div className="flex w-full flex-col justify-center gap-4 sm:w-auto sm:flex-row">
-          <Button href="/book" variant={isDark ? "ghost-light" : "primary"} size="lg" fullWidthMobile
-            className={isDark ? "border-2 border-white hover:bg-white hover:text-red font-semibold" : ""}>
-            Book a Free Consultation
-          </Button>
-          <Button
-            href={site.phoneHref}
-            variant="ghost-light"
-            size="lg"
-            fullWidthMobile
-            className={isDark ? "text-white/90 hover:bg-white/15" : "text-red hover:bg-red/10"}
+        <p className={`max-w-lg text-base ${isDark ? "text-slate-400" : "text-slate-500"}`}>{subtext}</p>
+        <div className="flex flex-col items-center gap-3 sm:flex-row">
+          <Link
+            href="/book"
+            className="inline-flex h-10 items-center gap-2 rounded-md bg-accent px-5 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
           >
-            Call Us Now
-          </Button>
+            Book a Free Consultation
+            <ArrowRight size={14} strokeWidth={2} />
+          </Link>
+          <a
+            href={site.phoneHref}
+            className={`inline-flex h-10 items-center gap-2 rounded-md px-5 text-sm font-medium transition-colors ${
+              isDark
+                ? "border border-slate-700 text-slate-300 hover:border-slate-500 hover:text-white"
+                : "border border-slate-200 text-slate-600 hover:bg-white hover:text-slate-900"
+            }`}
+          >
+            <Phone size={14} strokeWidth={2} />
+            {site.phone}
+          </a>
         </div>
       </Container>
     </section>

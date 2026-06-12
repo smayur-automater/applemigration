@@ -22,31 +22,33 @@ type ButtonProps = ButtonBaseProps &
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-red text-white hover:bg-red-light active:scale-[0.98] shadow-sm hover:shadow-md font-semibold",
+    "bg-accent text-white hover:bg-accent-hover active:scale-[0.98] font-medium",
   secondary:
-    "border-2 border-red text-red hover:bg-red hover:text-white font-semibold bg-transparent",
-  ghost: "text-red hover:bg-red-tint font-medium bg-transparent",
-  "ghost-light": "text-white hover:bg-white/10 font-medium bg-transparent",
+    "border border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300 font-medium bg-white",
+  ghost:
+    "text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-medium bg-transparent",
+  "ghost-light":
+    "text-white/90 hover:bg-white/10 font-medium bg-transparent",
   gold:
-    "bg-red text-white hover:bg-red-light active:bg-red-dark shadow-sm hover:shadow-md font-semibold",
+    "bg-accent text-white hover:bg-accent-hover active:scale-[0.98] font-medium",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
-  sm: "h-9 px-4 text-sm",
-  md: "h-11 px-6 text-base",
-  lg: "h-13 px-8 text-lg",
+  sm: "h-8 px-3 text-sm gap-1.5",
+  md: "h-10 px-4 text-sm gap-2",
+  lg: "h-11 px-6 text-base gap-2",
 };
 
 function Spinner() {
   return (
     <svg
-      className="size-5 animate-[spin_700ms_linear_infinite]"
+      className="size-4 animate-[spin_700ms_linear_infinite]"
       viewBox="0 0 24 24"
       fill="none"
       aria-hidden="true"
     >
-      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" opacity="0.25" />
-      <path d="M22 12a10 10 0 0 0-10-10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2.5" opacity="0.25" />
+      <path d="M22 12a10 10 0 0 0-10-10" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
     </svg>
   );
 }
@@ -65,13 +67,13 @@ export function Button({
   ...props
 }: ButtonProps & { disabled?: boolean }) {
   const classes = [
-    "inline-flex items-center justify-center gap-2 rounded-full whitespace-nowrap",
-    "transition-[background-color,color,box-shadow,transform] duration-[var(--duration-base)]",
-    "disabled:pointer-events-none disabled:opacity-60",
+    "inline-flex items-center justify-center rounded-md whitespace-nowrap",
+    "transition-[background-color,color,border-color,transform,opacity] duration-[var(--duration-fast)]",
+    "disabled:pointer-events-none disabled:opacity-50",
     variantStyles[variant],
     sizeStyles[size],
     fullWidthMobile ? "w-full sm:w-auto" : "",
-    loading ? "opacity-85 cursor-not-allowed" : "",
+    loading ? "opacity-70 cursor-not-allowed" : "",
     className,
   ]
     .filter(Boolean)

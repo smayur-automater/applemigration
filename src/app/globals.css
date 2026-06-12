@@ -1,51 +1,64 @@
 @import "tailwindcss";
 
-/* ── Design system tokens ── */
 @theme {
-  /* ─── Colour ──────────────────────────────────────────── */
-  --color-red:         #E8231A;   /* Primary – Vibrant Red    */
-  --color-red-light:   #FF4A3D;   /* Hover state on red       */
-  --color-red-dark:    #C41910;   /* Active/pressed red       */
-  --color-red-tint:    #FFF0EF;   /* Light red tint surface   */
-  --color-red-subtle:  #FFE4E2;   /* Card/panel backgrounds   */
+  /* ── Accent ── */
+  --color-accent:        #1D4ED8;
+  --color-accent-hover:  #1E40AF;
+  --color-accent-dark:   #1E3A8A;
+  --color-accent-light:  #EFF6FF;
 
-  --color-navy:        #1A1A2E;   /* Dark text (near black)   */
-  --color-charcoal:    #3D3D4E;   /* Body text                */
-  --color-muted:       #6B6B80;   /* Secondary / captions     */
+  /* ── Slate scale ── */
+  --color-slate-900:     #0F172A;
+  --color-slate-800:     #1E293B;
+  --color-slate-700:     #334155;
+  --color-slate-600:     #475569;
+  --color-slate-500:     #64748B;
+  --color-slate-400:     #94A3B8;
+  --color-slate-300:     #CBD5E1;
+  --color-slate-200:     #E2E8F0;
+  --color-slate-100:     #F1F5F9;
+  --color-slate-50:      #F8FAFC;
+  --color-white:         #FFFFFF;
 
-  --color-white:       #FFFFFF;   /* Page base                */
-  --color-off-white:   #FAFAFA;   /* Subtle section alt       */
-  --color-surface:     #FFF0EF;   /* Card tint                */
-  --color-border:      #FFD6D3;   /* Dividers / input borders */
+  /* ── Semantic ── */
+  --color-error:         #DC2626;
+  --color-success:       #16A34A;
+  --color-warning:       #D97706;
 
-  --color-error:       #DC2626;
-  --color-success:     #16A34A;
-  --color-warning:     #D97706;
+  /* ── Backwards-compat aliases (keep existing Tailwind classes working) ── */
+  --color-navy:          #0F172A;
+  --color-navy-light:    #1E293B;
+  --color-charcoal:      #334155;
+  --color-muted:         #64748B;
+  --color-surface:       #F1F5F9;
+  --color-off-white:     #F8FAFC;
+  --color-border:        #E2E8F0;
+  --color-gold:          #1D4ED8;
+  --color-gold-light:    #1E40AF;
+  --color-gold-dark:     #1E3A8A;
+  --color-red:           #1D4ED8;
+  --color-red-light:     #1E40AF;
+  --color-red-dark:      #1E3A8A;
+  --color-red-tint:      #EFF6FF;
+  --color-red-subtle:    #DBEAFE;
+  --color-sky:           #1D4ED8;
 
-  /* gold kept as alias so existing Tailwind classes don't break */
-  --color-gold:        #E8231A;
-  --color-gold-light:  #FF4A3D;
-  --color-gold-dark:   #C41910;
-  --color-navy-light:  #2D2D45;
-  --color-sky:         #E8231A;
-
-  /* ─── Typography ─────────────────────────────────────── */
-  --font-display: var(--font-poppins), system-ui, sans-serif;
+  /* ── Typography ── */
+  --font-display: var(--font-inter), system-ui, sans-serif;
   --font-body:    var(--font-inter), system-ui, sans-serif;
-  --font-sans:    var(--font-poppins), system-ui, sans-serif;
+  --font-sans:    var(--font-inter), system-ui, sans-serif;
 
-  /* ─── Shadows ────────────────────────────────────────── */
-  --shadow-xs:  0 1px 2px 0 rgb(232 35 26 / 0.06);
-  --shadow-sm:  0 1px 3px 0 rgb(232 35 26 / 0.10), 0 1px 2px -1px rgb(232 35 26 / 0.08);
-  --shadow-md:  0 4px 6px -1px rgb(232 35 26 / 0.10), 0 2px 4px -2px rgb(232 35 26 / 0.08);
-  --shadow-lg:  0 10px 15px -3px rgb(232 35 26 / 0.10), 0 4px 6px -4px rgb(232 35 26 / 0.06);
-  --shadow-xl:  0 20px 25px -5px rgb(232 35 26 / 0.10), 0 8px 10px -6px rgb(232 35 26 / 0.06);
-  --shadow-2xl: 0 25px 50px -12px rgb(232 35 26 / 0.20);
-  --shadow-gold: 0 0 0 3px rgb(232 35 26 / 0.25);  /* focus ring */
+  /* ── Neutral shadows ── */
+  --shadow-xs:  0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-sm:  0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.08);
+  --shadow-md:  0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+  --shadow-lg:  0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+  --shadow-xl:  0 20px 25px -5px rgb(0 0 0 / 0.07), 0 8px 10px -6px rgb(0 0 0 / 0.05);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.15);
+  --shadow-gold: 0 0 0 3px rgb(29 78 216 / 0.20);
 }
 
 :root {
-  /* ─── Z-Index Scale ──────────────────────────────────── */
   --z-below:    -1;
   --z-base:      0;
   --z-raised:   10;
@@ -55,85 +68,65 @@
   --z-modal:    400;
   --z-toast:    500;
 
-  /* ─── Transitions ────────────────────────────────────── */
   --ease-out:    cubic-bezier(0, 0, 0.2, 1);
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-  --duration-fast:   150ms;
-  --duration-base:   250ms;
-  --duration-slow:   400ms;
+  --duration-fast:  150ms;
+  --duration-base:  200ms;
+  --duration-slow:  350ms;
 
-  /* ─── Layout ─────────────────────────────────────────── */
   --max-w-content: 1200px;
   --max-w-prose:    720px;
   --max-w-narrow:   560px;
-  --header-h:        72px;
-  --header-h-mobile: 60px;
+  --header-h:        64px;
+  --header-h-mobile: 56px;
 }
 
-/* ── Base styles ── */
 html {
   scroll-padding-top: var(--header-h);
 }
 
 body {
   background: var(--color-white);
-  color: var(--color-charcoal);
-  font-family: var(--font-display);
-  line-height: 1.625;
+  color: var(--color-slate-700);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--color-navy);
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-slate-900);
   font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
-/* Main content fade-in on route render */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);   }
 }
 
 main {
-  animation: fadeIn 300ms var(--ease-out);
+  animation: fadeIn 250ms var(--ease-out);
 }
 
-/* Spinner */
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
-/* Standard focus ring (WCAG 2.2 AA) */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid var(--color-red);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
+  border-radius: 4px;
 }
 
-/* Reduced-motion: disable all animation/transitions globally */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation: none !important;
     transition: none !important;
   }

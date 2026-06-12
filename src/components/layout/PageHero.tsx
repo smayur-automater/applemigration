@@ -10,7 +10,7 @@ interface PageHeroProps {
 
 export function PageHero({ title, subtitle, breadcrumbs, children }: PageHeroProps) {
   return (
-    <div className="bg-navy py-14 text-white sm:py-20">
+    <div className="bg-slate-900 py-14 text-white sm:py-20">
       <Container>
         {breadcrumbs && (
           <div className="mb-6">
