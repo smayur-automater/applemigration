@@ -70,7 +70,7 @@ export default async function BlogPostPage({
         </Container>
       </Section>
       <CTABanner
-        variant="navy"
+        variant="red"
         heading="Questions About Your Situation?"
         subtext="Articles are general information — your case is specific. Talk it through with a registered agent, free."
       />

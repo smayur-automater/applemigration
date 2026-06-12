@@ -35,7 +35,7 @@ export default function TeamPage() {
         </Container>
       </Section>
       <CTABanner
-        variant="navy"
+        variant="red"
         heading="Want to Work With Us?"
         subtext="Book a free consultation and meet the agent who'll handle your case personally."
       />

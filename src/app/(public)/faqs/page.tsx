@@ -27,7 +27,7 @@ export default function FaqsPage() {
         </Container>
       </Section>
       <CTABanner
-        variant="navy"
+        variant="red"
         heading="Still Have Questions?"
         subtext="Book a free consultation or send us a message — we respond within 1 business day."
       />
