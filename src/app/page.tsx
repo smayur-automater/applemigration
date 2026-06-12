@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { TestimonialCard } from "@/components/ui/TestimonialCard";
 
 export const metadata: Metadata = {
   title: "Apple Education & Immigration | Registered Migration Agents Australia",
@@ -68,7 +69,7 @@ const services = [
 const testimonials = [
   {
     name: "Priya S.",
-    origin: "India",
+    country: "🇮🇳 India",
     visa: "Skilled Independent 189",
     quote:
       "Apple Immigration made a complex process feel simple. My 189 visa was approved in under 8 months. I can't recommend them highly enough.",
@@ -76,7 +77,7 @@ const testimonials = [
   },
   {
     name: "Wei L.",
-    origin: "China",
+    country: "🇨🇳 China",
     visa: "Student Visa 500",
     quote:
       "From course selection to visa lodgement, they handled everything professionally. I feel completely supported throughout my study journey.",
@@ -84,7 +85,7 @@ const testimonials = [
   },
   {
     name: "Maria G.",
-    origin: "Philippines",
+    country: "🇵🇭 Philippines",
     visa: "Partner Visa 820/801",
     quote:
       "My partner visa was approved with zero issues. The team knew exactly what documents were needed and kept me informed at every step.",
@@ -351,41 +352,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((t) => (
-              <div
-                key={t.name}
-                className="bg-white rounded-2xl p-6 shadow-sm flex flex-col"
-              >
-                {/* Stars */}
-                <div className="flex gap-0.5 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-4 h-4" fill="#D4A843" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-gray-600 text-sm leading-relaxed mb-5 flex-1">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <div className="flex items-center gap-3">
-                  <div
-                    className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0"
-                    style={{ backgroundColor: "var(--color-deep-navy)" }}
-                  >
-                    {t.initials}
-                  </div>
-                  <div>
-                    <p
-                      className="text-sm font-semibold"
-                      style={{ color: "var(--color-deep-navy)" }}
-                    >
-                      {t.name}
-                    </p>
-                    <p className="text-xs text-gray-400">
-                      {t.origin} · {t.visa}
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <TestimonialCard key={t.name} {...t} />
             ))}
           </div>
 
