@@ -32,8 +32,8 @@ const serviceIcons: Record<string, React.ReactNode> = {
 export function ServicePage({ service }: { service: ServiceData }) {
   return (
     <>
-      {/* Section 1 — PageHero with MARA strip */}
-      <div className="bg-navy py-14 text-white sm:py-20">
+      {/* Hero */}
+      <div className="bg-slate-900 py-14 text-white sm:py-20">
         <Container>
           <div className="mb-6">
             <Breadcrumb
@@ -46,12 +46,12 @@ export function ServicePage({ service }: { service: ServiceData }) {
             />
           </div>
           <div className="max-w-[680px]">
-            <h1 className="font-display text-[clamp(2.25rem,5vw,3.25rem)] font-bold leading-tight text-white">
+            <h1 className="text-[clamp(2.25rem,5vw,3.25rem)] font-semibold leading-tight tracking-tight text-white">
               {service.heroTitle}
             </h1>
-            <p className="mt-4 text-lg text-white/85">{service.heroSubtitle}</p>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Button href="/book" variant="gold" size="lg" fullWidthMobile>
+            <p className="mt-4 text-[17px] leading-relaxed text-slate-300">{service.heroSubtitle}</p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button href="/book" variant="primary" size="lg" fullWidthMobile>
                 Book a Free Consultation
               </Button>
               <Button href="/eligibility-check" variant="ghost-light" size="lg" fullWidthMobile>
@@ -63,75 +63,74 @@ export function ServicePage({ service }: { service: ServiceData }) {
         </Container>
       </div>
 
-      {/* Section 2 — Overview with sticky sidebar */}
+      {/* Overview + sticky sidebar */}
       <Section size="lg" bg="default">
         <Container className="grid gap-12 lg:grid-cols-[60%_1fr]">
           <div>
-            <h2 className="font-display text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-navy">
+            <h2 className="text-[clamp(1.5rem,3vw,2.25rem)] font-semibold tracking-tight text-slate-900">
               {service.overviewHeading}
             </h2>
-            <div className="mt-6 space-y-4 text-charcoal/85">
+            <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-slate-600">
               {service.overviewParagraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
             </div>
-            <h2 className="mt-12 font-display text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-navy">
+            <h2 className="mt-12 text-[clamp(1.5rem,3vw,2.25rem)] font-semibold tracking-tight text-slate-900">
               {service.requirementsHeading}
             </h2>
             <ol className="mt-6 space-y-4">
               {service.requirements.map((req, i) => (
                 <li key={i} className="flex gap-4">
-                  <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-gold font-semibold text-navy">
+                  <span className="flex size-7 shrink-0 items-center justify-center rounded border border-slate-200 bg-white text-[13px] font-semibold tabular-nums text-slate-500">
                     {i + 1}
                   </span>
-                  <span className="pt-1 text-charcoal/85">{req}</span>
+                  <span className="pt-0.5 text-[15px] leading-relaxed text-slate-600">{req}</span>
                 </li>
               ))}
             </ol>
           </div>
 
           <aside>
-            <div className="rounded-lg bg-white p-8 shadow-md lg:sticky lg:top-[calc(var(--header-h)+16px)]">
-              <h3 className="text-xl font-semibold text-navy">Get Expert Help</h3>
-              <p className="mt-2 text-sm text-charcoal/80">
-                Speak with a registered migration agent about your situation — free, with no
-                obligation.
+            <div className="rounded-lg border border-slate-200 bg-white p-7 lg:sticky lg:top-[calc(var(--header-h)+16px)]">
+              <h3 className="text-[15px] font-semibold text-slate-900">Get Expert Help</h3>
+              <p className="mt-1.5 text-[13px] leading-relaxed text-slate-500">
+                Speak with a registered migration agent about your situation — free, with no obligation.
               </p>
-              <div className="mt-5 flex flex-col gap-3">
-                <Button href="/book" className="w-full">
+              <div className="mt-5 flex flex-col gap-2.5">
+                <Button href="/book" className="w-full" size="sm">
                   Book a Free Consultation
                 </Button>
-                <Button href="/eligibility-check" variant="secondary" className="w-full">
+                <Button href="/eligibility-check" variant="secondary" className="w-full" size="sm">
                   Check Your Eligibility
                 </Button>
               </div>
-              <hr className="my-6 border-border" />
-              <div className="space-y-3 text-sm">
+              <hr className="my-5 border-slate-100" />
+              <div className="space-y-2.5 text-[13px]">
                 <a
                   href={site.phoneHref}
-                  className="flex items-center gap-2 font-medium text-navy transition-colors duration-(--duration-fast) hover:text-gold-dark"
+                  className="flex items-center gap-2 text-slate-600 transition-colors hover:text-slate-900"
                 >
-                  <PhoneIcon className="size-4" />
+                  <PhoneIcon className="size-3.5 shrink-0 text-slate-400" />
                   {site.phone}
                 </a>
                 <a
                   href={site.emailHref}
-                  className="flex items-center gap-2 font-medium text-navy transition-colors duration-(--duration-fast) hover:text-gold-dark"
+                  className="flex items-center gap-2 text-slate-600 transition-colors hover:text-slate-900"
                 >
-                  <MailIcon className="size-4" />
+                  <MailIcon className="size-3.5 shrink-0 text-slate-400" />
                   {site.email}
                 </a>
               </div>
-              <MaraDisclaimer variant="inline" className="mt-6" />
+              <MaraDisclaimer variant="inline" className="mt-5" />
             </div>
           </aside>
         </Container>
       </Section>
 
-      {/* Section 3 — Process steps */}
+      {/* Process steps */}
       <Section size="lg" bg="white" aria-label="Our process">
         <Container>
-          <h2 className="text-center font-display text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-navy">
+          <h2 className="text-center text-[clamp(1.5rem,3vw,2.25rem)] font-semibold tracking-tight text-slate-900">
             {service.processHeading}
           </h2>
           <ol className="mt-14 grid gap-10 md:grid-cols-5 md:gap-4">
@@ -140,15 +139,15 @@ export function ServicePage({ service }: { service: ServiceData }) {
                 {i < service.processSteps.length - 1 && (
                   <span
                     aria-hidden="true"
-                    className="absolute left-6 top-12 h-[calc(100%-1rem)] w-0.5 bg-border md:left-[calc(50%+2rem)] md:top-6 md:h-0.5 md:w-[calc(100%-4rem)]"
+                    className="absolute left-6 top-12 h-[calc(100%-1rem)] w-px bg-slate-200 md:left-[calc(50%+2rem)] md:top-6 md:h-px md:w-[calc(100%-4rem)]"
                   />
                 )}
-                <span className="relative z-10 flex size-12 shrink-0 items-center justify-center rounded-full bg-gold font-display text-lg font-bold text-navy md:mx-auto">
-                  {i + 1}
+                <span className="relative z-10 flex size-11 shrink-0 items-center justify-center rounded-md border border-slate-200 bg-white text-[13px] font-semibold tabular-nums text-slate-500 md:mx-auto">
+                  {String(i + 1).padStart(2, "0")}
                 </span>
                 <div className="md:mt-4">
-                  <h3 className="font-semibold text-navy">{step.title}</h3>
-                  <p className="mt-1 text-sm text-charcoal/75">{step.description}</p>
+                  <h3 className="text-[13px] font-semibold text-slate-900">{step.title}</h3>
+                  <p className="mt-1 text-[12px] leading-relaxed text-slate-500">{step.description}</p>
                 </div>
               </li>
             ))}
@@ -156,21 +155,21 @@ export function ServicePage({ service }: { service: ServiceData }) {
         </Container>
       </Section>
 
-      {/* Section 4 — Info card grid */}
+      {/* Info card grid */}
       {service.infoCards && (
-        <Section size="lg" bg="surface" aria-label={service.infoCardsHeading}>
+        <Section size="lg" bg="default" aria-label={service.infoCardsHeading}>
           <Container>
-            <h2 className="text-center font-display text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-navy">
+            <h2 className="text-center text-[clamp(1.5rem,3vw,2.25rem)] font-semibold tracking-tight text-slate-900">
               {service.infoCardsHeading}
             </h2>
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {service.infoCards.map((card) => (
-                <div key={card.title} className="rounded-lg bg-white p-6 shadow-sm">
-                  <div className="mb-4 flex size-12 items-center justify-center rounded-lg bg-surface text-navy" aria-hidden="true">
+                <div key={card.title} className="rounded-md border border-slate-200 bg-white p-5">
+                  <div className="mb-3 flex size-9 items-center justify-center rounded border border-slate-200 text-slate-500" aria-hidden="true">
                     {card.icon}
                   </div>
-                  <h3 className="font-semibold text-navy">{card.title}</h3>
-                  <p className="mt-1 text-sm text-charcoal/75">{card.description}</p>
+                  <h3 className="text-[13px] font-semibold text-slate-900">{card.title}</h3>
+                  <p className="mt-1 text-[12px] leading-relaxed text-slate-500">{card.description}</p>
                 </div>
               ))}
             </div>
@@ -178,10 +177,10 @@ export function ServicePage({ service }: { service: ServiceData }) {
         </Section>
       )}
 
-      {/* Section 5 — FAQs */}
-      <Section size="lg" bg="default" aria-label="Frequently asked questions">
+      {/* FAQs */}
+      <Section size="lg" bg="white" aria-label="Frequently asked questions">
         <Container size="prose">
-          <h2 className="text-center font-display text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-navy">
+          <h2 className="text-center text-[clamp(1.5rem,3vw,2.25rem)] font-semibold tracking-tight text-slate-900">
             {service.faqHeading}
           </h2>
           <div className="mt-10">
@@ -190,13 +189,13 @@ export function ServicePage({ service }: { service: ServiceData }) {
         </Container>
       </Section>
 
-      {/* Section 6 — Related services */}
-      <Section size="lg" bg="white" aria-label="Related services">
+      {/* Related services */}
+      <Section size="lg" bg="default" aria-label="Related services">
         <Container>
-          <h2 className="font-display text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-navy">
+          <h2 className="text-[clamp(1.5rem,3vw,2.25rem)] font-semibold tracking-tight text-slate-900">
             You Might Also Need
           </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {service.relatedSlugs.map((slug) => {
               const related = serviceSummaries.find((s) => s.slug === slug);
               if (!related) return null;
@@ -214,15 +213,15 @@ export function ServicePage({ service }: { service: ServiceData }) {
         </Container>
       </Section>
 
-      {/* MARA disclaimer above footer */}
-      <div className="bg-off-white">
-        <Container className="pb-8">
+      {/* MARA disclaimer */}
+      <div className="border-t border-slate-100 bg-slate-50">
+        <Container className="py-6">
           <MaraDisclaimer variant="inline" />
         </Container>
       </div>
 
-      {/* Section 7 — CTA Banner */}
-      <CTABanner variant="red" />
+      {/* CTA Banner */}
+      <CTABanner variant="dark" />
     </>
   );
 }

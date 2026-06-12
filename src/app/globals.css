@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Accent ── */
+  /* ── Primary accent (blue) ── */
   --color-accent:        #1D4ED8;
   --color-accent-hover:  #1E40AF;
   --color-accent-dark:   #1E3A8A;
@@ -25,7 +25,7 @@
   --color-success:       #16A34A;
   --color-warning:       #D97706;
 
-  /* ── Backwards-compat aliases (keep existing Tailwind classes working) ── */
+  /* ── Backwards-compat aliases (do not use for new code) ── */
   --color-navy:          #0F172A;
   --color-navy-light:    #1E293B;
   --color-charcoal:      #334155;
@@ -36,26 +36,20 @@
   --color-gold:          #1D4ED8;
   --color-gold-light:    #1E40AF;
   --color-gold-dark:     #1E3A8A;
-  --color-red:           #1D4ED8;
-  --color-red-light:     #1E40AF;
-  --color-red-dark:      #1E3A8A;
-  --color-red-tint:      #EFF6FF;
-  --color-red-subtle:    #DBEAFE;
-  --color-sky:           #1D4ED8;
 
   /* ── Typography ── */
   --font-display: var(--font-inter), system-ui, sans-serif;
   --font-body:    var(--font-inter), system-ui, sans-serif;
   --font-sans:    var(--font-inter), system-ui, sans-serif;
 
-  /* ── Neutral shadows ── */
+  /* ── Shadows ── */
   --shadow-xs:  0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-sm:  0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.08);
-  --shadow-md:  0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
-  --shadow-lg:  0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.05);
-  --shadow-xl:  0 20px 25px -5px rgb(0 0 0 / 0.07), 0 8px 10px -6px rgb(0 0 0 / 0.05);
-  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.15);
-  --shadow-gold: 0 0 0 3px rgb(29 78 216 / 0.20);
+  --shadow-sm:  0 1px 3px 0 rgb(0 0 0 / 0.07), 0 1px 2px -1px rgb(0 0 0 / 0.07);
+  --shadow-md:  0 4px 6px -1px rgb(0 0 0 / 0.06), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+  --shadow-lg:  0 10px 15px -3px rgb(0 0 0 / 0.06), 0 4px 6px -4px rgb(0 0 0 / 0.04);
+  --shadow-xl:  0 20px 25px -5px rgb(0 0 0 / 0.06), 0 8px 10px -6px rgb(0 0 0 / 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.12);
+  --shadow-focus: 0 0 0 3px rgb(29 78 216 / 0.18);
 }
 
 :root {
@@ -87,27 +81,28 @@ html {
 
 body {
   background: var(--color-white);
-  color: var(--color-slate-700);
+  color: var(--color-slate-600);
   font-family: var(--font-body);
+  font-size: 1rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--color-slate-900);
   font-family: var(--font-display);
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  letter-spacing: -0.025em;
   line-height: 1.2;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
+  from { opacity: 0; transform: translateY(4px); }
   to   { opacity: 1; transform: translateY(0);   }
 }
 
-main {
-  animation: fadeIn 250ms var(--ease-out);
-}
+main { animation: fadeIn 200ms var(--ease-out); }
 
 @keyframes spin {
   from { transform: rotate(0deg); }

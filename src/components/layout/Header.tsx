@@ -9,19 +9,27 @@ import { site } from "@/lib/site";
 
 function Logo() {
   return (
-    <Link href="/" className="flex shrink-0 items-center gap-2.5" aria-label={`${site.name} — home`}>
-      <div className="flex size-7 items-center justify-center rounded bg-accent" aria-hidden="true">
-        <span className="text-xs font-bold text-white">AE</span>
-      </div>
-      <span className="text-sm font-semibold text-slate-900">
-        Apple <span className="hidden sm:inline text-slate-500 font-normal">Education &amp; Immigration</span>
+    <Link
+      href="/"
+      className="flex shrink-0 items-center"
+      aria-label={`${site.name} — home`}
+    >
+      <span className="text-[15px] font-semibold leading-none tracking-tight text-slate-900">
+        Apple
+        <span className="font-normal text-slate-400">
+          <span className="hidden sm:inline"> Education &amp; Immigration</span>
+          <span className="sm:hidden"> E&amp;I</span>
+        </span>
       </span>
     </Link>
   );
 }
 
 function DesktopDropdown({
-  label, href, items, active,
+  label,
+  href,
+  items,
+  active,
 }: {
   label: string;
   href: string;
@@ -34,7 +42,7 @@ function DesktopDropdown({
 
   const openMenu = useCallback(() => {
     if (timer.current) clearTimeout(timer.current);
-    timer.current = setTimeout(() => setOpen(true), 150);
+    timer.current = setTimeout(() => setOpen(true), 120);
   }, []);
   const close = useCallback(() => {
     if (timer.current) clearTimeout(timer.current);
@@ -55,30 +63,35 @@ function DesktopDropdown({
   }, [close]);
 
   return (
-    <div ref={ref} className="relative" onMouseEnter={openMenu} onMouseLeave={close}
-      onBlur={(e) => { if (!ref.current?.contains(e.relatedTarget as Node)) close(); }}>
+    <div
+      ref={ref}
+      className="relative"
+      onMouseEnter={openMenu}
+      onMouseLeave={close}
+      onBlur={(e) => { if (!ref.current?.contains(e.relatedTarget as Node)) close(); }}
+    >
       <Link
         href={href}
         aria-expanded={open}
         aria-haspopup="menu"
         aria-current={active ? "page" : undefined}
         onFocus={() => setOpen(true)}
-        className={`flex items-center gap-1 py-1 text-sm transition-colors duration-(--duration-fast) ${
-          active ? "text-slate-900 font-medium" : "text-slate-500 hover:text-slate-900"
+        className={`flex items-center gap-1 py-1 text-[13px] transition-colors ${
+          active ? "font-medium text-slate-900" : "text-slate-500 hover:text-slate-900"
         }`}
       >
         {label}
         <ChevronDown
           aria-hidden="true"
-          size={14}
+          size={12}
           strokeWidth={2}
-          className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`transition-transform duration-150 ${open ? "rotate-180" : ""}`}
         />
       </Link>
       {open && (
         <div
           role="menu"
-          className="absolute left-0 top-full z-(--z-dropdown) mt-1 min-w-52 rounded-lg border border-slate-200 bg-white py-1 shadow-lg"
+          className="absolute left-0 top-full z-[var(--z-dropdown)] mt-1.5 min-w-52 rounded-md border border-slate-200 bg-white py-1 shadow-md"
         >
           {items.map((item) => (
             <Link
@@ -86,7 +99,7 @@ function DesktopDropdown({
               role="menuitem"
               href={item.href}
               onClick={close}
-              className="block px-3 py-2 text-sm text-slate-600 transition-colors duration-(--duration-fast) hover:bg-slate-50 hover:text-slate-900"
+              className="block px-3.5 py-2 text-[13px] text-slate-600 transition-colors hover:bg-slate-50 hover:text-slate-900"
             >
               {item.label}
             </Link>
@@ -129,8 +142,13 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
   }, [onClose]);
 
   return (
-    <div className="fixed inset-0 z-(--z-modal) lg:hidden">
-      <button aria-label="Close menu" onClick={onClose} className="absolute inset-0 bg-slate-900/40" tabIndex={-1} />
+    <div className="fixed inset-0 z-[var(--z-modal)] lg:hidden">
+      <button
+        aria-label="Close menu"
+        onClick={onClose}
+        className="absolute inset-0 bg-slate-900/50"
+        tabIndex={-1}
+      />
       <div
         ref={drawerRef}
         id="mobile-menu"
@@ -139,19 +157,19 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
         aria-label="Navigation menu"
         className="absolute right-0 top-0 flex h-full w-72 flex-col overflow-y-auto bg-white shadow-xl"
       >
-        <div className="flex items-center justify-between border-b border-slate-100 px-4 py-3">
+        <div className="flex items-center justify-between border-b border-slate-100 px-4 h-14">
           <Logo />
           <button
             aria-label="Close menu"
             onClick={onClose}
-            className="flex size-8 items-center justify-center rounded text-slate-400 hover:bg-slate-100 hover:text-slate-900"
+            className="flex size-8 items-center justify-center rounded text-slate-400 hover:bg-slate-100 hover:text-slate-700"
           >
-            <X size={18} strokeWidth={2} />
+            <X size={16} strokeWidth={2} />
           </button>
         </div>
 
-        <nav aria-label="Mobile navigation" className="flex-1 px-2 py-3">
-          <ul className="flex flex-col">
+        <nav aria-label="Mobile navigation" className="flex-1 overflow-y-auto px-2 py-3">
+          <ul className="flex flex-col gap-0.5">
             {mainNav.map((item) => (
               <li key={item.label}>
                 {item.children ? (
@@ -159,23 +177,23 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
                     <button
                       aria-expanded={expanded === item.label}
                       onClick={() => setExpanded(expanded === item.label ? null : item.label)}
-                      className="flex w-full items-center justify-between rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50"
+                      className="flex w-full items-center justify-between rounded px-3 py-2 text-[13px] font-medium text-slate-700 hover:bg-slate-50"
                     >
                       {item.label}
                       <ChevronDown
-                        size={14}
+                        size={12}
                         strokeWidth={2}
-                        className={`transition-transform duration-200 ${expanded === item.label ? "rotate-180" : ""}`}
+                        className={`transition-transform duration-150 ${expanded === item.label ? "rotate-180" : ""}`}
                       />
                     </button>
                     {expanded === item.label && (
-                      <ul className="mt-0.5 ml-2 border-l border-slate-100 pl-3 pb-1">
+                      <ul className="ml-3 mt-0.5 border-l border-slate-100 pl-3 pb-1">
                         {item.children.map((child) => (
                           <li key={child.href}>
                             <Link
                               href={child.href}
                               onClick={onClose}
-                              className="block rounded py-1.5 text-sm text-slate-500 hover:text-slate-900"
+                              className="block py-1.5 text-[13px] text-slate-500 hover:text-slate-900"
                             >
                               {child.label}
                             </Link>
@@ -188,7 +206,7 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
                   <Link
                     href={item.href}
                     onClick={onClose}
-                    className="block rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900"
+                    className="block rounded px-3 py-2 text-[13px] font-medium text-slate-700 hover:bg-slate-50 hover:text-slate-900"
                   >
                     {item.label}
                   </Link>
@@ -198,25 +216,25 @@ function MobileMenu({ onClose }: { onClose: () => void }) {
           </ul>
         </nav>
 
-        <div className="border-t border-slate-100 p-4 flex flex-col gap-2">
+        <div className="border-t border-slate-100 p-4 space-y-2">
+          <Link
+            href="/book"
+            onClick={onClose}
+            className="flex h-9 w-full items-center justify-center rounded-md bg-accent text-[13px] font-medium text-white transition-colors hover:bg-accent-hover"
+          >
+            Book Free Consultation
+          </Link>
           <Link
             href="/eligibility-check"
             onClick={onClose}
-            className="flex h-9 items-center justify-center rounded-md border border-slate-200 text-sm font-medium text-slate-700 hover:bg-slate-50"
+            className="flex h-9 w-full items-center justify-center rounded-md border border-slate-200 text-[13px] font-medium text-slate-700 hover:bg-slate-50"
           >
             Check Eligibility
           </Link>
           <Link
-            href="/book"
-            onClick={onClose}
-            className="flex h-9 items-center justify-center rounded-md bg-accent text-sm font-medium text-white hover:bg-accent-hover"
-          >
-            Book Free Consult
-          </Link>
-          <Link
             href="/staff/login"
             onClick={onClose}
-            className="text-center text-xs text-slate-400 hover:text-slate-600 py-1"
+            className="block py-1 text-center text-xs text-slate-400 hover:text-slate-600"
           >
             Staff Login
           </Link>
@@ -236,7 +254,9 @@ export function Header() {
     const sentinel = document.createElement("div");
     sentinel.style.cssText = "position:absolute;top:0;height:1px;width:1px;pointer-events:none;";
     document.body.prepend(sentinel);
-    const observer = new IntersectionObserver(([entry]) => setScrolled(!entry.isIntersecting));
+    const observer = new IntersectionObserver(([entry]) =>
+      setScrolled(!entry.isIntersecting)
+    );
     observer.observe(sentinel);
     return () => { observer.disconnect(); sentinel.remove(); };
   }, []);
@@ -253,19 +273,20 @@ export function Header() {
     <>
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-(--z-toast) focus:rounded focus:bg-accent focus:px-3 focus:py-1.5 focus:text-sm focus:font-medium focus:text-white"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[var(--z-toast)] focus:rounded focus:bg-accent focus:px-3 focus:py-1.5 focus:text-sm focus:font-medium focus:text-white"
       >
         Skip to main content
       </a>
+
       <header
-        className={`sticky top-0 z-(--z-sticky) h-[var(--header-h-mobile)] bg-white transition-shadow duration-200 lg:h-[var(--header-h)] ${
-          scrolled ? "shadow-sm border-b border-slate-200" : "border-b border-slate-100"
-        }`}
+        className={`sticky top-0 z-[var(--z-sticky)] h-[var(--header-h-mobile)] bg-white transition-shadow duration-200 lg:h-[var(--header-h)] ${
+          scrolled ? "shadow-sm" : ""
+        } border-b border-slate-200`}
       >
-        <div className="mx-auto flex h-full max-w-[var(--max-w-content)] items-center justify-between gap-6 px-[clamp(1rem,4vw,2rem)]">
+        <div className="mx-auto flex h-full max-w-[var(--max-w-content)] items-center justify-between gap-8 px-[clamp(1rem,4vw,2rem)]">
           <Logo />
 
-          <nav aria-label="Main navigation" className="hidden items-center gap-5 lg:flex">
+          <nav aria-label="Main navigation" className="hidden items-center gap-6 lg:flex">
             {mainNav.map((item) =>
               item.children ? (
                 <DesktopDropdown
@@ -280,9 +301,9 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   aria-current={isActive(item.href) ? "page" : undefined}
-                  className={`py-1 text-sm transition-colors duration-(--duration-fast) ${
+                  className={`py-1 text-[13px] transition-colors ${
                     isActive(item.href)
-                      ? "text-slate-900 font-medium"
+                      ? "font-medium text-slate-900"
                       : "text-slate-500 hover:text-slate-900"
                   }`}
                 >
@@ -292,18 +313,18 @@ export function Header() {
             )}
           </nav>
 
-          <div className="hidden items-center gap-2 lg:flex">
+          <div className="hidden items-center gap-2.5 lg:flex">
             <Link
               href="/eligibility-check"
-              className="h-8 rounded-md border border-slate-200 px-3 text-sm font-medium text-slate-600 transition-colors duration-(--duration-fast) hover:bg-slate-50 hover:text-slate-900 inline-flex items-center"
+              className="inline-flex h-8 items-center rounded-md border border-slate-200 bg-white px-3.5 text-[13px] font-medium text-slate-600 transition-colors hover:border-slate-300 hover:bg-slate-50 hover:text-slate-900"
             >
               Check Eligibility
             </Link>
             <Link
               href="/book"
-              className="h-8 rounded-md bg-accent px-3 text-sm font-medium text-white transition-colors duration-(--duration-fast) hover:bg-accent-hover inline-flex items-center"
+              className="inline-flex h-8 items-center rounded-md bg-accent px-3.5 text-[13px] font-medium text-white transition-colors hover:bg-accent-hover"
             >
-              Book Free Consult
+              Book Free Consultation
             </Link>
             <div className="mx-1 h-4 w-px bg-slate-200" aria-hidden="true" />
             <Link
@@ -322,10 +343,11 @@ export function Header() {
             onClick={() => setMenuOpen(true)}
             className="flex size-8 items-center justify-center rounded text-slate-500 hover:bg-slate-100 hover:text-slate-900 lg:hidden"
           >
-            <Menu size={20} strokeWidth={2} />
+            <Menu size={18} strokeWidth={2} />
           </button>
         </div>
       </header>
+
       {menuOpen && <MobileMenu onClose={closeMenu} />}
     </>
   );

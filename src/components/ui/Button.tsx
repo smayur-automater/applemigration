@@ -22,21 +22,21 @@ type ButtonProps = ButtonBaseProps &
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-accent text-white hover:bg-accent-hover active:scale-[0.98] font-medium",
+    "bg-accent text-white hover:bg-accent-hover active:scale-[0.98] font-medium shadow-sm",
   secondary:
-    "border border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300 font-medium bg-white",
+    "border border-slate-200 text-slate-700 bg-white hover:bg-slate-50 hover:border-slate-300 font-medium",
   ghost:
-    "text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-medium bg-transparent",
+    "text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-medium",
   "ghost-light":
-    "text-white/90 hover:bg-white/10 font-medium bg-transparent",
+    "border border-white/20 text-white hover:bg-white/10 font-medium",
   gold:
-    "bg-accent text-white hover:bg-accent-hover active:scale-[0.98] font-medium",
+    "bg-accent text-white hover:bg-accent-hover active:scale-[0.98] font-medium shadow-sm",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
-  sm: "h-8 px-3 text-sm gap-1.5",
-  md: "h-10 px-4 text-sm gap-2",
-  lg: "h-11 px-6 text-base gap-2",
+  sm: "h-8 px-3.5 text-[13px] gap-1.5",
+  md: "h-9 px-4 text-[13px] gap-2",
+  lg: "h-10 px-5 text-sm gap-2",
 };
 
 function Spinner() {

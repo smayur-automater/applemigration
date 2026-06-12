@@ -28,11 +28,10 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
 
           <div>
-            <div className="mb-4 flex items-center gap-2">
-              <div className="flex size-7 items-center justify-center rounded bg-accent">
-                <span className="text-xs font-bold text-white">AE</span>
-              </div>
-              <span className="text-sm font-semibold text-white">Apple E&amp;I</span>
+            <div className="mb-4">
+              <span className="text-[15px] font-semibold leading-none tracking-tight text-white">
+                Apple<span className="font-normal text-slate-400"> E&amp;I</span>
+              </span>
             </div>
             <p className="text-sm leading-relaxed text-slate-400">
               Helping students, professionals, and families build their Australian future with honest, expert migration advice.
