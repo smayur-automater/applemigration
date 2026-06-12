@@ -9,7 +9,7 @@ interface TestimonialCardProps {
 
 function Stars({ rating }: { rating: number }) {
   return (
-    <div aria-label={`Rated ${rating} out of 5 stars`} role="img" className="flex gap-0.5 text-gold">
+    <div aria-label={`Rated ${rating} out of 5 stars`} role="img" className="flex gap-0.5 text-amber-400">
       {Array.from({ length: 5 }).map((_, i) => (
         <svg
           key={i}
@@ -28,20 +28,20 @@ export function TestimonialCard({ quote, name, visa, country, flag, rating }: Te
   return (
     <figure
       aria-label={`Testimonial from ${name}`}
-      className="flex h-full snap-start flex-col gap-4 rounded-lg bg-white p-8 shadow-sm"
+      className="flex h-full snap-start flex-col gap-4 rounded-lg border border-slate-200 bg-white p-6"
     >
       <Stars rating={rating} />
-      <blockquote className="flex-1 text-charcoal/90">&ldquo;{quote}&rdquo;</blockquote>
-      <figcaption className="flex items-center gap-3 border-t border-border pt-4">
+      <blockquote className="flex-1 text-sm leading-relaxed text-slate-600">&ldquo;{quote}&rdquo;</blockquote>
+      <figcaption className="flex items-center gap-3 border-t border-slate-100 pt-4">
         <span
           aria-hidden="true"
-          className="flex size-10 items-center justify-center rounded-full bg-navy font-display text-lg font-semibold text-gold"
+          className="flex size-9 items-center justify-center rounded-full bg-slate-100 text-sm font-semibold text-slate-700"
         >
           {name.charAt(0)}
         </span>
         <span>
-          <span className="block font-semibold text-navy">{name}</span>
-          <span className="block text-sm text-charcoal/70">
+          <span className="block text-sm font-semibold text-slate-900">{name}</span>
+          <span className="block text-xs text-slate-500">
             {visa} · {flag ? `${flag} ` : ""}
             {country}
           </span>

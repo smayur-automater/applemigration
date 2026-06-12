@@ -6,7 +6,7 @@ interface KickerProps {
 export function Kicker({ children, className = "" }: KickerProps) {
   return (
     <p
-      className={`text-xs font-semibold uppercase tracking-[0.12em] text-gold ${className}`}
+      className={`text-xs font-semibold uppercase tracking-widest text-accent ${className}`}
     >
       {children}
     </p>

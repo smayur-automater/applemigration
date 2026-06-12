@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { inter, poppins } from "@/lib/fonts";
+import { inter } from "@/lib/fonts";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -23,15 +23,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${poppins.variable} h-full antialiased`}
-    >
-      <body className="flex min-h-full flex-col">{children}</body>
+    <html lang="en" className={`${inter.variable} h-full`}>
+      <body className="flex min-h-full flex-col antialiased">{children}</body>
     </html>
   );
 }

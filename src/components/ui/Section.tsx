@@ -9,11 +9,11 @@ const sizeMap: Record<SectionSize, string> = {
 };
 
 const bgMap: Record<SectionBg, string> = {
-  default: "bg-off-white",
-  navy: "bg-navy text-white",
-  surface: "bg-surface",
-  white: "bg-white",
-  gold: "bg-gold",
+  default: "bg-slate-50",
+  navy:    "bg-slate-900 text-white",
+  surface: "bg-slate-100",
+  white:   "bg-white",
+  gold:    "bg-accent",
 };
 
 interface SectionProps extends React.HTMLAttributes<HTMLElement> {
